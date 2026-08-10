@@ -1,6 +1,8 @@
 import type { VerificationStatus } from "../../types/school";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export function VerificationBadge({ status }: { status: VerificationStatus }) {
+  const { t } = useLanguage();
   if (status === "verified") {
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-50 px-2.5 py-1 text-xs font-medium text-accent-700">
@@ -11,7 +13,7 @@ export function VerificationBadge({ status }: { status: VerificationStatus }) {
             clipRule="evenodd"
           />
         </svg>
-        Verified
+        {t("verification.verified")}
       </span>
     );
   }
@@ -25,7 +27,7 @@ export function VerificationBadge({ status }: { status: VerificationStatus }) {
           clipRule="evenodd"
         />
       </svg>
-      Pending verification
+      {t("verification.unverified")}
     </span>
   );
 }

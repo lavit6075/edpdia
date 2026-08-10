@@ -26,6 +26,10 @@ ageRange { min, max }, gradeLevels
 schoolType ("co-ed" | "boys" | "girls"), boarding: boolean
 introEn, introZh   — objective, parent-readable, NOT marketing copy
 officialWebsite, officialSocial[]
+logoUrl | null   — hotlinked from the school's own official site (or a Wayback snapshot of
+                   it), never copied into this repo; UI falls back to a generated placeholder
+                   if null or if the image fails to load. See data/SOURCES.md → "Image sources
+                   & licensing".
 address { lineEn, lineZh, district }
 admissions {
   tuitionByLevel[] { level, annualFeeHKD | null },

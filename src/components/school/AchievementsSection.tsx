@@ -1,7 +1,9 @@
 import type { Achievements } from "../../types/school";
 import { NotPublished } from "./NotPublished";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export function AchievementsSection({ achievements }: { achievements: Achievements }) {
+  const { t } = useLanguage();
   const hasAny =
     achievements.examResults.length > 0 ||
     achievements.universityDestinations.length > 0 ||
@@ -10,25 +12,25 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
   return (
     <section aria-labelledby="achievements-heading" className="scroll-mt-24">
       <h2 id="achievements-heading" className="text-xl font-semibold text-neutral-900">
-        Student Achievements
+        {t("profile.achievementsHeading")}
       </h2>
 
       {!hasAny && (
         <p className="mt-3 text-sm">
-          <NotPublished label="No exam results, university destinations, or awards published yet." />
+          <NotPublished label={t("profile.noAchievements")} />
         </p>
       )}
 
       {achievements.examResults.length > 0 && (
         <div className="mt-4">
-          <h3 className="text-sm font-semibold text-neutral-700">Exam results</h3>
+          <h3 className="text-sm font-semibold text-neutral-700">{t("profile.examResultsHeading")}</h3>
           <table className="mt-2 w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-neutral-200 text-left text-neutral-500">
-                <th className="py-2 pr-2 font-medium">Qualification</th>
-                <th className="py-2 pr-2 font-medium">Year</th>
-                <th className="py-2 pr-2 font-medium">Metric</th>
-                <th className="py-2 font-medium">Source</th>
+                <th className="py-2 pr-2 font-medium">{t("profile.tableQualification")}</th>
+                <th className="py-2 pr-2 font-medium">{t("profile.tableYear")}</th>
+                <th className="py-2 pr-2 font-medium">{t("profile.tableMetric")}</th>
+                <th className="py-2 font-medium">{t("profile.source")}</th>
               </tr>
             </thead>
             <tbody>
@@ -46,7 +48,7 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
                       rel="noopener noreferrer"
                       className="text-brand-700 hover:underline"
                     >
-                      Source
+                      {t("profile.source")}
                     </a>
                   </td>
                 </tr>
@@ -58,7 +60,9 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
 
       {achievements.universityDestinations.length > 0 && (
         <div className="mt-6">
-          <h3 className="text-sm font-semibold text-neutral-700">University destinations</h3>
+          <h3 className="text-sm font-semibold text-neutral-700">
+            {t("profile.universityDestinationsHeading")}
+          </h3>
           <ul className="mt-2 space-y-3">
             {achievements.universityDestinations.map((d, i) => (
               <li key={i} className="text-sm text-neutral-800">
@@ -69,7 +73,7 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
                   rel="noopener noreferrer"
                   className="text-brand-700 hover:underline"
                 >
-                  (source)
+                  {t("profile.sourceParen")}
                 </a>
               </li>
             ))}
@@ -79,7 +83,7 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
 
       {achievements.awards.length > 0 && (
         <div className="mt-6">
-          <h3 className="text-sm font-semibold text-neutral-700">Awards</h3>
+          <h3 className="text-sm font-semibold text-neutral-700">{t("profile.awardsHeading")}</h3>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-neutral-800">
             {achievements.awards.map((a, i) => (
               <li key={i}>{a}</li>

@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
 import { schools, getDistricts, getCurricula, getRegions } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
+import { useLanguage } from "../i18n/LanguageContext";
 
 function toggle<T>(list: T[], value: T): T[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
 
 export function Directory() {
+  const { t } = useLanguage();
   const [query, setQuery] = useState("");
   const [regions, setRegions] = useState<string[]>([]);
   const [districts, setDistricts] = useState<string[]>([]);
@@ -46,13 +48,9 @@ export function Directory() {
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div className="max-w-2xl">
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
-          School Directory
+          {t("directory.title")}
         </h1>
-        <p className="mt-2 text-neutral-600">
-          Browse Hong Kong international schools by curriculum, district, and age range.
-          Information is compiled from public sources — always verify directly with the
-          school.
-        </p>
+        <p className="mt-2 text-neutral-600">{t("directory.subtitle")}</p>
       </div>
 
       <div className="mt-8 flex flex-col gap-8 lg:flex-row">
@@ -65,7 +63,7 @@ export function Directory() {
               className="flex items-center gap-2 rounded-md border border-neutral-300 px-3 py-2 text-sm font-medium text-neutral-700"
               aria-expanded={filtersOpen}
             >
-              Filters
+              {t("directory.filters")}
               {activeFilterCount > 0 && (
                 <span className="rounded-full bg-brand-700 px-1.5 py-0.5 text-xs text-white">
                   {activeFilterCount}
@@ -78,34 +76,35 @@ export function Directory() {
             <div className="sticky top-20 space-y-6">
               <div>
                 <label htmlFor="search" className="text-sm font-semibold text-neutral-900">
-                  Search
+                  {t("directory.search")}
                 </label>
                 <input
                   id="search"
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="School name…"
+                  placeholder={t("directory.searchPlaceholder")}
                   className="mt-2 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
                 />
               </div>
 
               <FilterGroup
-                title="Region"
+                title={t("directory.region")}
                 options={allRegions}
+                optionLabel={(v) => t(`regions.${v}`)}
                 selected={regions}
                 onToggle={(v) => setRegions((r) => toggle(r, v))}
               />
 
               <FilterGroup
-                title="District"
+                title={t("directory.district")}
                 options={allDistricts}
                 selected={districts}
                 onToggle={(v) => setDistricts((d) => toggle(d, v))}
               />
 
               <FilterGroup
-                title="Curriculum"
+                title={t("directory.curriculum")}
                 options={allCurricula}
                 selected={curricula}
                 onToggle={(v) => setCurricula((c) => toggle(c, v))}
@@ -117,7 +116,7 @@ export function Directory() {
                   onClick={clearFilters}
                   className="text-sm font-medium text-brand-700 hover:text-brand-800"
                 >
-                  Clear all filters
+                  {t("directory.clearAll")}
                 </button>
               ) : null}
             </div>
@@ -127,21 +126,20 @@ export function Directory() {
         {/* Results */}
         <div className="flex-1">
           <p className="mb-4 text-sm text-neutral-500">
-            {results.length} school{results.length === 1 ? "" : "s"} found
+            {results.length}{" "}
+            {t(results.length === 1 ? "directory.resultsFoundOne" : "directory.resultsFoundOther")}
           </p>
 
           {results.length === 0 ? (
             <div className="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 px-6 py-16 text-center">
-              <h2 className="text-lg font-semibold text-neutral-900">No schools match your filters</h2>
-              <p className="mt-2 text-sm text-neutral-600">
-                Try removing a filter or searching a different term.
-              </p>
+              <h2 className="text-lg font-semibold text-neutral-900">{t("directory.noResultsTitle")}</h2>
+              <p className="mt-2 text-sm text-neutral-600">{t("directory.noResultsBody")}</p>
               <button
                 type="button"
                 onClick={clearFilters}
                 className="mt-4 rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800"
               >
-                Clear all filters
+                {t("directory.clearAll")}
               </button>
             </div>
           ) : (
@@ -160,11 +158,12 @@ export function Directory() {
 interface FilterGroupProps {
   title: string;
   options: string[];
+  optionLabel?: (value: string) => string;
   selected: string[];
   onToggle: (value: string) => void;
 }
 
-function FilterGroup({ title, options, selected, onToggle }: FilterGroupProps) {
+function FilterGroup({ title, options, optionLabel, selected, onToggle }: FilterGroupProps) {
   if (options.length === 0) return null;
   return (
     <fieldset>
@@ -178,7 +177,7 @@ function FilterGroup({ title, options, selected, onToggle }: FilterGroupProps) {
               onChange={() => onToggle(option)}
               className="mt-0.5 h-4 w-4 rounded border-neutral-300 text-brand-700 focus:ring-brand-500"
             />
-            <span>{option}</span>
+            <span>{optionLabel ? optionLabel(option) : option}</span>
           </label>
         ))}
       </div>

@@ -6,38 +6,80 @@
     "slug": "chinese-international-school",
     "district": "North Point / Braemar Hill",
     "region": "Hong Kong Island",
-    "curriculum": ["IB Middle Years Programme (IBMYP)", "IB Diploma Programme (IBDP)"],
-    "ageRange": { "min": 4, "max": 18 },
+    "curriculum": [
+      "IB Middle Years Programme (IBMYP)",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 18
+    },
     "gradeLevels": "Reception to Year 13",
     "schoolType": "co-ed",
     "boarding": false,
     "introEn": "Chinese International School (CIS) is a bilingual, independent day school founded in 1983 on Hong Kong Island, offering an English–Chinese bicultural education from Reception through Year 13. It follows the IB Middle Years Programme and IB Diploma Programme and enrols students from more than 30 nationalities.",
-    "introZh": null,
+    "introZh": "漢基國際學校是一所位於香港島的獨立日校，於1983年創立，提供英語與中文並重的雙語及雙文化教育，涵蓋幼兒班至十三年級。學校採用國際文憑中學課程及大學預科課程，學生來自超過三十個國籍。",
     "officialWebsite": "https://www.cis.edu.hk",
-    "officialSocial": ["https://www.facebook.com/CISHK", "https://www.instagram.com/cishk"],
+    "officialSocial": [
+      "https://www.facebook.com/CISHK",
+      "https://www.instagram.com/cishk"
+    ],
+    "logoUrl": "https://www.cis.edu.hk/uploaded/themes/default_21/mycis_favicon.ico",
     "address": {
       "lineEn": "1 Hau Yuen Path, Braemar Hill, Hong Kong SAR, China",
-      "lineZh": null,
+      "lineZh": "香港北角寶馬山校園徑1號",
       "district": "North Point / Braemar Hill"
     },
     "admissions": {
-      "tuitionByLevel": [{ "level": "All levels (Reception – Year 13)", "annualFeeHKD": null }],
+      "tuitionByLevel": [
+        {
+          "level": "All levels (Reception – Year 13)",
+          "annualFeeHKD": null
+        }
+      ],
       "otherFees": [
-        { "label": "Annual Capital Levy", "amountHKD": 30200, "note": "For students joining in or after 2025-26; 2026-27 school year figure" },
-        { "label": "Reservation Deposit", "amountHKD": 150000, "note": "Non-refundable; includes the Annual Capital Levy" }
+        {
+          "label": "Annual Capital Levy",
+          "amountHKD": 30200,
+          "note": "For students joining in or after 2025-26; 2026-27 school year figure"
+        },
+        {
+          "label": "Reservation Deposit",
+          "amountHKD": 150000,
+          "note": "Non-refundable; includes the Annual Capital Levy"
+        }
       ],
       "applicationFee": null,
       "debentureOrCapitalLevy": 30200,
       "entranceExams": [],
       "applicationDeadlines": [],
-      "processSteps": ["Submit online application", "Stage 2: observation session for applicants who advance"]
+      "processSteps": [
+        "Submit online application",
+        "Stage 2: observation session for applicants who advance"
+      ]
     },
     "principalMessage": null,
-    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
     "sources": [
-      { "label": "CIS – About Us", "url": "https://www.cis.edu.hk/about-us/", "accessedDate": "2026-08-10" },
-      { "label": "CIS – 2026-27 School Fees", "url": "https://www.cis.edu.hk/admissions/school-fees", "accessedDate": "2026-08-10" },
-      { "label": "CIS – Admissions Process Overview", "url": "https://www.cis.edu.hk/admissions/admissions-process/overview", "accessedDate": "2026-08-10" }
+      {
+        "label": "CIS – About Us",
+        "url": "https://www.cis.edu.hk/about-us/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "CIS – 2026-27 School Fees",
+        "url": "https://www.cis.edu.hk/admissions/school-fees",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "CIS – Admissions Process Overview",
+        "url": "https://www.cis.edu.hk/admissions/admissions-process/overview",
+        "accessedDate": "2026-08-10"
+      }
     ],
     "lastVerified": "2026-08-10",
     "verificationStatus": "unverified"
@@ -49,50 +91,101 @@
     "slug": "hong-kong-international-school",
     "district": "Tai Tam / Repulse Bay",
     "region": "Hong Kong Island",
-    "curriculum": ["American Curriculum", "Advanced Placement (AP)"],
-    "ageRange": { "min": 4, "max": 18 },
+    "curriculum": [
+      "American Curriculum",
+      "Advanced Placement (AP)"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 18
+    },
     "gradeLevels": "Reception to Grade 12",
     "schoolType": "co-ed",
     "boarding": false,
     "introEn": "Hong Kong International School (HKIS) is a co-educational, American-style day school grounded in the Christian faith, serving students from Reception through Grade 12 across separate Primary and Secondary campuses in Tai Tam and Repulse Bay. It offers Advanced Placement (AP) courses at the secondary level and enrols students from more than 45 nationalities.",
-    "introZh": null,
+    "introZh": "香港國際學校是一所男女兼收的美式日校，以基督教信仰為辦學基礎，開設幼兒班至十二年級課程，小學部與中學部分別位於淺水灣及大潭，校舍各自獨立。中學階段提供大學先修（AP）課程，學生來自超過四十五個國籍。",
     "officialWebsite": "https://www.hkis.edu.hk",
     "officialSocial": [
       "https://www.facebook.com/HongKongInternationalSchool",
       "https://www.instagram.com/HongKongInternationalSchool",
       "https://www.youtube.com/@HKIStv"
     ],
+    "logoUrl": "https://www.hkis.edu.hk/Images/assets/logo-primary.svg",
     "address": {
       "lineEn": "1 Red Hill Road, Tai Tam, Hong Kong (Secondary Campus); 23 South Bay Close, Repulse Bay, Hong Kong (Primary Campus)",
-      "lineZh": null,
+      "lineZh": "香港大潭紅山道1號（中學部）；香港淺水灣南灣坊6及23號（小學部）",
       "district": "Tai Tam / Repulse Bay"
     },
     "admissions": {
       "tuitionByLevel": [
-        { "level": "Reception 1 – Grade 2", "annualFeeHKD": 231600 },
-        { "level": "Grades 3–5", "annualFeeHKD": 231600 },
-        { "level": "Grades 6–8", "annualFeeHKD": 244500 },
-        { "level": "Grades 9–12", "annualFeeHKD": 272600 }
+        {
+          "level": "Reception 1 – Grade 2",
+          "annualFeeHKD": 231600
+        },
+        {
+          "level": "Grades 3–5",
+          "annualFeeHKD": 231600
+        },
+        {
+          "level": "Grades 6–8",
+          "annualFeeHKD": 244500
+        },
+        {
+          "level": "Grades 9–12",
+          "annualFeeHKD": 272600
+        }
       ],
       "otherFees": [
-        { "label": "Application Fee", "amountHKD": 2000, "note": "Payable at time of application; non-refundable" },
-        { "label": "Entry Fee", "amountHKD": 15000, "note": "One-time fee for new students only" },
-        { "label": "Annual Capital Levy", "amountHKD": 24500, "note": "Payable in two instalments of HK$12,250" }
+        {
+          "label": "Application Fee",
+          "amountHKD": 2000,
+          "note": "Payable at time of application; non-refundable"
+        },
+        {
+          "label": "Entry Fee",
+          "amountHKD": 15000,
+          "note": "One-time fee for new students only"
+        },
+        {
+          "label": "Annual Capital Levy",
+          "amountHKD": 24500,
+          "note": "Payable in two instalments of HK$12,250"
+        }
       ],
       "applicationFee": 2000,
       "debentureOrCapitalLevy": 24500,
       "entranceExams": [],
       "applicationDeadlines": [
-        { "intakeYear": "Annual (recurring)", "level": "Primary-aged students", "deadline": "October 1" },
-        { "intakeYear": "Annual (recurring)", "level": "Secondary-aged students", "deadline": "November 1" }
+        {
+          "intakeYear": "Annual (recurring)",
+          "level": "Primary-aged students",
+          "deadline": "October 1"
+        },
+        {
+          "intakeYear": "Annual (recurring)",
+          "level": "Secondary-aged students",
+          "deadline": "November 1"
+        }
       ],
       "processSteps": []
     },
     "principalMessage": null,
-    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
     "sources": [
-      { "label": "HKIS homepage / About", "url": "https://www.hkis.edu.hk", "accessedDate": "2026-08-10" },
-      { "label": "HKIS – Tuition & Fees 2026-27", "url": "https://www.hkis.edu.hk/admissions/tuition-fees", "accessedDate": "2026-08-10" }
+      {
+        "label": "HKIS homepage / About",
+        "url": "https://www.hkis.edu.hk",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "HKIS – Tuition & Fees 2026-27",
+        "url": "https://www.hkis.edu.hk/admissions/tuition-fees",
+        "accessedDate": "2026-08-10"
+      }
     ],
     "lastVerified": "2026-08-10",
     "verificationStatus": "unverified"
@@ -104,22 +197,38 @@
     "slug": "german-swiss-international-school",
     "district": "The Peak / Pok Fu Lam",
     "region": "Hong Kong Island",
-    "curriculum": ["German International Abitur (DIA)", "IGCSE", "IB Diploma Programme (IBDP)"],
-    "ageRange": { "min": 3, "max": 18 },
+    "curriculum": [
+      "German International Abitur (DIA)",
+      "IGCSE",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
     "gradeLevels": "Kindergarten to Secondary (Year 13)",
     "schoolType": "co-ed",
     "boarding": false,
     "introEn": "German Swiss International School (GSIS) is a dual-language day school operating since 1969 across two Hong Kong Island campuses, offering parallel German International Stream (leading to the German International Abitur) and English International Stream (IGCSE and IB Diploma) programmes from Kindergarten through Secondary. It enrols roughly 1,250 students from around 27 countries.",
-    "introZh": null,
+    "introZh": "德瑞國際學校於1969年創校，是一所雙語日校，在香港島設有兩個校舍。學校並行開辦德文部（修讀德國國際文憑）及英文部（修讀IGCSE及國際文憑大學預科課程），由幼稚園至中學階段，約有一千二百五十名學生，來自約二十七個國家。",
     "officialWebsite": "https://www.gsis.edu.hk",
-    "officialSocial": ["https://www.facebook.com/GSISHK/", "https://www.instagram.com/gsishk/"],
+    "officialSocial": [
+      "https://www.facebook.com/GSISHK/",
+      "https://www.instagram.com/gsishk/"
+    ],
+    "logoUrl": "https://www.gsis.edu.hk/_next/static/media/img-logo.805f99bd.svg",
     "address": {
       "lineEn": "11 Guildford Road, The Peak, Hong Kong (The Peak Campus); 162 Pok Fu Lam Road, Pok Fu Lam, Hong Kong (Pok Fu Lam Campus)",
-      "lineZh": null,
+      "lineZh": "香港山頂僑福道11及22號（山頂校舍）；香港薄扶林薄扶林道162號（薄扶林校舍）",
       "district": "The Peak / Pok Fu Lam"
     },
     "admissions": {
-      "tuitionByLevel": [{ "level": "All levels (German & English Streams)", "annualFeeHKD": null }],
+      "tuitionByLevel": [
+        {
+          "level": "All levels (German & English Streams)",
+          "annualFeeHKD": null
+        }
+      ],
       "otherFees": [],
       "applicationFee": null,
       "debentureOrCapitalLevy": null,
@@ -128,10 +237,947 @@
       "processSteps": []
     },
     "principalMessage": null,
-    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
     "sources": [
-      { "label": "GSIS – About", "url": "https://www.gsis.edu.hk/about/", "accessedDate": "2026-08-10" },
-      { "label": "GSIS – Fees & Debenture (figures not available in fetched content; page appears client-rendered)", "url": "https://www.gsis.edu.hk/en/admissions/fees-and-debenture", "accessedDate": "2026-08-10" }
+      {
+        "label": "GSIS – About",
+        "url": "https://www.gsis.edu.hk/about/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "GSIS – Fees & Debenture (figures not available in fetched content; page appears client-rendered)",
+        "url": "https://www.gsis.edu.hk/en/admissions/fees-and-debenture",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "canadian-international-school-of-hong-kong",
+    "nameEn": "Canadian International School of Hong Kong",
+    "nameZh": "香港加拿大國際學校",
+    "slug": "canadian-international-school-of-hong-kong",
+    "district": "Aberdeen / Wong Chuk Hang",
+    "region": "Hong Kong Island",
+    "curriculum": [
+      "IB Primary Years Programme (IBPYP)",
+      "IB Middle Years Programme (IBMYP)",
+      "IB Diploma Programme (IBDP)",
+      "Ontario Secondary School Diploma (OSSD)"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Nursery to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Canadian International School of Hong Kong (CDNIS) is a co-educational, independent day school in Aberdeen on Hong Kong Island, offering the full IB continuum (PYP, MYP, and Diploma Programme) from Nursery through Grade 12, plus the Ontario Secondary School Diploma (OSSD) for Grades 11–12. It enrols more than 2,100 students from over 40 nationalities.",
+    "introZh": "香港加拿大國際學校位於香港島香港仔，是一所男女兼收的獨立日校，由幼兒班至十二年級提供完整的國際文憑課程，包括小學、中學及大學預科課程，並於十一及十二年級開辦安大略省中學文憑。學生逾二千一百人，來自超過四十個國籍。",
+    "officialWebsite": "https://www.cdnis.edu.hk",
+    "officialSocial": [
+      "https://www.facebook.com/CanadianInternationalSchoolOfHongKong",
+      "https://www.instagram.com/cdnishk/",
+      "https://www.youtube.com/user/cdniscomm",
+      "https://www.linkedin.com/school/canadian-international-school-of-hong-kong/"
+    ],
+    "logoUrl": "https://www.cdnis.edu.hk/resources/images/f_auto,q_auto/v1660613705/cdniseduhk/vpbrwmahzfh0k3t6knwa/top-logo.png",
+    "address": {
+      "lineEn": "36 Nam Long Shan Road, Aberdeen, Hong Kong (Main Campus); 11 Heung Yip Road, Wong Chuk Hang, Hong Kong (Early Years Centre)",
+      "lineZh": "香港香港仔南朗山道36號（主校舍）；香港黃竹坑香葉道11號THE SOUTHSIDE地下G21-24號舖（幼兒學習中心）",
+      "district": "Aberdeen / Wong Chuk Hang"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Nursery (Half Day, Bilingual)",
+          "annualFeeHKD": 142780
+        },
+        {
+          "level": "Early Years 1 (Half Day, Bilingual)",
+          "annualFeeHKD": 161000
+        },
+        {
+          "level": "Early Years 2 (Whole Day, Bilingual)",
+          "annualFeeHKD": 209200
+        },
+        {
+          "level": "Preparatory to Grade 2 (Bilingual)",
+          "annualFeeHKD": 217200
+        },
+        {
+          "level": "Grade 3 (Bilingual)",
+          "annualFeeHKD": 200000
+        },
+        {
+          "level": "Grade 4–5",
+          "annualFeeHKD": 200000
+        },
+        {
+          "level": "Grade 6–8",
+          "annualFeeHKD": 223100
+        },
+        {
+          "level": "Grade 9–10",
+          "annualFeeHKD": 244800
+        },
+        {
+          "level": "Grade 11–12",
+          "annualFeeHKD": 261500
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Application Fee (Nursery)",
+          "amountHKD": 1800,
+          "note": null
+        },
+        {
+          "label": "Assessment Fee (EY1+)",
+          "amountHKD": 1650,
+          "note": null
+        },
+        {
+          "label": "Entry Fee",
+          "amountHKD": 12500,
+          "note": "One-time, new students only"
+        },
+        {
+          "label": "Reservation Deposit",
+          "amountHKD": 80000,
+          "note": null
+        }
+      ],
+      "applicationFee": 2350,
+      "debentureOrCapitalLevy": 43000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "CDNIS homepage",
+        "url": "https://www.cdnis.edu.hk/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "CDNIS – Tuition & Fees 2026/2027 (pending EDB approval); re-verified 2026-08-10 field-by-field against a real Wayback snapshot (2026-06-07) after this dataset's provenance was called into question — every figure matched exactly",
+        "url": "https://web.archive.org/web/20260607233318/https://www.cdnis.edu.hk/admissions/tuition-fees",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "french-international-school-hong-kong",
+    "nameEn": "French International School Hong Kong",
+    "nameZh": "法國國際學校",
+    "slug": "french-international-school-hong-kong",
+    "district": "Chai Wan / Jardine's Lookout / Blue Pool Road / Tseung Kwan O",
+    "region": "Hong Kong Island",
+    "curriculum": [
+      "French National Curriculum (AEFE)",
+      "IGCSE",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Petite Section / Nursery to Terminale / Year 13 (dual streams)",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "French International School Hong Kong (FIS) is a co-educational day school operating across four campuses on Hong Kong Island and in Tseung Kwan O, offering a French Stream (following the French national curriculum within the AEFE network) and an International Stream (leading to IGCSE and the IB Diploma Programme) in parallel.",
+    "introZh": "法國國際學校是一所男女兼收的日校，於香港島及將軍澳合共設有四個校舍。學校同時開辦法文部及英文部兩條學制：法文部採用法國國家課程，隸屬法國海外教育署（AEFE）網絡；英文部則修讀IGCSE及國際文憑大學預科課程。",
+    "officialWebsite": "https://www.fis.edu.hk",
+    "officialSocial": [
+      "https://www.facebook.com/HKFIS/",
+      "https://www.instagram.com/hkfis/"
+    ],
+    "logoUrl": "https://static.wixstatic.com/media/fecce6_b5ddd0a6d1174fe8914bda78e06dfd6a~mv2.png/v1/fill/w_105,h_116,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bilingual_logo_red_bar-01.png",
+    "address": {
+      "lineEn": "Multiple campuses: Chai Wan, Jardine's Lookout, Blue Pool Road (Hong Kong Island) and Tseung Kwan O",
+      "lineZh": "香港藍塘道165號（藍塘道校舍）；另設柴灣、渣甸山及將軍澳校舍",
+      "district": "Chai Wan / Jardine's Lookout / Blue Pool Road / Tseung Kwan O"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "French Stream – Petite & Moyenne Section",
+          "annualFeeHKD": 150653
+        },
+        {
+          "level": "French Stream – Grande Section",
+          "annualFeeHKD": 155908
+        },
+        {
+          "level": "French Stream – CP-CM2",
+          "annualFeeHKD": 153292
+        },
+        {
+          "level": "French Stream – 6ème-3ème",
+          "annualFeeHKD": 162478
+        },
+        {
+          "level": "French Stream – 2nde-Terminale",
+          "annualFeeHKD": 196519
+        },
+        {
+          "level": "International Stream – Nursery & Reception",
+          "annualFeeHKD": 156729
+        },
+        {
+          "level": "International Stream – Y1-Y6",
+          "annualFeeHKD": 166408
+        },
+        {
+          "level": "International Stream – Y7-Y11 (iGCSE)",
+          "annualFeeHKD": 208302
+        },
+        {
+          "level": "International Stream – Y12-Y13 (IB)",
+          "annualFeeHKD": 224298
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Assessment Fee",
+          "amountHKD": 1000,
+          "note": "Per stream"
+        },
+        {
+          "label": "Debenture Admin Fee",
+          "amountHKD": 5000,
+          "note": "Non-refundable"
+        },
+        {
+          "label": "Private Debenture",
+          "amountHKD": 120000,
+          "note": "Fully redeemable"
+        },
+        {
+          "label": "Corporate Debenture",
+          "amountHKD": 250000,
+          "note": "Fully redeemable"
+        },
+        {
+          "label": "Confirmation Deposit",
+          "amountHKD": 25000,
+          "note": "Non-refundable; credited against first-term tuition"
+        }
+      ],
+      "applicationFee": 2200,
+      "debentureOrCapitalLevy": 120000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "FIS homepage",
+        "url": "https://www.fis.edu.hk/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "FIS – School Fees 2026-27; re-verified 2026-08-10 via a fresh live fetch after this dataset's provenance was called into question — every figure matched exactly",
+        "url": "https://www.fis.edu.hk/school-fees",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "australian-international-school-hong-kong",
+    "nameEn": "Australian International School Hong Kong",
+    "nameZh": "香港澳洲國際學校",
+    "slug": "australian-international-school-hong-kong",
+    "district": "Kowloon Tong",
+    "region": "Kowloon",
+    "curriculum": [
+      "Australian Curriculum",
+      "New South Wales Higher School Certificate (NSW HSC)",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 18
+    },
+    "gradeLevels": "Reception to Year 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Australian International School Hong Kong (AISHK) is a co-educational day school in Kowloon Tong serving Reception through Year 12, following an Australian curriculum framework with a choice of the NSW Higher School Certificate (HSC) or the IB Diploma Programme in the senior years. It enrols around 1,200 students from 27 nationalities.",
+    "introZh": "香港澳洲國際學校位於九龍塘，是一所男女兼收的日校，設幼兒班至十二年級。學校採用澳洲課程框架，高年級學生可選修新南威爾士州高中畢業證書或國際文憑大學預科課程，現有學生約一千二百人，來自二十七個國籍。",
+    "officialWebsite": "https://www.aishk.edu.hk",
+    "officialSocial": [
+      "https://www.instagram.com/ais_hk",
+      "https://www.facebook.com/AustralianInternationalSchoolHongKong",
+      "https://hk.linkedin.com/school/australian-international-school-hong-kong"
+    ],
+    "logoUrl": "https://www.aishk.edu.hk/Images/assets/logo/logo-crest.svg",
+    "address": {
+      "lineEn": "3A Norfolk Road, Kowloon Tong, Kowloon, Hong Kong",
+      "lineZh": "九龍九龍塘羅福道3A號",
+      "district": "Kowloon Tong"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Reception",
+          "annualFeeHKD": 156200
+        },
+        {
+          "level": "Primary (Prep-Year 6)",
+          "annualFeeHKD": 182500
+        },
+        {
+          "level": "Secondary (Year 7-10)",
+          "annualFeeHKD": 210500
+        },
+        {
+          "level": "Year 11-12 (HSC)",
+          "annualFeeHKD": 220900
+        },
+        {
+          "level": "Year 11-12 (IB)",
+          "annualFeeHKD": 265400
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Assessment Fee",
+          "amountHKD": 500,
+          "note": "If assessment required"
+        },
+        {
+          "label": "Application Renewal Fee",
+          "amountHKD": 500,
+          "note": "To maintain waitlist placement"
+        },
+        {
+          "label": "Reservation Deposit",
+          "amountHKD": 35000,
+          "note": "Refundable upon withdrawal"
+        }
+      ],
+      "applicationFee": 1500,
+      "debentureOrCapitalLevy": 25000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "AISHK homepage",
+        "url": "https://www.aishk.edu.hk/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "AISHK – Admissions (Tuition & Fees) 2026; re-verified 2026-08-10 via a fresh live fetch after this dataset's provenance was called into question — every figure matched exactly",
+        "url": "https://www.aishk.edu.hk/admissions",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "harrow-international-school-hong-kong",
+    "nameEn": "Harrow International School Hong Kong",
+    "nameZh": "哈羅香港國際學校",
+    "slug": "harrow-international-school-hong-kong",
+    "district": "Tuen Mun",
+    "region": "New Territories",
+    "curriculum": [
+      "British Curriculum"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Nursery to Year 13 (Sixth Form)",
+    "schoolType": "co-ed",
+    "boarding": true,
+    "introEn": "Harrow International School Hong Kong is a co-educational boarding and day school in Tuen Mun, New Territories, established in 2012 as part of the Harrow family of schools. It serves students from Nursery through Year 13 (Sixth Form), with boarding available from Year 6 onwards, and enrols around 1,650 students.",
+    "introZh": "哈羅香港國際學校位於新界屯門，是一所男女兼收的寄宿及日校，於2012年創校，屬哈羅公學系列學校之一。學校開設幼兒班至十三年級課程，並由六年級起提供寄宿服務，現有學生約一千六百五十人。",
+    "officialWebsite": "https://www.harrowhongkong.hk",
+    "officialSocial": [
+      "https://www.facebook.com/HarrowHK",
+      "https://www.instagram.com/harrowhkofficial"
+    ],
+    "logoUrl": "https://www.harrowhongkong.hk/wp-content/uploads/2024/10/cropped-Website-Logo_new.png",
+    "address": {
+      "lineEn": "38 Tsing Ying Road, Tuen Mun, Hong Kong",
+      "lineZh": "新界屯門青盈路38號",
+      "district": "Tuen Mun"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Nursery & Reception",
+          "annualFeeHKD": 175812
+        },
+        {
+          "level": "Years 1-5",
+          "annualFeeHKD": 201314
+        },
+        {
+          "level": "Years 6-8",
+          "annualFeeHKD": 229949
+        },
+        {
+          "level": "Years 9-11",
+          "annualFeeHKD": 229949
+        },
+        {
+          "level": "Years 12-13",
+          "annualFeeHKD": 239070
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Boarding Fee (Annual, Year 6+)",
+          "amountHKD": 130705,
+          "note": "Academic Year 2025-26; boarding available Year 6 onwards"
+        }
+      ],
+      "applicationFee": 1500,
+      "debentureOrCapitalLevy": 60000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "Harrow HK homepage",
+        "url": "https://www.harrowhongkong.hk/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "Harrow HK – Fees (Academic Year 2025-26); re-verified 2026-08-10 via a fresh live fetch after this dataset's provenance was called into question — every figure matched exactly",
+        "url": "https://www.harrowhongkong.hk/admissions/fees",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "kellett-school",
+    "nameEn": "Kellett School",
+    "nameZh": "啟歷學校",
+    "slug": "kellett-school",
+    "district": "Pok Fu Lam / Kowloon Bay",
+    "region": "Hong Kong Island",
+    "curriculum": [
+      "British Curriculum",
+      "A-Level"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 18
+    },
+    "gradeLevels": "Reception to Sixth Form (Year 13)",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Kellett School is a co-educational, British International day school operating two campuses — a Preparatory campus in Pok Fu Lam and a combined Preparatory and Senior campus in Kowloon Bay — serving students from Reception through Sixth Form (Year 13), with A-Levels offered in the Sixth Form.",
+    "introZh": "啟歷學校是一所男女兼收的英式國際日校，設有兩個校舍：薄扶林校舍開辦小學課程，九龍灣校舍則同時開辦小學及中學課程。學校由幼兒班至第十三班，並於預科階段開辦英國高級程度會考課程。",
+    "officialWebsite": "https://www.kellettschool.com",
+    "officialSocial": [
+      "https://www.instagram.com/KellettSchool",
+      "https://www.youtube.com/KellettSchoolHK",
+      "https://www.facebook.com/KellettSchool"
+    ],
+    "logoUrl": "https://www.kellettschool.com/Images/img/global/logo.png",
+    "address": {
+      "lineEn": "2 Wah Lok Path, Wah Fu, Pok Fu Lam, Hong Kong (Preparatory Campus); 7 Lam Hing Street, Kowloon Bay, Hong Kong (Preparatory and Senior Campus)",
+      "lineZh": "香港華富華樂徑2號（小學校舍）；九龍九龍灣臨興街7號（小學及中學校舍）",
+      "district": "Pok Fu Lam / Kowloon Bay"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Preparatory (Reception-Year 6)",
+          "annualFeeHKD": 218200
+        },
+        {
+          "level": "Senior (Year 7-11)",
+          "annualFeeHKD": 271300
+        },
+        {
+          "level": "Sixth Form (Year 12-13)",
+          "annualFeeHKD": 279100
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Application Fee (Reception-Year 4)",
+          "amountHKD": 2000,
+          "note": null
+        },
+        {
+          "label": "Application Fee (Year 5-13)",
+          "amountHKD": 2500,
+          "note": "Includes assessment"
+        },
+        {
+          "label": "Annual Association Fee",
+          "amountHKD": 500,
+          "note": "Per family"
+        }
+      ],
+      "applicationFee": 2000,
+      "debentureOrCapitalLevy": 40000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "Kellett School – About Us",
+        "url": "https://www.kellettschool.com/about-us",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "Kellett School – Fees & Debenture Information 2026/27; re-verified 2026-08-10 via a fresh live fetch after this dataset's provenance was called into question — every figure matched exactly",
+        "url": "https://www.kellettschool.com/admissions/fees-debenture-information",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "yew-chung-international-school-of-hong-kong",
+    "nameEn": "Yew Chung International School of Hong Kong",
+    "nameZh": "耀中國際學校",
+    "slug": "yew-chung-international-school-of-hong-kong",
+    "district": "Kowloon Tong / Tseung Kwan O",
+    "region": "Kowloon",
+    "curriculum": [
+      "IGCSE",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 0,
+      "max": 18
+    },
+    "gradeLevels": "Early Childhood (from 6 months) to Year 13",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Yew Chung International School of Hong Kong (YCIS) is a co-educational, bilingual day school founded in 1932, operating nine campuses across Kowloon Tong and Tseung Kwan O. It serves students from Early Childhood (from 6 months) through Year 13, offering IGCSE and the IB Diploma Programme at the secondary level.",
+    "introZh": "耀中國際學校於1932年創辦，是一所男女兼收的雙語日校，於九龍塘及將軍澳合共設有九個校舍。學校招收由六個月大的幼兒至十三年級學生，並於中學階段開辦IGCSE及國際文憑大學預科課程，實行中英雙語教學。",
+    "officialWebsite": "https://www.ycis-hk.com",
+    "officialSocial": [],
+    "logoUrl": "https://www.ycis-hk.com/images/logo/YCIS-PLogo-Vertical-RGB-Colour-Sep2021.svg",
+    "address": {
+      "lineEn": "Multiple campuses in Kowloon Tong and Tseung Kwan O, Hong Kong",
+      "lineZh": "九龍九龍塘森麻實道22號等多個校舍（九龍塘及將軍澳）",
+      "district": "Kowloon Tong / Tseung Kwan O"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "All levels (Early Childhood / Primary / Secondary)",
+          "annualFeeHKD": null
+        }
+      ],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "YCIS homepage",
+        "url": "https://www.ycis-hk.com/",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "YCIS – Tuition & Fees (figures published only as downloadable PDFs; not extracted)",
+        "url": "https://www.ycis-hk.com/en/admissions/tuition-n-fees",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "nord-anglia-international-school-hong-kong",
+    "nameEn": "Nord Anglia International School Hong Kong",
+    "nameZh": "香港諾德安達國際學校",
+    "slug": "nord-anglia-international-school-hong-kong",
+    "district": "Sai Kung / Lam Tin / Kwun Tong",
+    "region": "Kowloon",
+    "curriculum": [
+      "English National Curriculum",
+      "IGCSE",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Early Years to IB Diploma (Year 13)",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Nord Anglia International School Hong Kong (NAIS Hong Kong) is a co-educational day school operating across Early Years, Primary, and Secondary campuses in Sai Kung, Lam Tin, and Kwun Tong. It follows the English National Curriculum through to IGCSEs and the IB Diploma Programme, and is part of the Nord Anglia Education group of schools.",
+    "introZh": "香港諾德安達國際學校是一所男女兼收的日校，幼兒部、小學部及中學部分別位於西貢、藍田及觀塘。學校採用英國國家課程，並開辦IGCSE及國際文憑大學預科課程，隸屬諾德安達教育集團旗下的國際學校網絡。",
+    "officialWebsite": "https://www.nordangliaeducation.com/nais-hongkong",
+    "officialSocial": [
+      "https://www.facebook.com/NAISHongKong",
+      "https://www.instagram.com/naishongkong"
+    ],
+    "logoUrl": "https://web.archive.org/web/20260101004925im_/https://www.nordangliaeducation.com/nais-hong-kong/-/media/nais-hong-kong/nais_hk_logo_black.png?h=48&iar=0&w=286&rev=00bc35cbf9314dde80fd726b31cc4a8a&hash=F615B8CCA312862ED393DF0413BE753B",
+    "address": {
+      "lineEn": "Sai Kung (Early Years Campus), Lam Tin (Primary Campus), and Kwun Tong (Secondary Campus), Hong Kong",
+      "lineZh": "九龍藍田安田街11號（小學部）；九龍觀塘月華街19號（中學部）；另設西貢幼兒部校舍",
+      "district": "Sai Kung / Lam Tin / Kwun Tong"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Nursery Morning Session",
+          "annualFeeHKD": 132300
+        },
+        {
+          "level": "Nursery Afternoon Session",
+          "annualFeeHKD": 93900
+        },
+        {
+          "level": "Lower Kindergarten (Reception) Morning Session",
+          "annualFeeHKD": 91300
+        },
+        {
+          "level": "Lower Kindergarten (Reception) Afternoon Session",
+          "annualFeeHKD": 91300
+        },
+        {
+          "level": "Upper Kindergarten (Year 1) Morning Session",
+          "annualFeeHKD": 98500
+        },
+        {
+          "level": "Upper Kindergarten (Year 1) Afternoon Session",
+          "annualFeeHKD": 98500
+        },
+        {
+          "level": "Year 1 – 6",
+          "annualFeeHKD": 197000
+        },
+        {
+          "level": "Year 7 – 11",
+          "annualFeeHKD": 220500
+        },
+        {
+          "level": "Year 12 – 13",
+          "annualFeeHKD": 222500
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Capital Enrolment Fee",
+          "amountHKD": 100000,
+          "note": "Non-refundable, non-transferable; applies for 2025/26 admissions"
+        },
+        {
+          "label": "Annual Capital Levy (ACL)",
+          "amountHKD": 35000,
+          "note": "Replaces the Capital Enrolment Fee for new students from the 2026-27 academic year, subject to EDB approval"
+        }
+      ],
+      "applicationFee": 3000,
+      "debentureOrCapitalLevy": 35000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": [
+        "Submit online enquiry",
+        "Schedule a school tour",
+        "Submit online application form with supporting documents and application fee",
+        "Assessment and/or interview",
+        "Receive offer decision",
+        "Enrol and pay Capital Enrolment Fee / Annual Capital Levy"
+      ]
+    },
+    "principalMessage": {
+      "quote": "It gives me great pleasure to introduce you to our school. Nord Anglia International School, Hong Kong is part of Nord Anglia Education (NAE), a family of 84 premium international schools in 33 countries. Our shared vision is that all members of the school community, staff as well as students, should “Be Ambitious”.",
+      "name": "Kenny Duncan, Principal",
+      "sourceUrl": "https://web.archive.org/web/20250813203548/https://www.nordangliaeducation.com/nais-hong-kong/about-us/principals-welcome"
+    },
+    "achievements": {
+      "examResults": [
+        {
+          "qualification": "IB Diploma Programme (IBDP)",
+          "year": "2021/22",
+          "metric": "Pass rate",
+          "value": "100%",
+          "sourceUrl": "https://web.archive.org/web/20250805013102/https://www.nordangliaeducation.com/nais-hong-kong/academic-excellence/academic-success"
+        },
+        {
+          "qualification": "IB Diploma Programme (IBDP)",
+          "year": "2021/22",
+          "metric": "Students scoring 40+ points",
+          "value": "33%",
+          "sourceUrl": "https://web.archive.org/web/20250805013102/https://www.nordangliaeducation.com/nais-hong-kong/academic-excellence/academic-success"
+        },
+        {
+          "qualification": "IGCSE",
+          "year": "2021/22",
+          "metric": "Grades at A*/A",
+          "value": "51%",
+          "sourceUrl": "https://web.archive.org/web/20250805013102/https://www.nordangliaeducation.com/nais-hong-kong/academic-excellence/academic-success"
+        },
+        {
+          "qualification": "IGCSE",
+          "year": "2021/22",
+          "metric": "Grades at A*–C",
+          "value": "94%",
+          "sourceUrl": "https://web.archive.org/web/20250805013102/https://www.nordangliaeducation.com/nais-hong-kong/academic-excellence/academic-success"
+        }
+      ],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "NAIS Hong Kong – Principal's Welcome (Wayback archive, 2025-08-13 snapshot; direct fetch of this subpage is bot-blocked)",
+        "url": "https://web.archive.org/web/20250813203548/https://www.nordangliaeducation.com/nais-hong-kong/about-us/principals-welcome",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "NAIS Hong Kong – Academic Success (Wayback archive, 2025-08-05 snapshot)",
+        "url": "https://web.archive.org/web/20250805013102/https://www.nordangliaeducation.com/nais-hong-kong/academic-excellence/academic-success",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "NAIS Hong Kong – Tuition Fees 2025-26 (Wayback archive, 2026-04-13 snapshot)",
+        "url": "https://web.archive.org/web/20260413123407/https://www.nordangliaeducation.com/nais-hong-kong/admissions/tuition-fees",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "malvern-college-hong-kong",
+    "nameEn": "Malvern College Hong Kong",
+    "nameZh": "香港墨爾文國際學校",
+    "slug": "malvern-college-hong-kong",
+    "district": "Pak Shek Kok, Tai Po",
+    "region": "New Territories",
+    "curriculum": [
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 6,
+      "max": 18
+    },
+    "gradeLevels": "Year 1 to Year 13 (Sixth Form)",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Malvern College Hong Kong is a co-educational day school in Pak Shek Kok, Tai Po, New Territories, affiliated with Malvern College in the United Kingdom. It has a Prep and Senior School structure culminating in the IB Diploma Programme in the Sixth Form.",
+    "introZh": "香港墨爾文國際學校位於新界大埔白石角，是一所男女兼收的日校，與英國墨爾文書院聯繫。學校設有小學部及中學部，並獲授權為國際文憑世界學校，學生於預科階段修讀國際文憑大學預科課程。",
+    "officialWebsite": "https://www.malverncollege.org.hk",
+    "officialSocial": [
+      "https://www.facebook.com/MalvernHK",
+      "https://www.instagram.com/malvernhk"
+    ],
+    "logoUrl": "https://web.archive.org/web/20260101093254im_/https://www.malverncollege.org.hk/wp-content/themes/malvernhktheme/malvernhtml/docs/dist/img/logo.png",
+    "address": {
+      "lineEn": "Fo Chun Road, Pak Shek Kok, Tai Po, New Territories, Hong Kong",
+      "lineZh": "新界大埔白石角科進路3號",
+      "district": "Pak Shek Kok, Tai Po"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "All levels",
+          "annualFeeHKD": null
+        }
+      ],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [
+        {
+          "qualification": "IB Diploma Programme (IBDP)",
+          "year": "2023-24 (two-year average)",
+          "metric": "Average points score",
+          "value": "38 points",
+          "sourceUrl": "https://web.archive.org/web/20250426172854/https://www.malverncollege.org.hk/exam-results/"
+        }
+      ],
+      "universityDestinations": [
+        {
+          "year": "2024",
+          "institutions": [
+            "London School of Economics and Political Science (LSE)",
+            "University College London (UCL)",
+            "King's College London",
+            "University of Toronto",
+            "University of British Columbia (UBC)",
+            "University of Warwick",
+            "University of Hong Kong (HKU)",
+            "Hong Kong University of Science and Technology (HKUST)",
+            "University of Manchester",
+            "University of Bath",
+            "Indiana University Bloomington"
+          ],
+          "sourceUrl": "https://web.archive.org/web/20250426172854/https://www.malverncollege.org.hk/exam-results/"
+        }
+      ],
+      "awards": [
+        "Class of 2024 IBDP graduates secured over HK$3.6 million in university scholarships"
+      ]
+    },
+    "sources": [
+      {
+        "label": "Malvern College Hong Kong – Exam Results (Wayback archive, 2025-04-26 snapshot; live site presents an automated bot-verification interstitial that blocks direct fetching)",
+        "url": "https://web.archive.org/web/20250426172854/https://www.malverncollege.org.hk/exam-results/",
+        "accessedDate": "2026-08-10"
+      }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "stamford-american-school-hong-kong",
+    "nameEn": "Stamford American School Hong Kong",
+    "nameZh": null,
+    "slug": "stamford-american-school-hong-kong",
+    "district": "Ho Man Tin / Tai Kok Tsui",
+    "region": "Kowloon",
+    "curriculum": [
+      "American Curriculum",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 5,
+      "max": 18
+    },
+    "gradeLevels": "Pre-Primary to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Stamford American School Hong Kong is a co-educational day school operating a Ho Man Tin main campus and a West Kowloon campus, serving Pre-Primary through Grade 12. It follows an American curriculum with an optional IB Diploma Programme pathway, alongside a STEM-focused enrichment programme (STEMinn).",
+    "introZh": "Stamford American School Hong Kong是一所男女兼收的日校，主校舍位於九龍何文田，另於大角咀設有西九龍校舍。學校由學前班至十二年級採用美式課程框架，並提供國際文憑大學預科課程作為選修途徑，另設STEM專項增益課程供學生修讀。",
+    "officialWebsite": "https://www.sais.edu.hk",
+    "officialSocial": [
+      "https://www.facebook.com/StamfordAmericanSchoolHongKong",
+      "https://www.instagram.com/stamford_hk"
+    ],
+    "logoUrl": "https://www.sais.edu.hk/wp-content/uploads/sites/19/2025/05/Stamford_HK_Horiz_Logo_200313_RGB-02-1.webp",
+    "address": {
+      "lineEn": "25 Man Fuk Road, Ho Man Tin, Kowloon, Hong Kong (Ho Man Tin Campus); G/F to 2/F, Imperial Cullinan, 10 Hoi Fai Road, Tai Kok Tsui, Kowloon, Hong Kong (West Kowloon Campus)",
+      "lineZh": "九龍何文田文福道25號（何文田校舍）；九龍大角咀海輝道10號瓏璽地下至2樓（西九龍校舍）",
+      "district": "Ho Man Tin / Tai Kok Tsui"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        {
+          "level": "Pre-Primary – Grade 2 (Ho Man Tin)",
+          "annualFeeHKD": 219900
+        },
+        {
+          "level": "Grade 3 – Grade 5 (Ho Man Tin)",
+          "annualFeeHKD": 227200
+        },
+        {
+          "level": "Grade 6 – Grade 8 (Ho Man Tin)",
+          "annualFeeHKD": 249300
+        },
+        {
+          "level": "Grade 9 – Grade 10 (West Kowloon)",
+          "annualFeeHKD": 257000
+        },
+        {
+          "level": "Grade 11 – Grade 12 (West Kowloon)",
+          "annualFeeHKD": 274400
+        }
+      ],
+      "otherFees": [
+        {
+          "label": "Capital Levy – One-Time Option",
+          "amountHKD": 150000,
+          "note": "For duration at school"
+        },
+        {
+          "label": "Capital Levy – Annual Option",
+          "amountHKD": 30000,
+          "note": "Plus a one-time HK$30,000 tuition fee offset; 2025/2026 figures"
+        }
+      ],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": 30000,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [
+      {
+        "label": "Stamford American School HK – About Us",
+        "url": "https://www.sais.edu.hk/about-us",
+        "accessedDate": "2026-08-10"
+      },
+      {
+        "label": "Stamford American School HK – Fees 2026-2027",
+        "url": "https://www.sais.edu.hk/admissions/fees/",
+        "accessedDate": "2026-08-10"
+      }
     ],
     "lastVerified": "2026-08-10",
     "verificationStatus": "unverified"
