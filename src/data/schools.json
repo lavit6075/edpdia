@@ -1,0 +1,139 @@
+[
+  {
+    "id": "chinese-international-school",
+    "nameEn": "Chinese International School",
+    "nameZh": "漢基國際學校",
+    "slug": "chinese-international-school",
+    "district": "North Point / Braemar Hill",
+    "region": "Hong Kong Island",
+    "curriculum": ["IB Middle Years Programme (IBMYP)", "IB Diploma Programme (IBDP)"],
+    "ageRange": { "min": 4, "max": 18 },
+    "gradeLevels": "Reception to Year 13",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Chinese International School (CIS) is a bilingual, independent day school founded in 1983 on Hong Kong Island, offering an English–Chinese bicultural education from Reception through Year 13. It follows the IB Middle Years Programme and IB Diploma Programme and enrols students from more than 30 nationalities.",
+    "introZh": null,
+    "officialWebsite": "https://www.cis.edu.hk",
+    "officialSocial": ["https://www.facebook.com/CISHK", "https://www.instagram.com/cishk"],
+    "address": {
+      "lineEn": "1 Hau Yuen Path, Braemar Hill, Hong Kong SAR, China",
+      "lineZh": null,
+      "district": "North Point / Braemar Hill"
+    },
+    "admissions": {
+      "tuitionByLevel": [{ "level": "All levels (Reception – Year 13)", "annualFeeHKD": null }],
+      "otherFees": [
+        { "label": "Annual Capital Levy", "amountHKD": 30200, "note": "For students joining in or after 2025-26; 2026-27 school year figure" },
+        { "label": "Reservation Deposit", "amountHKD": 150000, "note": "Non-refundable; includes the Annual Capital Levy" }
+      ],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": 30200,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": ["Submit online application", "Stage 2: observation session for applicants who advance"]
+    },
+    "principalMessage": null,
+    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "sources": [
+      { "label": "CIS – About Us", "url": "https://www.cis.edu.hk/about-us/", "accessedDate": "2026-08-10" },
+      { "label": "CIS – 2026-27 School Fees", "url": "https://www.cis.edu.hk/admissions/school-fees", "accessedDate": "2026-08-10" },
+      { "label": "CIS – Admissions Process Overview", "url": "https://www.cis.edu.hk/admissions/admissions-process/overview", "accessedDate": "2026-08-10" }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "hong-kong-international-school",
+    "nameEn": "Hong Kong International School",
+    "nameZh": "香港國際學校",
+    "slug": "hong-kong-international-school",
+    "district": "Tai Tam / Repulse Bay",
+    "region": "Hong Kong Island",
+    "curriculum": ["American Curriculum", "Advanced Placement (AP)"],
+    "ageRange": { "min": 4, "max": 18 },
+    "gradeLevels": "Reception to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "Hong Kong International School (HKIS) is a co-educational, American-style day school grounded in the Christian faith, serving students from Reception through Grade 12 across separate Primary and Secondary campuses in Tai Tam and Repulse Bay. It offers Advanced Placement (AP) courses at the secondary level and enrols students from more than 45 nationalities.",
+    "introZh": null,
+    "officialWebsite": "https://www.hkis.edu.hk",
+    "officialSocial": [
+      "https://www.facebook.com/HongKongInternationalSchool",
+      "https://www.instagram.com/HongKongInternationalSchool",
+      "https://www.youtube.com/@HKIStv"
+    ],
+    "address": {
+      "lineEn": "1 Red Hill Road, Tai Tam, Hong Kong (Secondary Campus); 23 South Bay Close, Repulse Bay, Hong Kong (Primary Campus)",
+      "lineZh": null,
+      "district": "Tai Tam / Repulse Bay"
+    },
+    "admissions": {
+      "tuitionByLevel": [
+        { "level": "Reception 1 – Grade 2", "annualFeeHKD": 231600 },
+        { "level": "Grades 3–5", "annualFeeHKD": 231600 },
+        { "level": "Grades 6–8", "annualFeeHKD": 244500 },
+        { "level": "Grades 9–12", "annualFeeHKD": 272600 }
+      ],
+      "otherFees": [
+        { "label": "Application Fee", "amountHKD": 2000, "note": "Payable at time of application; non-refundable" },
+        { "label": "Entry Fee", "amountHKD": 15000, "note": "One-time fee for new students only" },
+        { "label": "Annual Capital Levy", "amountHKD": 24500, "note": "Payable in two instalments of HK$12,250" }
+      ],
+      "applicationFee": 2000,
+      "debentureOrCapitalLevy": 24500,
+      "entranceExams": [],
+      "applicationDeadlines": [
+        { "intakeYear": "Annual (recurring)", "level": "Primary-aged students", "deadline": "October 1" },
+        { "intakeYear": "Annual (recurring)", "level": "Secondary-aged students", "deadline": "November 1" }
+      ],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "sources": [
+      { "label": "HKIS homepage / About", "url": "https://www.hkis.edu.hk", "accessedDate": "2026-08-10" },
+      { "label": "HKIS – Tuition & Fees 2026-27", "url": "https://www.hkis.edu.hk/admissions/tuition-fees", "accessedDate": "2026-08-10" }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  },
+  {
+    "id": "german-swiss-international-school",
+    "nameEn": "German Swiss International School",
+    "nameZh": "德瑞國際學校",
+    "slug": "german-swiss-international-school",
+    "district": "The Peak / Pok Fu Lam",
+    "region": "Hong Kong Island",
+    "curriculum": ["German International Abitur (DIA)", "IGCSE", "IB Diploma Programme (IBDP)"],
+    "ageRange": { "min": 3, "max": 18 },
+    "gradeLevels": "Kindergarten to Secondary (Year 13)",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "German Swiss International School (GSIS) is a dual-language day school operating since 1969 across two Hong Kong Island campuses, offering parallel German International Stream (leading to the German International Abitur) and English International Stream (IGCSE and IB Diploma) programmes from Kindergarten through Secondary. It enrols roughly 1,250 students from around 27 countries.",
+    "introZh": null,
+    "officialWebsite": "https://www.gsis.edu.hk",
+    "officialSocial": ["https://www.facebook.com/GSISHK/", "https://www.instagram.com/gsishk/"],
+    "address": {
+      "lineEn": "11 Guildford Road, The Peak, Hong Kong (The Peak Campus); 162 Pok Fu Lam Road, Pok Fu Lam, Hong Kong (Pok Fu Lam Campus)",
+      "lineZh": null,
+      "district": "The Peak / Pok Fu Lam"
+    },
+    "admissions": {
+      "tuitionByLevel": [{ "level": "All levels (German & English Streams)", "annualFeeHKD": null }],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": { "examResults": [], "universityDestinations": [], "awards": [] },
+    "sources": [
+      { "label": "GSIS – About", "url": "https://www.gsis.edu.hk/about/", "accessedDate": "2026-08-10" },
+      { "label": "GSIS – Fees & Debenture (figures not available in fetched content; page appears client-rendered)", "url": "https://www.gsis.edu.hk/en/admissions/fees-and-debenture", "accessedDate": "2026-08-10" }
+    ],
+    "lastVerified": "2026-08-10",
+    "verificationStatus": "unverified"
+  }
+]
