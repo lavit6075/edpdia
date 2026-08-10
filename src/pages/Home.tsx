@@ -1,48 +1,50 @@
 import { Link } from "react-router-dom";
 import { schools } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
-
-const stats = [
-  { label: "Schools listed", value: schools.length.toString() },
-  { label: "Curricula covered", value: "IB, British, American & more" },
-  { label: "Coverage", value: "Hong Kong Island, Kowloon, New Territories" },
-];
+import { HeroGraphic } from "../components/HeroGraphic";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function Home() {
+  const { t } = useLanguage();
   const featured = schools.slice(0, 3);
+
+  const stats = [
+    { label: t("home.statSchools"), value: schools.length.toString() },
+    { label: t("home.statCurricula"), value: t("home.statCurriculaValue") },
+    { label: t("home.statCoverage"), value: t("home.statCoverageValue") },
+  ];
 
   return (
     <div>
       {/* Hero */}
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mx-auto flex max-w-6xl items-center gap-8 px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-              Hong Kong's international school directory
+              {t("home.eyebrow")}
             </p>
             <h1 className="mt-3 text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
-              An encyclopaedia, not a sales pitch.
+              {t("home.title")}
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-              Edpdia compiles curricula, admissions details, and official sources for
-              Hong Kong's international schools in one neutral, easy-to-scan place — so
-              you can make an informed decision, not a marketed one.
+              {t("home.subtitle")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/schools"
                 className="rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-800"
               >
-                Browse schools
+                {t("home.browseSchools")}
               </Link>
               <Link
                 to="/contact"
                 className="rounded-md border border-neutral-300 px-5 py-3 text-sm font-semibold text-neutral-700 hover:bg-white"
               >
-                Contact us
+                {t("home.contactUs")}
               </Link>
             </div>
           </div>
+          <HeroGraphic className="hidden h-72 w-64 shrink-0 lg:block" />
         </div>
       </section>
 
@@ -63,17 +65,15 @@ export function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-900">
-              Featured schools
+              {t("home.featuredTitle")}
             </h2>
-            <p className="mt-1 text-neutral-600">
-              A sample of what's in the directory.
-            </p>
+            <p className="mt-1 text-neutral-600">{t("home.featuredSubtitle")}</p>
           </div>
           <Link
             to="/schools"
             className="hidden shrink-0 text-sm font-semibold text-brand-700 hover:underline sm:block"
           >
-            View all schools →
+            {t("home.viewAll")}
           </Link>
         </div>
 
@@ -87,7 +87,7 @@ export function Home() {
           to="/schools"
           className="mt-6 block text-center text-sm font-semibold text-brand-700 hover:underline sm:hidden"
         >
-          View all schools →
+          {t("home.viewAll")}
         </Link>
       </section>
 
@@ -96,25 +96,16 @@ export function Home() {
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="grid gap-8 sm:grid-cols-3">
             <div>
-              <h3 className="text-base font-semibold text-neutral-900">No rankings</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                We don't score or rank schools. Every family's priorities are different —
-                we present facts and let you decide.
-              </p>
+              <h3 className="text-base font-semibold text-neutral-900">{t("home.noRankingsTitle")}</h3>
+              <p className="mt-2 text-sm text-neutral-600">{t("home.noRankingsBody")}</p>
             </div>
             <div>
-              <h3 className="text-base font-semibold text-neutral-900">Sourced, not guessed</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Every fee, deadline, and result links to where it came from. Unpublished
-                data is shown as "Not published," never invented.
-              </p>
+              <h3 className="text-base font-semibold text-neutral-900">{t("home.sourcedTitle")}</h3>
+              <p className="mt-2 text-sm text-neutral-600">{t("home.sourcedBody")}</p>
             </div>
             <div>
-              <h3 className="text-base font-semibold text-neutral-900">Always verify</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Details change. Treat Edpdia as a starting point, and confirm directly
-                with the school before you apply.
-              </p>
+              <h3 className="text-base font-semibold text-neutral-900">{t("home.verifyTitle")}</h3>
+              <p className="mt-2 text-sm text-neutral-600">{t("home.verifyBody")}</p>
             </div>
           </div>
         </div>

@@ -95,6 +95,10 @@ export interface School {
 
   officialWebsite: string;
   officialSocial: string[];
+  /** Hotlinked directly from the school's own official site (or a Wayback snapshot of it) —
+   *  never copied into this repository. Null if no usable logo was found; the UI falls back
+   *  to a generated placeholder either way if this fails to load. See data/SOURCES.md. */
+  logoUrl: string | null;
 
   address: Address;
 
