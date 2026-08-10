@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
-
-const footerNav = [
-  {
-    heading: "Directory",
-    links: [
-      { to: "/schools", label: "Browse schools" },
-      { to: "/admissions", label: "Admissions guide" },
-      { to: "/resources", label: "Resources & news" },
-    ],
-  },
-  {
-    heading: "About Edpdia",
-    links: [
-      { to: "/about", label: "About us" },
-      { to: "/faq", label: "FAQ" },
-      { to: "/contact", label: "Contact us" },
-    ],
-  },
-];
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
+  const footerNav = [
+    {
+      heading: t("footer.directoryGroup"),
+      links: [
+        { to: "/schools", label: t("footer.browseSchools") },
+        { to: "/admissions", label: t("footer.admissionsGuide") },
+        { to: "/resources", label: t("footer.resourcesNews") },
+      ],
+    },
+    {
+      heading: t("footer.aboutGroup"),
+      links: [
+        { to: "/about", label: t("footer.aboutUs") },
+        { to: "/faq", label: t("footer.faq") },
+        { to: "/contact", label: t("footer.contactUs") },
+      ],
+    },
+  ];
+
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -29,12 +32,10 @@ export function Footer() {
               <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-700 text-sm font-bold text-white">
                 E
               </span>
-              <span className="text-base font-semibold text-neutral-900">Edpdia</span>
+              <span className="text-base font-semibold text-neutral-900">{t("header.brand")}</span>
             </div>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-neutral-600">
-              An independent, encyclopaedia-style directory of Hong Kong international
-              schools — curricula, admissions information, and official sources in one
-              place.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -59,18 +60,12 @@ export function Footer() {
 
         <div className="mt-10 border-t border-neutral-200 pt-6">
           <p className="text-xs leading-relaxed text-neutral-500">
-            Disclaimer: information on Edpdia is compiled from publicly available
-            sources, including official school websites — always verify details
-            directly with the school before making a decision. Data not yet
-            cross-checked against an official source is marked&nbsp;
-            <span className="font-medium text-warn-700">pending verification</span>.
+            {t("footer.disclaimer")}&nbsp;
+            <span className="font-medium text-warn-700">{t("footer.pendingVerification")}</span>.
           </p>
-          <p className="mt-2 text-xs text-neutral-500">
-            Available in English and 繁體中文 (Traditional Chinese).
-          </p>
+          <p className="mt-2 text-xs text-neutral-500">{t("footer.languageNote")}</p>
           <p className="mt-4 text-xs text-neutral-400">
-            © {new Date().getFullYear()} Edpdia. Not affiliated with any school listed
-            in this directory.
+            © {new Date().getFullYear()} {t("footer.copyright")}
           </p>
         </div>
       </div>
