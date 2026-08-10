@@ -28,7 +28,7 @@ export function Faq() {
                   type="button"
                   onClick={() => setOpenId(isOpen ? null : entry.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-neutral-50"
                 >
                   <span className="text-sm font-semibold text-neutral-900">
                     {zh ? entry.questionZh : entry.questionEn}
@@ -36,7 +36,7 @@ export function Faq() {
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className={`h-5 w-5 shrink-0 text-neutral-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    className={`h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "rotate-180" : ""}`}
                   >
                     <path
                       fillRule="evenodd"
@@ -46,7 +46,7 @@ export function Faq() {
                   </svg>
                 </button>
                 {isOpen && (
-                  <p className="px-5 pb-4 text-sm leading-relaxed text-neutral-600">
+                  <p className="expand-in px-5 pb-4 text-sm leading-relaxed text-neutral-600">
                     {zh ? entry.answerZh : entry.answerEn}
                   </p>
                 )}

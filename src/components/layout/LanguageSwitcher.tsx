@@ -13,7 +13,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
         type="button"
         onClick={() => setLanguage("en")}
         aria-pressed={language === "en"}
-        className={`rounded px-2 py-1 font-medium transition-colors ${
+        className={`press-sm rounded px-2 py-1 font-medium transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           language === "en"
             ? "bg-brand-700 text-white"
             : "text-neutral-600 hover:bg-neutral-100"
@@ -25,7 +25,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
         type="button"
         onClick={() => setLanguage("zh-HK")}
         aria-pressed={language === "zh-HK"}
-        className={`rounded px-2 py-1 font-medium transition-colors ${
+        className={`press-sm rounded px-2 py-1 font-medium transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           language === "zh-HK"
             ? "bg-brand-700 text-white"
             : "text-neutral-600 hover:bg-neutral-100"

@@ -78,7 +78,7 @@ src/
     admissionsGuideData.ts    Admissions Guide page content (process/exam types/checklist)
     faqData.ts, resourcesData.ts
   i18n/
-    en.json, zh-HK.json       UI string dictionaries (213 keys each, checked for parity)
+    en.json, zh-HK.json       UI string dictionaries (216 keys each, checked for parity)
     LanguageContext.tsx       useLanguage() hook: language, setLanguage, t()
   context/
     ShortlistContext.tsx      Shortlist state, persisted to localStorage
@@ -106,16 +106,50 @@ written at the start of the build specifically so they'd persist across sessions
   entry with a URL and an access date.
 - The UI renders `null` as a neutral "Not published" — never a guess.
 
-### Images: no photography or third-party assets in this repo
+### Images: nothing copied into this repo, nothing used without a known licence
 
-School logos are hotlinked directly from each school's own official site (`logoUrl` in
-`schools.json`) — never downloaded or re-hosted here. If a logo is missing or fails to load
-(`<img onError>`), the UI falls back to a fully generated SVG placeholder
-(`src/components/school/PlaceholderLogo.tsx`) — an original graphic with no external asset,
-coloured and patterned deterministically by the school's curriculum
-(`src/lib/curriculumTheme.ts`). The homepage hero graphic (`src/components/HeroGraphic.tsx`) is
-the same approach: a fully original, code-generated SVG, not a stock photo. Every logo URL's
-source and verification method is logged in `data/SOURCES.md` under "Image sources & licensing."
+Three kinds of imagery, all hotlinked from their original host — none stored here:
+
+1. **School logos** (`logoUrl`) — from each school's own official site. If a logo is missing or
+   fails to load (`<img onError>`), the UI falls back to a generated SVG placeholder
+   (`src/components/school/PlaceholderLogo.tsx`), coloured and patterned deterministically by
+   curriculum (`src/lib/curriculumTheme.ts`).
+2. **Campus photos** (`photo`) — freely-licensed Wikimedia Commons photography, 12/12 schools.
+   Each licence was read from Commons' machine-readable metadata, never assumed. Author and
+   licence are displayed beneath the photo, both linked, as CC BY / BY-SA require.
+3. **Decorative imagery** (`src/lib/decorativeImages.ts`) — generic education/Hong Kong photos
+   sourced via the Openverse API, filtered to permissive licences (ND and NC excluded). These
+   are never captioned as, or presented as, a specific school.
+
+The homepage hero graphic (`src/components/HeroGraphic.tsx`) is an original, code-generated SVG —
+not a photo at all.
+
+**The rule that governs all of it**: if a licence can't be positively identified, the image isn't
+used — the generated placeholder stands in instead. Every image's source, author, licence and
+usage is logged in `data/SOURCES.md` under "Image sources & licensing."
+
+All photos lazy-load with explicit `width`/`height` and a reserved aspect-ratio box, so images
+never shift layout as they arrive.
+
+### Bilingual content
+
+UI strings live in `src/i18n/{en,zh-HK}.json` (parity enforced by `npm run validate:i18n`).
+School-level Chinese content lives in the data: `nameZh` (11/12 — Stamford publishes no Chinese
+name), `introZh` (12/12) and `address.lineZh` (12/12). Chinese names and addresses come from the
+Education Bureau's official international-schools registry; intros were written for this project
+from facts already present in `introEn`. Where a `...Zh` field is null, the UI falls back to
+English with a small "English only" note rather than showing a blank.
+
+### Motion
+
+Deliberately restrained and centralised in `src/index.css`: 150–300ms, a single
+`cubic-bezier(0.4, 0, 0.2, 1)` easing, no bounce or overshoot. Cards fade/slide up on entering
+the viewport (`src/hooks/useRevealOnScroll.ts`, revealing once); hover, press, filter/language
+swaps, FAQ answers and the mobile menu all get short transitions.
+
+Two rules held throughout: **fee and admissions tables are never animated** — figures families
+are making decisions on appear instantly and stay put — and everything is disabled under
+`prefers-reduced-motion`, with `.reveal` content forced visible so nothing is ever left hidden.
 
 ## What's AI-generated vs hand-corrected
 

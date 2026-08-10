@@ -6,6 +6,7 @@ import { NotPublished } from "../components/school/NotPublished";
 import { AdmissionsSection } from "../components/school/AdmissionsSection";
 import { AchievementsSection } from "../components/school/AchievementsSection";
 import { SchoolLogo } from "../components/school/SchoolLogo";
+import { CampusPhoto } from "../components/school/CampusPhoto";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export function SchoolProfile() {
@@ -50,8 +51,8 @@ export function SchoolProfile() {
       {/* Header */}
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-start gap-4">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-white">
-            <SchoolLogo school={school} className="h-full w-full" />
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-white p-1">
+            <SchoolLogo school={school} size={80} />
           </div>
           <div>
             <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">{name.text}</h1>
@@ -144,6 +145,8 @@ export function SchoolProfile() {
           {intro.isFallback && (
             <p className="mt-2 text-xs text-neutral-400">{t("profile.englishOnlyNote")}</p>
           )}
+
+          {school.photo && <CampusPhoto photo={school.photo} schoolName={name.text} />}
 
           <div className="mt-6">
             <h3 className="text-sm font-semibold text-neutral-700">{t("profile.addressHeading")}</h3>

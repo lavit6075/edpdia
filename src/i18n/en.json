@@ -128,7 +128,10 @@
     "lastVerified": "Last verified:",
     "verificationFootnote": "This profile is compiled from publicly available information. Fees, deadlines, and other details change — always confirm directly with the school before applying.",
     "notPublished": "Not published",
-    "accessedLabel": "accessed"
+    "accessedLabel": "accessed",
+    "photoAlt": "{school} campus",
+    "photoCreditPrefix": "Photo:",
+    "photoViaCommons": "via Wikimedia Commons"
   },
   "verification": {
     "verified": "Verified",

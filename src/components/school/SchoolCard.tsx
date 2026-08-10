@@ -6,6 +6,7 @@ import { SchoolLogo } from "./SchoolLogo";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { localizeIntro, localizeSchoolName } from "../../lib/schools";
 import { useCompare } from "../../context/CompareContext";
+import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
 
 export function SchoolCard({ school }: { school: School }) {
   const { language, t } = useLanguage();
@@ -14,15 +15,19 @@ export function SchoolCard({ school }: { school: School }) {
   const intro = localizeIntro(school, language);
   const secondaryName = language === "en" ? school.nameZh : name.isFallback ? null : school.nameEn;
   const comparing = isComparing(school.slug);
+  const revealRef = useRevealOnScroll<HTMLDivElement>();
 
   return (
-    <div className="group relative flex flex-col rounded-lg border border-neutral-200 bg-white p-5 transition-shadow hover:shadow-md">
+    <div
+      ref={revealRef}
+      className="reveal group relative flex flex-col rounded-lg border border-neutral-200 bg-white p-5 transition-[box-shadow,transform,border-color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md"
+    >
       <ShortlistButton slug={school.slug} className="absolute right-3 top-3 z-10" />
 
       <Link to={`/schools/${school.slug}`} className="flex flex-col">
         <div className="flex items-start gap-3 pr-8">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-md border border-neutral-100 bg-white">
-            <SchoolLogo school={school} className="h-full w-full" />
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-neutral-100 bg-white">
+            <SchoolLogo school={school} size={48} />
           </div>
           <div>
             <h3 className="text-base font-semibold text-neutral-900 group-hover:text-brand-700">

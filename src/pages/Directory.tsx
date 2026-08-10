@@ -8,7 +8,7 @@ function toggle<T>(list: T[], value: T): T[] {
 }
 
 export function Directory() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [query, setQuery] = useState("");
   const [regions, setRegions] = useState<string[]>([]);
   const [districts, setDistricts] = useState<string[]>([]);
@@ -143,7 +143,10 @@ export function Directory() {
               </button>
             </div>
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div
+              key={`${language}|${query}|${regions.join()}|${districts.join()}|${curricula.join()}`}
+              className="fade-swap grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
+            >
               {results.map((school) => (
                 <SchoolCard key={school.id} school={school} />
               ))}

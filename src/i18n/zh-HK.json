@@ -128,7 +128,10 @@
     "lastVerified": "最後核實日期:",
     "verificationFootnote": "此學校頁面根據公開資料整理而成。學費、截止日期及其他詳情或有變動——申請前請務必直接向學校核實。",
     "notPublished": "未公開",
-    "accessedLabel": "查閱日期"
+    "accessedLabel": "查閱日期",
+    "photoAlt": "{school}校舍",
+    "photoCreditPrefix": "相片：",
+    "photoViaCommons": "來自維基共享資源"
   },
   "verification": {
     "verified": "已核實",

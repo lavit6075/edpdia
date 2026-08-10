@@ -17,7 +17,7 @@ export function ShortlistButton({ slug, className = "" }: { slug: string; classN
       aria-pressed={active}
       aria-label={active ? t("directory.shortlistRemove") : t("directory.shortlistAdd")}
       title={active ? t("directory.shortlistRemove") : t("directory.shortlistAdd")}
-      className={`inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
+      className={`press-sm inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         active
           ? "text-accent-600 hover:bg-accent-50"
           : "text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600"

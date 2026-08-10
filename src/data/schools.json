@@ -82,7 +82,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Chinese_International_School.jpg/1280px-Chinese_International_School.jpg",
+      "width": 1200,
+      "height": 1817,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Exploringlife",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_International_School.jpg"
+    }
   },
   {
     "id": "hong-kong-international-school",
@@ -188,7 +197,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hong_Kong_International_School.JPG/1280px-Hong_Kong_International_School.JPG",
+      "width": 1200,
+      "height": 675,
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "author": "HK Arun",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_International_School.JPG"
+    }
   },
   {
     "id": "german-swiss-international-school",
@@ -255,7 +273,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/German_Swiss_International_School_2020.jpg/1280px-German_Swiss_International_School_2020.jpg",
+      "width": 1200,
+      "height": 900,
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "author": "Wpcpey",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:German_Swiss_International_School_2020.jpg"
+    }
   },
   {
     "id": "canadian-international-school-of-hong-kong",
@@ -378,7 +405,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg/1280px-Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg",
+      "width": 1200,
+      "height": 794,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Exploringlife",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School_of_Hong_Kong_(blue_sky).jpg"
+    }
   },
   {
     "id": "french-international-school-hong-kong",
@@ -406,7 +442,7 @@
       "https://www.facebook.com/HKFIS/",
       "https://www.instagram.com/hkfis/"
     ],
-    "logoUrl": "https://static.wixstatic.com/media/fecce6_b5ddd0a6d1174fe8914bda78e06dfd6a~mv2.png/v1/fill/w_105,h_116,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bilingual_logo_red_bar-01.png",
+    "logoUrl": "https://static.wixstatic.com/media/fecce6_b5ddd0a6d1174fe8914bda78e06dfd6a~mv2.png/v1/fill/w_420,h_464,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bilingual_logo_red_bar-01.png",
     "address": {
       "lineEn": "Multiple campuses: Chai Wan, Jardine's Lookout, Blue Pool Road (Hong Kong Island) and Tseung Kwan O",
       "lineZh": "香港藍塘道165號（藍塘道校舍）；另設柴灣、渣甸山及將軍澳校舍",
@@ -503,7 +539,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/French_International_School_in_Hong_Kong_2017.jpg/1280px-French_International_School_in_Hong_Kong_2017.jpg",
+      "width": 1200,
+      "height": 800,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Wpcpey",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_International_School_in_Hong_Kong_2017.jpg"
+    }
   },
   {
     "id": "australian-international-school-hong-kong",
@@ -603,7 +648,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Australian_International_School_Hong_Kong.jpg/1280px-Australian_International_School_Hong_Kong.jpg",
+      "width": 1200,
+      "height": 792,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Exploringlife",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Australian_International_School_Hong_Kong.jpg"
+    }
   },
   {
     "id": "harrow-international-school-hong-kong",
@@ -690,7 +744,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Harrow_International_School_Hong_Kong.JPG/1280px-Harrow_International_School_Hong_Kong.JPG",
+      "width": 1200,
+      "height": 800,
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "author": "水水",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harrow_International_School_Hong_Kong.JPG"
+    }
   },
   {
     "id": "kellett-school",
@@ -781,7 +844,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg/1280px-Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg",
+      "width": 1200,
+      "height": 900,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "LN9267",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kellett_School_(Pokfulam_Campus)_28-11-2022.jpg"
+    }
   },
   {
     "id": "yew-chung-international-school-of-hong-kong",
@@ -844,7 +916,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg/1280px-Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg",
+      "width": 1200,
+      "height": 800,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Prosperity Horizons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg"
+    }
   },
   {
     "id": "nord-anglia-international-school-hong-kong",
@@ -999,7 +1080,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nord_Anglia_International_School_Hong_Kong_20151122.jpg/1280px-Nord_Anglia_International_School_Hong_Kong_20151122.jpg",
+      "width": 1200,
+      "height": 800,
+      "licence": "CC BY 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "author": "Wpcpey",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nord_Anglia_International_School_Hong_Kong_20151122.jpg"
+    }
   },
   {
     "id": "malvern-college-hong-kong",
@@ -1087,7 +1177,16 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Malvern_College_Hong_Kong_202102.jpg/1280px-Malvern_College_Hong_Kong_202102.jpg",
+      "width": 1200,
+      "height": 900,
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "author": "Wpcpey",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malvern_College_Hong_Kong_202102.jpg"
+    }
   },
   {
     "id": "stamford-american-school-hong-kong",
@@ -1180,6 +1279,15 @@
       }
     ],
     "lastVerified": "2026-08-10",
-    "verificationStatus": "unverified"
+    "verificationStatus": "unverified",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stamford_American_School_HK.jpg/1280px-Stamford_American_School_HK.jpg",
+      "width": 1200,
+      "height": 1154,
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "StamfordRegina",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamford_American_School_HK.jpg"
+    }
   }
 ]

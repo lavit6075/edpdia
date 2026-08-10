@@ -93,7 +93,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <nav className="border-t border-neutral-200 bg-white px-4 py-3 md:hidden">
+        <nav className="expand-in border-t border-neutral-200 bg-white px-4 py-3 md:hidden">
           <div className="flex flex-col gap-1">
             {navItems.map((item) => (
               <NavLink

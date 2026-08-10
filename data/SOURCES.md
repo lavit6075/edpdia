@@ -265,3 +265,107 @@ mapping), with the school's initials rendered on top. Deterministic per school, 
 **Homepage hero graphic** (`src/components/HeroGraphic.tsx`): also a fully original, inline SVG —
 an abstract skyline-and-open-book motif built from rectangles and paths in the site's own brand
 colour tokens. No stock photography, no external image library, nothing to attribute or license.
+
+## Traditional Chinese content (2026-08-10)
+
+**Coverage.** `nameZh` 9/12 → 11/12, `introZh` 0/12 → 12/12, `address.lineZh` 0/12 → 12/12.
+
+**Names and addresses** come from the Education Bureau's official *International Schools in
+Hong Kong* registry (Traditional Chinese edition), which is the authoritative record of each
+school's registered Chinese name and address:
+<https://internationalschools.edb.gov.hk/tc/schools/is.html> (accessed 2026-08-10).
+
+- **Correction**: Harrow's `nameZh` was changed from `香港哈羅國際學校` to **`哈羅香港國際學校`**,
+  the form registered with the EDB (school id 14).
+- **Nord Anglia** is listed in the EDB registry under its English name only — no Chinese name is
+  registered. `香港諾德安達國際學校` is used, corroborated by the Chinese Wikipedia article of that
+  exact title; the school's own site is bot-protected and carries no Chinese. Flagged below.
+- **Stamford American School** is not in the EDB registry at all, and its own site contains no
+  Chinese text. `nameZh` is therefore left **null** rather than invented — the profile falls back
+  to the English name, which is what the school itself uses.
+- Campus addresses not separately registered with the EDB (Nord Anglia's Sai Kung early-years
+  campus, both Stamford campuses, CDNIS's early-years centre, FIS's non-Blue-Pool-Road campuses)
+  were rendered using standard Hong Kong street-name equivalents (e.g. 文福道 = Man Fuk Road,
+  verified against Hong Kong street references) rather than an official Chinese page. Flagged below.
+
+**Intros** (`introZh`) were written for this project, each 80–120 Chinese characters, stating only
+facts already present in the corresponding `introEn`. No new claims about any school were
+introduced in translation. CIS's own Chinese-language address string (`中國香港北角寶馬山校園徑一號`)
+was found on its official site and matches the EDB record, which is a useful cross-check on the
+registry data.
+
+## Image sources & licensing — campus photography (2026-08-10)
+
+**Policy**: nothing is copied into this repository. Every photo is hotlinked from its original
+host, and no photo is used unless its licence was positively identified from machine-readable
+metadata. Where no such photo exists, the generated placeholder stands in — a blank is always
+preferred to an unlicensed image.
+
+### School campus photos — Wikimedia Commons (12/12 schools)
+
+Each was located via the Commons search API, its licence read from the `extmetadata`
+`LicenseShortName` field, and the image URL confirmed to return HTTP 200 with an `image/*`
+content-type. Attribution (author + licence, both linked) is rendered directly beneath the photo
+on the school profile, as CC BY / BY-SA require.
+
+| School | Author | Licence | Commons file page |
+|---|---|---|---|
+| Chinese International School | Exploringlife | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Chinese_International_School.jpg) |
+| Hong Kong International School | HK Arun | CC BY-SA 3.0 | [File page](https://commons.wikimedia.org/wiki/File:Hong_Kong_International_School.JPG) |
+| German Swiss International School | Wpcpey | CC BY 4.0 | [File page](https://commons.wikimedia.org/wiki/File:German_Swiss_International_School_2020.jpg) |
+| Canadian International School of HK | Exploringlife | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Canadian_International_School_of_Hong_Kong_(blue_sky).jpg) |
+| French International School HK | Wpcpey | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:French_International_School_in_Hong_Kong_2017.jpg) |
+| Australian International School HK | Exploringlife | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Australian_International_School_Hong_Kong.jpg) |
+| Harrow International School HK | 水水 | CC BY-SA 3.0 | [File page](https://commons.wikimedia.org/wiki/File:Harrow_International_School_Hong_Kong.JPG) |
+| Kellett School | LN9267 | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Kellett_School_(Pokfulam_Campus)_28-11-2022.jpg) |
+| Yew Chung International School of HK | Prosperity Horizons | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg) |
+| Nord Anglia International School HK | Wpcpey | CC BY 3.0 | [File page](https://commons.wikimedia.org/wiki/File:Nord_Anglia_International_School_Hong_Kong_20151122.jpg) |
+| Malvern College Hong Kong | Wpcpey | CC BY 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Malvern_College_Hong_Kong_202102.jpg) |
+| Stamford American School HK | StamfordRegina | CC BY-SA 4.0 | [File page](https://commons.wikimedia.org/wiki/File:Stamford_American_School_HK.jpg) |
+
+### Decorative (non-school-specific) imagery
+
+Sourced via the Openverse API, which exposes each item's machine-readable licence. Filtered to
+permissive licences only — **ND (no-derivatives) and NC (non-commercial) were deliberately
+excluded** so usage is unambiguous. These are generic images and are never captioned as, or
+presented as, any specific school. Defined in `src/lib/decorativeImages.ts`.
+
+| Placement | Subject | Author | Licence | Source |
+|---|---|---|---|---|
+| Homepage band | Victoria Harbour, Hong Kong | akwan.architect | CC BY 2.0 | [Flickr](https://www.flickr.com/photos/31672795@N04/8218269421) |
+| Admissions Guide header | Writing at a desk | Green Chameleon | CC0 1.0 | [StockSnap](https://stocksnap.io/photo/writing-drawing-8Y0EDX4VP9) |
+| Resources header | Writing in a notebook | Image Catalog | CC0 1.0 | [Flickr](https://www.flickr.com/photos/133061897@N02/18692128651) |
+
+**Not used**: per-article photos on the Resources cards. The permissively-licensed candidates
+available were either low-resolution or showed identifiable specific schools (e.g. a named US
+high school), which would be misleading as generic decoration. The clean typographic cards were
+kept instead — this is the "leave the placeholder where there's nothing safe" rule applied.
+
+### Rendering
+
+All photos are lazy-loaded (`loading="lazy"`, `decoding="async"`) with explicit `width`/`height`
+plus a reserved-aspect-ratio container, so no image causes layout shift. Every photo has an
+`onError` fallback (hide, or swap to the generated placeholder for logos) so a dead hotlink never
+leaves a broken image.
+
+### Logo quality pass (2026-08-10)
+
+Every logo was downloaded and inspected. SVG is preferred, then the largest available raster.
+- Already vector (best possible): HKIS, GSIS, AISHK, YCIS.
+- Large raster, no action needed: Malvern (3125×1562), Harrow (480×601), Kellett (346×400),
+  CDNIS (403×94 wordmark).
+- **Upgraded**: French International School 105×116 → **420×464** (requested a larger render from
+  the same Wix asset).
+- **Capped at source**: Nord Anglia's wordmark is only published at 286×48; no larger version
+  exists on the site or in the archive.
+- **Known weak spot**: Chinese International School's only retrievable brand asset is its 32×32
+  favicon — its real header logo is injected by JavaScript and is not in the served HTML. It
+  renders acceptably at small sizes but is the lowest-quality logo in the set. Flagged below.
+
+## Flags added 2026-08-10
+
+- Nord Anglia `nameZh` (`香港諾德安達國際學校`) is corroborated by Chinese Wikipedia, not by the
+  school's own site or the EDB registry — worth confirming with the school directly.
+- Chinese addresses for campuses outside the EDB registry (listed above) were transliterated from
+  standard Hong Kong street names rather than taken from an official Chinese page.
+- CIS logo is a 32×32 favicon; replace if a higher-resolution official asset becomes reachable.

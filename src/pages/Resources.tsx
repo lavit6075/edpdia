@@ -1,5 +1,7 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { RESOURCE_ARTICLES } from "../lib/resourcesData";
+import { DecorativeBanner } from "../components/DecorativeBanner";
+import { DECORATIVE_IMAGES } from "../lib/decorativeImages";
 
 export function Resources() {
   const { t, language } = useLanguage();
@@ -15,6 +17,8 @@ export function Resources() {
           <p className="mt-3 text-neutral-600">{t("resourcesPage.heroSubtitle")}</p>
         </div>
       </section>
+
+      <DecorativeBanner image={DECORATIVE_IMAGES.resources} heightClass="h-32 sm:h-40" />
 
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <div className="grid gap-5 sm:grid-cols-2">

@@ -74,6 +74,21 @@ export interface Source {
   accessedDate: string;
 }
 
+export interface SchoolPhoto {
+  /** Direct (hotlinked) image URL on upload.wikimedia.org. */
+  url: string;
+  /** Intrinsic size of the served image — set on the <img> to reserve space and avoid CLS. */
+  width: number;
+  height: number;
+  /** e.g. "CC BY-SA 4.0" — only positively-identified free licences are ever stored here. */
+  licence: string;
+  licenceUrl: string | null;
+  /** Commons uploader/author, displayed as the required attribution. */
+  author: string;
+  /** Commons file description page — the canonical credit link. */
+  sourceUrl: string;
+}
+
 export interface School {
   id: string;
   nameEn: string;
@@ -99,6 +114,11 @@ export interface School {
    *  never copied into this repository. Null if no usable logo was found; the UI falls back
    *  to a generated placeholder either way if this fails to load. See data/SOURCES.md. */
   logoUrl: string | null;
+
+  /** Freely-licensed campus photo from Wikimedia Commons, hotlinked (never copied into this
+   *  repo). Attribution is rendered next to the image, as the licence requires. Null when no
+   *  photo with a licence we could positively identify exists — never a guess. */
+  photo: SchoolPhoto | null;
 
   address: Address;
 
