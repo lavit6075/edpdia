@@ -108,7 +108,14 @@ written at the start of the build specifically so they'd persist across sessions
 
 ### Images: nothing copied into this repo, nothing used without a known licence
 
-Three kinds of imagery, all hotlinked from their original host — none stored here:
+All imagery is **self-hosted** from `public/img` (117 files, ~19 MB). It was originally
+hotlinked; that was changed because hotlinks fail silently — a school redesigns and the logo
+404s, or a privacy extension blocks the third-party host and the image vanishes for that visitor
+with nothing in our logs. `npm run images:fetch` downloads anything still remote and rewrites the
+data; `npm run images:optimise` downscales to rendered sizes. Attribution is unaffected — author,
+licence, licence URL and the Commons file page all still render.
+
+Three kinds of imagery:
 
 1. **School logos** (`logoUrl`) — from each school's own official site. If a logo is missing or
    fails to load (`<img onError>`), the UI falls back to a generated SVG placeholder
@@ -296,3 +303,28 @@ only as PDFs and so couldn't be transcribed by fetch).
 Static build (`npm run build` → `dist/`), deployable to any static host. Deployed here via the
 Vercel CLI with the Vite framework preset auto-detected (build command `npm run build`, output
 directory `dist`).
+
+## SEO status
+
+Per-route `<title>`, `description`, `canonical`, Open Graph and Twitter tags are set by
+`useSeo`, plus JSON-LD (`School` on profiles, `FAQPage` on `/faq`, `Organization` on `/`).
+`sitemap.xml` and `robots.txt` are generated at build time from the data, so the route list
+cannot drift.
+
+**Known limitation — this is a client-rendered SPA.** The tags above are written by JavaScript
+after load. Googlebot renders JS and will see them, but most social-card scrapers (Facebook,
+X, LinkedIn, Slack, WhatsApp) do not execute JS — they read the raw HTML response, which is the
+same `index.html` for every route. **So `og:`/`twitter:` tags will not produce per-page link
+previews until the site is prerendered.** Prerendering is the fix, and the codebase is already
+SSR-safe for it (every `localStorage`/`window` read at init is guarded, and all DOM writes are
+inside effects).
+
+`/compare` and `/shortlist` are `Disallow`ed in robots.txt — they're per-visitor UI state, not
+content worth indexing.
+
+### 404s
+
+A blanket SPA rewrite made every path return 200 with the app shell, which search engines treat
+as a soft 404. `vercel.json` now enumerates the real routes (10 static + 12 school slugs,
+regenerated on every build by `scripts/generate-routing.mjs`) and returns a genuine 404 for
+anything else.
