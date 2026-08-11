@@ -3,7 +3,13 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 const STORAGE_KEY = "edpdia-compare";
 export const MAX_COMPARE = 4;
 
-function getInitial(): string[] {
+/**
+ * Prerendered HTML is generated with empty selection, so the first client render must be empty
+ * too or hydration mismatches for every returning visitor. Stored state is applied in an
+ * effect right after hydration, and persistence is gated on that read completing so the
+ * placeholder empty value never clobbers what the visitor saved.
+ */
+function readStored(): string[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -29,11 +35,19 @@ interface CompareContextValue {
 const CompareContext = createContext<CompareContextValue | null>(null);
 
 export function CompareProvider({ children }: { children: ReactNode }) {
-  const [compareList, setCompareListState] = useState<string[]>(getInitial);
+  const [compareList, setCompareListState] = useState<string[]>([]);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    const stored = readStored();
+    if (stored.length) setCompareListState(stored);
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(compareList));
-  }, [compareList]);
+  }, [compareList, hydrated]);
 
   function toggleCompare(slug: string) {
     setCompareListState((prev) => {

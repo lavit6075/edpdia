@@ -77,6 +77,15 @@ Sitemap: ${SITE}/sitemap.xml
   "utf-8",
 );
 
+// ---------- routes.generated.json ----------
+// Single source of truth shared by the prerenderer and the 404 route config, so the set of
+// pages we prerender can never drift from the set we serve 200s for.
+writeFileSync(
+  path.join(ROOT, "scripts/routes.generated.json"),
+  JSON.stringify({ routes: all.map((r) => r.p) }, null, 2) + "\n",
+  "utf-8",
+);
+
 // ---------- vercel.json ----------
 const appRoutes = all.filter((r) => r.p !== "/compare" && r.p !== "/shortlist").map((r) => r.p);
 const spaPaths = [...appRoutes, "/compare", "/shortlist"];
@@ -86,10 +95,12 @@ const vercel = {
   routes: [
     // Real files (assets, images, sitemap, robots, favicon) win first.
     { handle: "filesystem" },
-    // Known application routes -> the SPA shell, HTTP 200.
+    // Known application routes -> their prerendered HTML, HTTP 200.
+    // Explicit dest rather than relying on filesystem directory-index resolution, so the
+    // mapping is deterministic. Falls back to the shell if a page wasn't prerendered.
     ...spaPaths.map((p) => ({
       src: `^${p.replace(/\//g, "\\/")}\\/?$`,
-      dest: "/index.html",
+      dest: p === "/" ? "/index.html" : `${p}/index.html`,
     })),
     // Anything else is genuinely not a page: serve the shell but with a real 404 status,
     // so crawlers and monitoring see 404 rather than a soft 200.

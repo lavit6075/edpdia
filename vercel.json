@@ -10,87 +10,87 @@
     },
     {
       "src": "^\\/schools\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/index.html"
     },
     {
       "src": "^\\/admissions\\/?$",
-      "dest": "/index.html"
+      "dest": "/admissions/index.html"
     },
     {
       "src": "^\\/admissions\\/timeline\\/?$",
-      "dest": "/index.html"
+      "dest": "/admissions/timeline/index.html"
     },
     {
       "src": "^\\/resources\\/?$",
-      "dest": "/index.html"
+      "dest": "/resources/index.html"
     },
     {
       "src": "^\\/about\\/?$",
-      "dest": "/index.html"
+      "dest": "/about/index.html"
     },
     {
       "src": "^\\/faq\\/?$",
-      "dest": "/index.html"
+      "dest": "/faq/index.html"
     },
     {
       "src": "^\\/contact\\/?$",
-      "dest": "/index.html"
+      "dest": "/contact/index.html"
     },
     {
       "src": "^\\/schools\\/chinese-international-school\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/chinese-international-school/index.html"
     },
     {
       "src": "^\\/schools\\/hong-kong-international-school\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/hong-kong-international-school/index.html"
     },
     {
       "src": "^\\/schools\\/german-swiss-international-school\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/german-swiss-international-school/index.html"
     },
     {
       "src": "^\\/schools\\/canadian-international-school-of-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/canadian-international-school-of-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/french-international-school-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/french-international-school-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/australian-international-school-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/australian-international-school-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/harrow-international-school-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/harrow-international-school-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/kellett-school\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/kellett-school/index.html"
     },
     {
       "src": "^\\/schools\\/yew-chung-international-school-of-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/yew-chung-international-school-of-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/nord-anglia-international-school-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/nord-anglia-international-school-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/malvern-college-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/malvern-college-hong-kong/index.html"
     },
     {
       "src": "^\\/schools\\/stamford-american-school-hong-kong\\/?$",
-      "dest": "/index.html"
+      "dest": "/schools/stamford-american-school-hong-kong/index.html"
     },
     {
       "src": "^\\/compare\\/?$",
-      "dest": "/index.html"
+      "dest": "/compare/index.html"
     },
     {
       "src": "^\\/shortlist\\/?$",
-      "dest": "/index.html"
+      "dest": "/shortlist/index.html"
     },
     {
       "src": "/.*",

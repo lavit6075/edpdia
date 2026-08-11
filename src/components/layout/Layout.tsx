@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { CompareBar } from "./CompareBar";
+import { PrerenderReady } from "./PrerenderReady";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 export function Layout() {
@@ -20,6 +21,7 @@ export function Layout() {
       </main>
       <Footer />
       <CompareBar />
+      <PrerenderReady />
     </div>
   );
 }

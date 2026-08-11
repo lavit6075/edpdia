@@ -22,10 +22,15 @@ function getByPath(obj: unknown, path: string): unknown {
   }, obj);
 }
 
-function getInitialLanguage(): Language {
-  if (typeof window === "undefined") return "en";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === "zh-HK" ? "zh-HK" : "en";
+/**
+ * Prerendered HTML is always English, so the FIRST client render must be English too or
+ * hydration mismatches for every returning zh-HK visitor. The stored preference is applied in
+ * an effect immediately after hydration instead — a returning Chinese reader sees a brief
+ * English frame, which is the standard trade for static generation.
+ */
+function readStoredLanguage(): Language | null {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem(STORAGE_KEY) === "zh-HK" ? "zh-HK" : null;
 }
 
 interface LanguageContextValue {
@@ -37,12 +42,22 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>(getInitialLanguage);
+  const [language, setLanguage] = useState<Language>("en");
+  const [hydrated, setHydrated] = useState(false);
+
+  // Runs once, after hydration has matched the prerendered English markup.
+  useEffect(() => {
+    const stored = readStoredLanguage();
+    if (stored) setLanguage(stored);
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language;
-    window.localStorage.setItem(STORAGE_KEY, language);
-  }, [language]);
+    // Don't persist the placeholder "en" before the stored value has been read back,
+    // or a returning zh-HK visitor's preference gets clobbered on every load.
+    if (hydrated) window.localStorage.setItem(STORAGE_KEY, language);
+  }, [language, hydrated]);
 
   function t(path: string): string {
     const value = getByPath(dictionaries[language], path);
