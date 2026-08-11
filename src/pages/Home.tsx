@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { schools } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
 import { HeroGraphic } from "../components/HeroGraphic";
-import { DecorativeBanner } from "../components/DecorativeBanner";
-import { DECORATIVE_IMAGES } from "../lib/decorativeImages";
+import { CampusStrip } from "../components/CampusStrip";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export function Home() {
@@ -50,8 +49,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* Decorative Hong Kong band — generic city imagery, not any specific school */}
-      <DecorativeBanner image={DECORATIVE_IMAGES.homeBand} heightClass="h-32 sm:h-44" />
+      {/* Real campus photography — every school in the directory, not a "featured" subset */}
+      <CampusStrip />
 
       {/* Stats / value prop */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">

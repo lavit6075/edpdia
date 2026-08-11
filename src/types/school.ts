@@ -75,11 +75,15 @@ export interface Source {
 }
 
 export interface SchoolPhoto {
-  /** Direct (hotlinked) image URL on upload.wikimedia.org. */
+  /** Direct (hotlinked) image URL on upload.wikimedia.org — the large render, used as lead. */
   url: string;
   /** Intrinsic size of the served image — set on the <img> to reserve space and avoid CLS. */
   width: number;
   height: number;
+  /** Smaller render for the filmstrip, so a 112px-tall thumbnail doesn't pull a 6MP original. */
+  thumbUrl: string;
+  thumbWidth: number;
+  thumbHeight: number;
   /** e.g. "CC BY-SA 4.0" — only positively-identified free licences are ever stored here. */
   licence: string;
   licenceUrl: string | null;
@@ -87,6 +91,8 @@ export interface SchoolPhoto {
   author: string;
   /** Commons file description page — the canonical credit link. */
   sourceUrl: string;
+  /** Commons image description, used for alt text where available. */
+  caption: string | null;
 }
 
 export interface School {
@@ -115,10 +121,14 @@ export interface School {
    *  to a generated placeholder either way if this fails to load. See data/SOURCES.md. */
   logoUrl: string | null;
 
-  /** Freely-licensed campus photo from Wikimedia Commons, hotlinked (never copied into this
-   *  repo). Attribution is rendered next to the image, as the licence requires. Null when no
-   *  photo with a licence we could positively identify exists — never a guess. */
-  photo: SchoolPhoto | null;
+  /** Freely-licensed campus photos from Wikimedia Commons, hotlinked (never copied into this
+   *  repo). Attribution is rendered beside every image, as the licences require.
+   *
+   *  photos[0] is the LEAD — always an exterior/main-building view where one exists, since
+   *  that is what someone opening a profile actually wants to see. The remainder feed an
+   *  optional filmstrip. Counts range 1–8 across the directory; the layout is built so a
+   *  one-photo school renders as complete rather than as a gap (see CampusPhoto/PhotoStrip). */
+  photos: SchoolPhoto[];
 
   address: Address;
 

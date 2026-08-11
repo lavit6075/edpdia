@@ -437,3 +437,59 @@ Confirmed for the ShareAlike photos:
 The decorative banners likewise use `object-cover` for framing. Those images are CC BY 2.0 and
 CC0 in any case, so even a genuine derivative use would be permitted with the attribution that is
 rendered on them.
+
+## Campus photography expansion (2026-08-11)
+
+Expanded from 12 photos (one per school) to **53**, all Wikimedia Commons, all licence-verified
+from machine-readable metadata, all hotlinked — nothing copied into this repo.
+
+**Search method.** Per school: English name, Chinese name, and district/street names in both
+languages (e.g. 寶馬山 / Braemar Hill, 青盈路 / Tsing Ying Road), which surfaced campus shots filed
+under location rather than under the school. This is what took several schools from 1 photo to 5–8.
+
+| School | Photos | Licences |
+|---|---|---|
+| French International School HK | 8 | CC0 ×2, CC BY‑SA 3.0/4.0, CC BY 2.5 |
+| Hong Kong International School | 7 | CC BY‑SA 3.0 ×5, 4.0 ×2 |
+| German Swiss International School | 7 | CC BY‑SA 2.5 ×4, 3.0, 4.0, CC BY 4.0 |
+| Australian International School HK | 6 | Public domain ×2, CC BY‑SA 4.0 ×4 |
+| Canadian International School of HK | 5 | CC BY‑SA 4.0 ×5 |
+| Kellett School | 5 | CC BY‑SA 3.0 ×2, 4.0 ×2, CC BY 3.0 |
+| Yew Chung International School of HK | 5 | CC BY‑SA 3.0 ×2, 4.0 ×3 |
+| Chinese International School | 4 | CC BY‑SA 3.0, 4.0 ×3 |
+| Harrow International School HK | 2 | CC BY‑SA 3.0, CC BY 3.0 |
+| Nord Anglia International School HK | 2 | CC BY 3.0, CC BY‑SA 4.0 |
+| Malvern College Hong Kong | 1 | CC BY 4.0 |
+| Stamford American School HK | 1 | CC BY‑SA 4.0 |
+
+**Lead selection.** `photos[0]` is the lead and is always an exterior / main-building view where
+one exists — preferred over interiors, statues, playgrounds and detail shots *even when the detail
+shot is higher resolution*, because someone opening a profile wants to know what the school looks
+like from the street. This changed CIS (→ main entrance), HKIS (→ the shot described as "front
+view"), GSIS (→ Peak campus) and Nord Anglia (→ the 6000×4000 exterior).
+
+**Deliberately excluded.** Malvern's *"under construction in December 2017"* shot — a building site
+presented as a campus would misinform. Malvern therefore has one photo, and that is correct.
+Stamford has exactly one photo available anywhere and is not padded.
+
+**Sources that yielded nothing usable** (checked, documented, not guessed):
+- *Google Maps / Street View* — structurally unusable, not merely unlicensed. Google's Geo
+  Guidelines: *"You may not screenshot Street View imagery or remove it from embedded sources for
+  any purpose."* User-contributed Maps photos are licensed to Google, not the public; there is no
+  open-licence route. Only live embeds are permitted.
+- *School press/media kits* — all rights reserved. CDNIS's Digital Media Policy is representative:
+  *"All materials are copyrighted by CDNIS unless otherwise indicated"*, with external use handled
+  by permission request, not licence. Harrow's footer: *"Copyright ©2024 Harrow International
+  School. All Rights Reserved."* Usable only via individually negotiated written permission.
+- *Flickr / OSM-adjacent* — Openverse (which indexes Flickr, StockSnap and others under licence
+  filters) returned only re-indexed Commons files. No unique additions for any school.
+
+**Licence handling.** Highest quality is chosen regardless of licence flavour; ShareAlike imposes
+no practical constraint here because complete, unmodified files are reproduced inside delineated
+figures with per-photo attribution, and no adaptations are created. Every photo — lead, filmstrip
+and homepage strip — carries author + licence (both linked to source) and the line *"Licence
+applies to this photograph only."*
+
+**Retired.** The generic Victoria Harbour stock band on the homepage, replaced by real campus
+photography. The Admissions Guide and Resources banners keep their generic CC0/CC BY stock, which
+is correct — those illustrate studying and reading, not any school.

@@ -7,6 +7,7 @@ import { AdmissionsSection } from "../components/school/AdmissionsSection";
 import { AchievementsSection } from "../components/school/AchievementsSection";
 import { SchoolLogo } from "../components/school/SchoolLogo";
 import { CampusPhoto } from "../components/school/CampusPhoto";
+import { PhotoStrip } from "../components/school/PhotoStrip";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export function SchoolProfile() {
@@ -55,7 +56,7 @@ export function SchoolProfile() {
             <SchoolLogo school={school} size={80} />
           </div>
           <div>
-            <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">{name.text}</h1>
+            <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">{name.text}</h1>
             {secondaryName && <p className="mt-1 text-lg text-neutral-500">{secondaryName}</p>}
           </div>
         </div>
@@ -136,22 +137,28 @@ export function SchoolProfile() {
         ))}
       </nav>
 
-      <div className="mt-8 space-y-12">
+      <div className="mt-8 space-y-16">
         <section id="overview" aria-labelledby="overview-heading" className="scroll-mt-24">
           <h2 id="overview-heading" className="text-xl font-semibold text-neutral-900">
             {t("profile.introHeading")}
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-700">{intro.text}</p>
+          {school.photos.length > 0 && (
+            <CampusPhoto photo={school.photos[0]} schoolName={name.text} />
+          )}
+
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-neutral-700">{intro.text}</p>
           {intro.isFallback && (
             <p className="mt-2 text-xs text-neutral-400">{t("profile.englishOnlyNote")}</p>
           )}
-
-          {school.photo && <CampusPhoto photo={school.photo} schoolName={name.text} />}
 
           <div className="mt-6">
             <h3 className="text-sm font-semibold text-neutral-700">{t("profile.addressHeading")}</h3>
             <p className="mt-1 text-sm text-neutral-800">{address.text}</p>
           </div>
+
+          {/* Last in the section: when a school has only one photo this renders nothing and
+              Overview simply closes on the address block. */}
+          <PhotoStrip photos={school.photos.slice(1)} schoolName={name.text} />
         </section>
 
         <div id="admissions">

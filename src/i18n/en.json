@@ -37,7 +37,7 @@
     "statCurriculaValue": "IB, British, American & more",
     "statCoverage": "Coverage",
     "statCoverageValue": "Hong Kong Island, Kowloon, New Territories",
-    "featuredTitle": "Featured schools",
+    "featuredTitle": "From the directory",
     "featuredSubtitle": "A sample of what's in the directory.",
     "viewAll": "View all schools →",
     "noRankingsTitle": "No rankings",
@@ -45,7 +45,8 @@
     "sourcedTitle": "Sourced, not guessed",
     "sourcedBody": "Every fee, deadline, and result links to where it came from. Unpublished data is shown as \"Not published,\" never invented.",
     "verifyTitle": "Always verify",
-    "verifyBody": "Details change. Treat Edpdia as a starting point, and confirm directly with the school before you apply."
+    "verifyBody": "Details change. Treat Edpdia as a starting point, and confirm directly with the school before you apply.",
+    "campusStripLabel": "Campus photography from across the directory"
   },
   "directory": {
     "title": "School Directory",
@@ -132,7 +133,8 @@
     "photoAlt": "{school} campus",
     "photoCreditPrefix": "Photo:",
     "photoViaCommons": "via Wikimedia Commons",
-    "photoLicenceScope": "Licence applies to this photograph only."
+    "photoLicenceScope": "Licence applies to this photograph only.",
+    "morePhotos": "More photos"
   },
   "verification": {
     "verified": "Verified",

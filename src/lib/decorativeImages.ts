@@ -23,17 +23,6 @@ export interface DecorativeImage {
 }
 
 export const DECORATIVE_IMAGES = {
-  /** Homepage — Hong Kong harbour, establishing the city context. */
-  homeBand: {
-    url: "https://live.staticflickr.com/8065/8218269421_c9d6dfae61_b.jpg",
-    width: 1024,
-    height: 683,
-    licence: "CC BY 2.0",
-    licenceUrl: "https://creativecommons.org/licenses/by/2.0/",
-    author: "akwan.architect",
-    sourceUrl: "https://www.flickr.com/photos/31672795@N04/8218269421",
-    title: "Victoria Harbour, Hong Kong",
-  },
   /** Admissions Guide header — generic study imagery, CC0. */
   admissions: {
     url: "https://cdn.stocksnap.io/img-thumbs/960w/8Y0EDX4VP9.jpg",

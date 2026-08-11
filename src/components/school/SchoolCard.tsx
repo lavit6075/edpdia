@@ -16,64 +16,88 @@ export function SchoolCard({ school }: { school: School }) {
   const secondaryName = language === "en" ? school.nameZh : name.isFallback ? null : school.nameEn;
   const comparing = isComparing(school.slug);
   const revealRef = useRevealOnScroll<HTMLDivElement>();
+  const lead = school.photos[0];
 
   return (
     <div
       ref={revealRef}
-      className="reveal group relative flex flex-col rounded-lg border border-neutral-200 bg-white p-5 transition-[box-shadow,transform,border-color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md"
+      className="reveal group relative flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white transition-[box-shadow,transform,border-color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md"
     >
-      <ShortlistButton slug={school.slug} className="absolute right-3 top-3 z-10" />
+      <ShortlistButton
+        slug={school.slug}
+        className="absolute right-2 top-2 z-10 bg-white/85 backdrop-blur"
+      />
 
-      <Link to={`/schools/${school.slug}`} className="flex flex-col">
-        <div className="flex items-start gap-3 pr-8">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-neutral-100 bg-white">
-            <SchoolLogo school={school} size={48} />
+      <Link to={`/schools/${school.slug}`} className="flex flex-1 flex-col">
+        {/* Shallow photo band — a texture strip, not a hero, so cards stay compact.
+            Every school has at least one photo, so this never renders ragged. */}
+        {lead && (
+          <div className="aspect-[16/6] w-full overflow-hidden bg-neutral-100">
+            <img
+              src={lead.thumbUrl}
+              width={lead.thumbWidth}
+              height={lead.thumbHeight}
+              loading="lazy"
+              decoding="async"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+            />
           </div>
-          <div>
-            <h3 className="text-base font-semibold text-neutral-900 group-hover:text-brand-700">
-              {name.text}
-            </h3>
-            {secondaryName && (
-              <p className="mt-0.5 text-sm text-neutral-500">{secondaryName}</p>
-            )}
+        )}
+
+        <div className="flex flex-1 flex-col p-5">
+          <div className="flex items-start gap-3">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-neutral-100 bg-white">
+              <SchoolLogo school={school} size={48} />
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-neutral-900 group-hover:text-brand-700">
+                {name.text}
+              </h3>
+              {secondaryName && (
+                <p className="mt-0.5 text-sm text-neutral-500">{secondaryName}</p>
+              )}
+            </div>
           </div>
+
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <Tag variant="neutral">{t(`regions.${school.region}`)}</Tag>
+            <span className="text-sm text-neutral-500">{school.district}</span>
+          </div>
+
+          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral-600">
+            {intro.text}
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {school.curriculum.map((c) => (
+              <Tag key={c} variant="brand">
+                {c}
+              </Tag>
+            ))}
+          </div>
+
+          <dl className="mt-auto grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3 text-xs text-neutral-500">
+            <div>
+              <dt className="font-medium text-neutral-400">{t("directory.ages")}</dt>
+              <dd>
+                {school.ageRange.min}–{school.ageRange.max}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-medium text-neutral-400">{t("directory.type")}</dt>
+              <dd className="capitalize">
+                {t(`schoolType.${school.schoolType}`)}
+                {school.boarding ? ` · ${t("directory.boardingSuffix")}` : ""}
+              </dd>
+            </div>
+          </dl>
         </div>
-
-        <div className="mt-2 flex flex-wrap items-center gap-2">
-          <Tag variant="neutral">{t(`regions.${school.region}`)}</Tag>
-          <span className="text-sm text-neutral-500">{school.district}</span>
-        </div>
-
-        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral-600">
-          {intro.text}
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {school.curriculum.map((c) => (
-            <Tag key={c} variant="brand">
-              {c}
-            </Tag>
-          ))}
-        </div>
-
-        <dl className="mt-4 grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3 text-xs text-neutral-500">
-          <div>
-            <dt className="font-medium text-neutral-400">{t("directory.ages")}</dt>
-            <dd>
-              {school.ageRange.min}–{school.ageRange.max}
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-neutral-400">{t("directory.type")}</dt>
-            <dd className="capitalize">
-              {t(`schoolType.${school.schoolType}`)}
-              {school.boarding ? ` · ${t("directory.boardingSuffix")}` : ""}
-            </dd>
-          </div>
-        </dl>
       </Link>
 
-      <label className="mt-3 flex items-center gap-2 border-t border-neutral-100 pt-3 text-xs font-medium text-neutral-600">
+      {/* Compare moved inline at the card foot to offset the height the photo band adds. */}
+      <label className="flex items-center gap-2 border-t border-neutral-100 px-5 py-2.5 text-xs font-medium text-neutral-600">
         <input
           type="checkbox"
           checked={comparing}

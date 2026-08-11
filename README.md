@@ -114,9 +114,17 @@ Three kinds of imagery, all hotlinked from their original host — none stored h
    fails to load (`<img onError>`), the UI falls back to a generated SVG placeholder
    (`src/components/school/PlaceholderLogo.tsx`), coloured and patterned deterministically by
    curriculum (`src/lib/curriculumTheme.ts`).
-2. **Campus photos** (`photo`) — freely-licensed Wikimedia Commons photography, 12/12 schools.
-   Each licence was read from Commons' machine-readable metadata, never assumed. Author and
-   licence are displayed beneath the photo, both linked, as CC BY / BY-SA require.
+2. **Campus photos** (`photos[]`) — 53 freely-licensed Wikimedia Commons photographs across
+   12/12 schools (1–8 each). Each licence was read from Commons' machine-readable metadata,
+   never assumed. `photos[0]` is the lead and is always an exterior/main-building view where one
+   exists. Author and licence are displayed beneath every photo, both linked, as CC BY / BY-SA
+   require, alongside "Licence applies to this photograph only."
+
+   Photo counts are uneven, so the layout is built so that a one-photo school reads as complete
+   rather than as a gap: the lead photo gets identical treatment for every school, and the
+   optional filmstrip is a flex row of content-width items (never a grid with fillable cells)
+   placed last in its section, so its absence closes the section cleanly. No photo count is ever
+   displayed — a counter would make 1 read as a deficiency.
 3. **Decorative imagery** (`src/lib/decorativeImages.ts`) — generic education/Hong Kong photos
    sourced via the Openverse API, filtered to permissive licences (ND and NC excluded). These
    are never captioned as, or presented as, a specific school.

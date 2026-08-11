@@ -37,7 +37,7 @@
     "statCurriculaValue": "IB、英式、美式課程等",
     "statCoverage": "覆蓋範圍",
     "statCoverageValue": "香港島、九龍、新界",
-    "featuredTitle": "精選學校",
+    "featuredTitle": "名錄內的學校",
     "featuredSubtitle": "名錄內容一覽。",
     "viewAll": "查看所有學校 →",
     "noRankingsTitle": "不設排名",
@@ -45,7 +45,8 @@
     "sourcedTitle": "有根有據,絕不臆測",
     "sourcedBody": "每項學費、截止日期及成績數據,均附有資料來源連結。未公開的資料會標示為「未公開」,絕不臆測。",
     "verifyTitle": "務必核實",
-    "verifyBody": "資料會隨時間變動。請視 Edpdia 為起點,申請前務必直接向學校核實。"
+    "verifyBody": "資料會隨時間變動。請視 Edpdia 為起點,申請前務必直接向學校核實。",
+    "campusStripLabel": "名錄內各校校舍相片"
   },
   "directory": {
     "title": "學校名錄",
@@ -132,7 +133,8 @@
     "photoAlt": "{school}校舍",
     "photoCreditPrefix": "相片：",
     "photoViaCommons": "來自維基共享資源",
-    "photoLicenceScope": "授權條款僅適用於此相片。"
+    "photoLicenceScope": "授權條款僅適用於此相片。",
+    "morePhotos": "更多相片"
   },
   "verification": {
     "verified": "已核實",
