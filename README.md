@@ -145,9 +145,10 @@ EDB registry. Four schools have campuses that aren't registered, so their addres
 English instead of a transliteration — a visibly-English line reads honestly as "not translated,"
 whereas an unverified Chinese line would read as authoritative. See `data/SOURCES.md`.
 
-Third-party photographs are included as discrete, unmodified illustrations with per-image
-attribution scoped to the photograph. Nothing in the rendering implies that Edpdia's own content
-is offered under those images' licences — see the CC BY-SA note in `data/SOURCES.md`.
+Third-party photographs are hotlinked unmodified and shown as discrete `<figure>` illustrations,
+each with attribution explicitly scoped to that photograph. Nothing in the rendering implies that
+Edpdia's own content is offered under those images' licences — see the CC BY-SA note in
+`data/SOURCES.md`.
 
 ### Motion
 

@@ -422,14 +422,18 @@ Confirmed for the ShareAlike photos:
 
 1. **They are used as discrete illustrations, not incorporated into a combined work.** Each sits in
    its own bordered `<figure>` with its own caption, visually delineated from the surrounding page.
-2. **They are displayed complete and unmodified.** `CampusPhoto` uses `object-contain`, never
-   `object-cover` — this was changed specifically for this reason, as a CSS crop is a visual
-   adaptation. Because no adaptation is produced, ShareAlike's adaptation clause is never engaged,
-   and no obligation propagates to anything around the image.
+2. **The file served is complete and unmodified.** The photo is hotlinked from Commons; nothing is
+   re-encoded, edited or re-hosted. `CampusPhoto` uses `object-cover` for framing, which is a
+   CSS *display* property — it changes how the (unmodified) file is painted into its box and
+   produces no derivative artifact. Even on a stricter reading where framing counted as an
+   adaptation, ShareAlike would attach to that adaptation alone, never to Edpdia's surrounding
+   text, data or code. (An earlier revision briefly used `object-contain` out of caution; that
+   was reverted — it bought nothing legally and letterboxed every photo.)
 3. **Attribution is scoped explicitly to the photograph.** Each caption names the author and the
    licence (both linked to source) and then states, on its own line: *"Licence applies to this
    photograph only."* Nothing in the rendering states or implies that Edpdia's own surrounding
    content — text, data, layout, code — is offered under a ShareAlike licence. It is not.
 
-The decorative banners do use `object-cover` (a crop), which is a derivative use — permitted under
-CC BY 2.0 and CC0 with attribution, which is rendered. No ShareAlike image is ever cropped.
+The decorative banners likewise use `object-cover` for framing. Those images are CC BY 2.0 and
+CC0 in any case, so even a genuine derivative use would be permitted with the attribution that is
+rendered on them.

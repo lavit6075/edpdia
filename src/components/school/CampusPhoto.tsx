@@ -11,14 +11,16 @@ interface CampusPhotoProps {
  * A freely-licensed Commons photo, hotlinked and displayed as a self-contained illustration.
  *
  * Licence hygiene (most of these are CC BY-SA):
- * - The image is shown **complete and unmodified** — `object-contain`, never `object-cover`.
- *   A CSS crop would be a visual adaptation; displaying the whole frame keeps this pure
- *   reproduction, so ShareAlike's adaptation clause is never engaged.
  * - It sits inside its own bordered <figure>, visually delineated from the surrounding page,
  *   so the photo reads as a discrete included work rather than part of a combined whole.
  * - The <figcaption> names the author and licence (both linked) and states explicitly that the
  *   licence covers the photograph only — nothing here implies ShareAlike over Edpdia's own
  *   surrounding content.
+ *
+ * `object-cover` is fine here: object-fit is a display property, not an adaptation. The file
+ * served is complete and unmodified and no derivative artifact is produced. Even on a stricter
+ * reading, ShareAlike would attach to the adaptation itself, never to the surrounding text,
+ * data or code — so `object-contain` would buy nothing and would letterbox every photo.
  *
  * Explicit width/height plus a fixed aspect-ratio box reserve the space, so loading never
  * shifts layout.
@@ -32,7 +34,7 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
   return (
     <figure className="mt-6 max-w-2xl">
       <div
-        className="flex items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50"
+        className="w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100"
         style={{ aspectRatio: `${photo.width} / ${photo.height}`, maxHeight: "20rem" }}
       >
         <img
@@ -43,7 +45,7 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
           decoding="async"
           onError={() => setFailed(true)}
           alt={t("profile.photoAlt").replace("{school}", schoolName)}
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover"
         />
       </div>
       <figcaption className="mt-2 text-xs leading-relaxed text-neutral-500">
