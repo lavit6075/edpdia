@@ -39,7 +39,7 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
                   <td className="py-2 pr-2 text-neutral-800">{r.qualification}</td>
                   <td className="py-2 pr-2 text-neutral-800">{r.year}</td>
                   <td className="py-2 pr-2 text-neutral-800">
-                    {r.metric}: {r.value}
+                    {`${r.metric}: ${r.value}`}
                   </td>
                   <td className="py-2">
                     <a
@@ -66,7 +66,8 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
           <ul className="mt-2 space-y-3">
             {achievements.universityDestinations.map((d, i) => (
               <li key={i} className="text-sm text-neutral-800">
-                <span className="font-medium">{d.year}:</span> {d.institutions.join(", ")}{" "}
+                <span className="font-medium">{`${d.year}:`}</span>
+                {` ${d.institutions.join(", ")} `}
                 <a
                   href={d.sourceUrl}
                   target="_blank"

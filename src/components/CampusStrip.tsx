@@ -39,7 +39,7 @@ export function CampusStrip() {
                   {name}
                 </p>
                 <p className="text-[11px] leading-tight text-neutral-400">
-                  {photo.author} · {photo.licence}
+                  {`${photo.author} · ${photo.licence}`}
                 </p>
               </Link>
             </li>

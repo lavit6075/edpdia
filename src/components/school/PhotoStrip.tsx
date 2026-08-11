@@ -49,7 +49,7 @@ export function PhotoStrip({ photos, schoolName }: PhotoStripProps) {
                 className="h-28 w-auto rounded-md border border-neutral-200 object-cover transition-opacity duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-85"
               />
               <span className="mt-1 block max-w-[15rem] text-[11px] leading-tight text-neutral-400">
-                {photo.author} · {photo.licence}
+                {`${photo.author} · ${photo.licence}`}
               </span>
             </a>
           </li>

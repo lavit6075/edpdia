@@ -10,7 +10,7 @@ export function PhotoCredit({ photo, compact = false }: { photo: SchoolPhoto; co
       className={`${compact ? "mt-1.5 text-[11px]" : "mt-2 text-xs"} leading-relaxed text-neutral-500`}
     >
       <span>
-        {t("profile.photoCreditPrefix")}{" "}
+        {`${t("profile.photoCreditPrefix")} `}
         <a
           href={photo.sourceUrl}
           target="_blank"
@@ -33,10 +33,7 @@ export function PhotoCredit({ photo, compact = false }: { photo: SchoolPhoto; co
           photo.licence
         )}
         {!compact && (
-          <>
-            {" · "}
-            {t("profile.photoViaCommons")}
-          </>
+          <>{` · ${t("profile.photoViaCommons")}`}</>
         )}
       </span>
       <span className="mt-0.5 block text-neutral-400">{t("profile.photoLicenceScope")}</span>

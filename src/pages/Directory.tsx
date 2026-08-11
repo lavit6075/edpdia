@@ -133,8 +133,9 @@ export function Directory() {
         {/* Results */}
         <div className="flex-1">
           <p className="mb-4 text-sm text-neutral-500">
-            {results.length}{" "}
-            {t(results.length === 1 ? "directory.resultsFoundOne" : "directory.resultsFoundOther")}
+            {`${results.length} ${t(
+              results.length === 1 ? "directory.resultsFoundOne" : "directory.resultsFoundOther",
+            )}`}
           </p>
 
           {results.length === 0 ? (

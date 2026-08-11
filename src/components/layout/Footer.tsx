@@ -60,12 +60,12 @@ export function Footer() {
 
         <div className="mt-10 border-t border-neutral-200 pt-6">
           <p className="text-xs leading-relaxed text-neutral-500">
-            {t("footer.disclaimer")}&nbsp;
+            {`${t("footer.disclaimer")}\u00a0`}
             <span className="font-medium text-warn-700">{t("footer.pendingVerification")}</span>.
           </p>
           <p className="mt-2 text-xs text-neutral-500">{t("footer.languageNote")}</p>
           <p className="mt-4 text-xs text-neutral-400">
-            © {new Date().getFullYear()} {t("footer.copyright")}
+            {`© ${new Date().getFullYear()} ${t("footer.copyright")}`}
           </p>
         </div>
       </div>

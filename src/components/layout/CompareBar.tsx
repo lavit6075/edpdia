@@ -19,7 +19,7 @@ export function CompareBar() {
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
         {/* Compact summary on small screens; full chip list from sm up. */}
         <p className="flex-1 text-sm font-medium text-neutral-700 sm:hidden">
-          {compareList.length} {t("compareBar.selected")}
+          {`${compareList.length} ${t("compareBar.selected")}`}
         </p>
         <div className="hidden flex-1 flex-wrap items-center gap-2 sm:flex">
           {schools.map((school) => (
@@ -48,7 +48,7 @@ export function CompareBar() {
               to={`/compare?schools=${compareList.join(",")}`}
               className="rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800"
             >
-              {t("compareBar.compareButton")} ({compareList.length})
+              {`${t("compareBar.compareButton")} (${compareList.length})`}
             </Link>
           )}
           <button

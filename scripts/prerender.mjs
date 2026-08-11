@@ -16,7 +16,11 @@
  *      Layout-level signal).
  * Both must hold. A timeout only exists as a failure tripwire, never as the happy path.
  *
- * Any hydration or console error is reported and fails the build rather than being swallowed.
+ * Runs in two passes. Pass 1 crawls with the shell as the HTML fallback and writes the snapshots.
+ * Pass 2 re-serves dist the way Vercel does — prerendered file first — and reloads every route so
+ * hydrateRoot actually runs against the written markup; that is the only configuration in which a
+ * hydration mismatch is observable. Any hydration or console error is reported and fails the build
+ * rather than being swallowed.
  */
 import { createServer } from "node:http";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from "node:fs";
@@ -43,17 +47,34 @@ const MIME = {
   ".json": "application/json",
 };
 
-/** Static server that mirrors production: real files win, everything else gets the SPA shell. */
-function serve(port) {
+/**
+ * Static server used for both passes.
+ *
+ * `mode: "shell"` (crawl pass) — assets are served from disk but every HTML request gets the
+ * pristine shell. Snapshots must be produced from a clean client render, never from a previously
+ * written snapshot.
+ *
+ * `mode: "files"` (verify pass) — mirrors Vercel: dist/<route>/index.html wins, shell is only the
+ * last-resort fallback. This is the ONLY configuration in which hydrateRoot actually runs against
+ * prerendered markup, so it is the only one where a hydration mismatch can be observed at all.
+ */
+function serve(port, mode) {
   return new Promise((resolve) => {
     const server = createServer((req, res) => {
       const url = decodeURIComponent((req.url || "/").split("?")[0]);
       const file = path.join(DIST, url);
-      // Real asset? Serve it. Anything else gets the pristine shell, never a rendered page.
       if (existsSync(file) && !statSync(file).isDirectory() && path.extname(file) !== ".html") {
         res.writeHead(200, { "Content-Type": MIME[path.extname(file)] || "application/octet-stream" });
         res.end(readFileSync(file));
         return;
+      }
+      if (mode === "files") {
+        const page = path.join(DIST, url, "index.html");
+        if (existsSync(page)) {
+          res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+          res.end(readFileSync(page));
+          return;
+        }
       }
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
       res.end(SHELL_HTML);
@@ -62,8 +83,30 @@ function serve(port) {
   });
 }
 
+/** Loads a route and returns every console/page error it produced, split by kind. */
+async function visit(context, port, route) {
+  const page = await context.newPage();
+  const hydration = [];
+  const consoleErrors = [];
+  page.on("console", (msg) => {
+    if (msg.type() !== "error" && msg.type() !== "warning") return;
+    const text = msg.text();
+    // React reports hydration problems as errors/warnings mentioning hydrat*, or as the
+    // minified-invariant codes #418/#423/#425 in a production build.
+    if (/hydrat|#418|#423|#425|did not match|didn't match/i.test(text)) hydration.push(text);
+    else if (msg.type() === "error") consoleErrors.push(text);
+  });
+  page.on("pageerror", (err) => {
+    if (/hydrat|#418|#423|#425|did not match|didn't match/i.test(err.message)) hydration.push(err.message);
+    else consoleErrors.push(err.message);
+  });
+  await page.goto(`http://localhost:${port}${route}`, { waitUntil: "networkidle", timeout: 45000 });
+  await page.waitForFunction(() => window.__PRERENDER_READY__ === true, null, { timeout: 30000 });
+  return { page, hydration, consoleErrors };
+}
+
 const PORT = 4178;
-const server = await serve(PORT);
+let server = await serve(PORT, "shell");
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 
@@ -71,25 +114,23 @@ const problems = [];
 const snapshots = [];
 let written = 0;
 
+console.log("pass 1 — crawl (shell fallback, clean client render)");
 for (const route of ROUTES) {
-  const page = await context.newPage();
-  const consoleErrors = [];
-  page.on("console", (msg) => {
-    if (msg.type() !== "error" && msg.type() !== "warning") return;
-    const text = msg.text();
-    // React reports hydration problems as errors/warnings mentioning hydrat*.
-    if (/hydrat|did not match|Text content does not match/i.test(text)) {
-      problems.push(`[HYDRATION] ${route}: ${text}`);
-    } else if (msg.type() === "error") {
-      consoleErrors.push(text);
-    }
-  });
-  page.on("pageerror", (err) => problems.push(`[PAGEERROR] ${route}: ${err.message}`));
-
+  let page;
   try {
-    await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle", timeout: 45000 });
-    // App-level readiness, not a sleep.
-    await page.waitForFunction(() => window.__PRERENDER_READY__ === true, null, { timeout: 30000 });
+    const visited = await visit(context, PORT, route);
+    page = visited.page;
+    const { consoleErrors } = visited;
+
+    // Strip client-only decoration state before serialising. `data-reveal-pending` is written by
+    // useRevealOnScroll on off-screen elements; React owns those nodes and diffs every attribute on
+    // them during hydration, so leaving it in the snapshot warns on every card. The hook re-applies
+    // it after hydration where it is invisible to do so.
+    await page.evaluate(() => {
+      for (const el of document.querySelectorAll("[data-reveal-pending]")) {
+        el.removeAttribute("data-reveal-pending");
+      }
+    });
 
     const html = await page.content();
 
@@ -107,10 +148,9 @@ for (const route of ROUTES) {
   } catch (err) {
     problems.push(`[FAILED] ${route}: ${err.message}`);
   }
-  await page.close();
+  if (page) await page.close();
 }
 
-await browser.close();
 server.close();
 
 // Flush every snapshot only once the crawl is finished.
@@ -119,12 +159,42 @@ for (const { route, html } of snapshots) {
   mkdirSync(outDir, { recursive: true });
   writeFileSync(path.join(outDir, "index.html"), html, "utf-8");
 }
-
 console.log(`\nprerendered ${written}/${ROUTES.length} routes`);
+
+// ---------------------------------------------------------------------------
+// Pass 2 — hydration verification.
+//
+// Pass 1 CANNOT detect hydration mismatches: it serves the empty shell, so #root has no children
+// and main.tsx takes the createRoot branch. hydrateRoot never runs, so there is nothing to
+// mismatch. An earlier version of this script reported "no hydration mismatches" from pass 1
+// alone; that result was vacuous and hid a #418 on every route. This pass re-serves dist the way
+// Vercel does — prerendered file first — so hydrateRoot runs against the real markup.
+// ---------------------------------------------------------------------------
+console.log("\npass 2 — verify hydration (prerendered files served first)");
+server = await serve(PORT, "files");
+let hydrated = 0;
+for (const route of ROUTES) {
+  try {
+    const { page, hydration, consoleErrors } = await visit(context, PORT, route);
+    const didHydrate = await page.evaluate(() => window.__HYDRATED__ === true);
+    if (!didHydrate) problems.push(`[NOT-HYDRATED] ${route}: served markup had no #root children`);
+    else hydrated++;
+    for (const h of hydration) problems.push(`[HYDRATION] ${route}: ${h}`);
+    for (const c of consoleErrors) problems.push(`[CONSOLE] ${route}: ${c}`);
+    await page.close();
+  } catch (err) {
+    problems.push(`[VERIFY-FAILED] ${route}: ${err.message}`);
+  }
+}
+console.log(`  hydrated ${hydrated}/${ROUTES.length} routes against prerendered markup`);
+
+await browser.close();
+server.close();
+
 if (problems.length) {
   console.log(`\n${problems.length} problem(s) — NOT suppressed:`);
   problems.forEach((p) => console.log("  ✗ " + p));
   process.exitCode = 1;
 } else {
-  console.log("no hydration mismatches, page errors or console errors");
+  console.log("\nno hydration mismatches, page errors or console errors");
 }

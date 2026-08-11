@@ -82,7 +82,7 @@ export function AdmissionsTimeline() {
           >
             {intakeYearOptions.map((year) => (
               <option key={year} value={year}>
-                {formatIntakeYear(year)} {t("timeline.intakeSuffix")}
+                {`${formatIntakeYear(year)} ${t("timeline.intakeSuffix")}`}
               </option>
             ))}
           </select>
@@ -104,7 +104,7 @@ export function AdmissionsTimeline() {
                 {dateFormatter.format(date)}
                 {!isIntakeMonth && (
                   <span className="ml-1 font-normal normal-case text-neutral-400">
-                    · {step.monthsBefore} {t("timeline.monthsBeforeIntake")}
+                    {`· ${step.monthsBefore} ${t("timeline.monthsBeforeIntake")}`}
                   </span>
                 )}
               </p>

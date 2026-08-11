@@ -82,14 +82,13 @@ export function SchoolCard({ school }: { school: School }) {
             <div>
               <dt className="font-medium text-neutral-400">{t("directory.ages")}</dt>
               <dd>
-                {school.ageRange.min}–{school.ageRange.max}
+                {`${school.ageRange.min}–${school.ageRange.max}`}
               </dd>
             </div>
             <div>
               <dt className="font-medium text-neutral-400">{t("directory.type")}</dt>
               <dd className="capitalize">
-                {t(`schoolType.${school.schoolType}`)}
-                {school.boarding ? ` · ${t("directory.boardingSuffix")}` : ""}
+                {`${t(`schoolType.${school.schoolType}`)}${school.boarding ? ` · ${t("directory.boardingSuffix")}` : ""}`}
               </dd>
             </div>
           </dl>

@@ -124,7 +124,7 @@ function SchoolProfileView({ school }: { school: School }) {
         <div>
           <dt className="font-medium text-neutral-500">{t("profile.ageRange")}</dt>
           <dd className="mt-0.5 text-neutral-900">
-            {school.ageRange.min}–{school.ageRange.max}
+            {`${school.ageRange.min}–${school.ageRange.max}`}
           </dd>
         </div>
         <div>
@@ -218,11 +218,10 @@ function SchoolProfileView({ school }: { school: School }) {
           {school.principalMessage ? (
             <figure className="mt-4 border-l-4 border-brand-200 pl-4">
               <blockquote className="text-sm italic leading-relaxed text-neutral-700">
-                “{school.principalMessage.quote}”
+                {`“${school.principalMessage.quote}”`}
               </blockquote>
               <figcaption className="mt-2 text-sm text-neutral-500">
-                — {school.principalMessage.name}
-                {", "}
+                {`— ${school.principalMessage.name}, `}
                 <a
                   href={school.principalMessage.sourceUrl}
                   target="_blank"
@@ -251,8 +250,14 @@ function SchoolProfileView({ school }: { school: School }) {
           <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-600">
             <VerificationBadge status={school.verificationStatus} />
             <span>
-              {t("profile.lastVerified")}{" "}
-              {school.lastVerified ? school.lastVerified : <NotPublished />}
+              {school.lastVerified ? (
+                `${t("profile.lastVerified")} ${school.lastVerified}`
+              ) : (
+                <>
+                  {`${t("profile.lastVerified")} `}
+                  <NotPublished />
+                </>
+              )}
             </span>
           </div>
           <ul className="mt-3 space-y-1.5 text-sm">
@@ -267,8 +272,7 @@ function SchoolProfileView({ school }: { school: School }) {
                   {source.label}
                 </a>
                 <span className="text-neutral-400">
-                  {" "}
-                  — {t("profile.accessedLabel")} {source.accessedDate}
+                  {` — ${t("profile.accessedLabel")} ${source.accessedDate}`}
                 </span>
               </li>
             ))}
