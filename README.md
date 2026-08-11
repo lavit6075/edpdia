@@ -311,16 +311,60 @@ Per-route `<title>`, `description`, `canonical`, Open Graph and Twitter tags are
 `sitemap.xml` and `robots.txt` are generated at build time from the data, so the route list
 cannot drift.
 
-**Known limitation — this is a client-rendered SPA.** The tags above are written by JavaScript
-after load. Googlebot renders JS and will see them, but most social-card scrapers (Facebook,
-X, LinkedIn, Slack, WhatsApp) do not execute JS — they read the raw HTML response, which is the
-same `index.html` for every route. **So `og:`/`twitter:` tags will not produce per-page link
-previews until the site is prerendered.** Prerendering is the fix, and the codebase is already
-SSR-safe for it (every `localStorage`/`window` read at init is guarded, and all DOM writes are
-inside effects).
+Those tags are written by effects, i.e. after JS runs — which used to mean the raw HTML
+response was the same near-empty `index.html` for every route, and social-card scrapers
+(Facebook, X, LinkedIn, Slack, WhatsApp) never execute JS. **The build now prerenders every
+route**, so the tags are in the response body. See "Prerendering" below.
 
-`/compare` and `/shortlist` are `Disallow`ed in robots.txt — they're per-visitor UI state, not
-content worth indexing.
+`/compare` and `/shortlist` are `Disallow`ed in robots.txt, marked `noindex, follow` in-page,
+and excluded from `sitemap.xml` (20 URLs, not 22) — they render query-string and localStorage
+state, so the prerendered copy is an empty comparison and an empty shortlist. They are still
+prerendered and still return 200; there is just nothing there worth listing.
+
+### Prerendering
+
+`npm run build` runs `tsc` → `vite build` → `scripts/prerender.mjs`, which serves `dist` over a
+local static server, visits every route in headless Chromium and writes the settled document to
+`dist/<route>/index.html`. The route list comes from `scripts/routes.generated.json` — the same
+file that drives the `vercel.json` 404 config — so the set of pages prerendered can never drift
+from the set served a 200. `src/main.tsx` calls `hydrateRoot` when `#root` already has markup.
+
+**Settle condition** is `networkidle` *plus* `window.__PRERENDER_READY__`, never a fixed sleep.
+The flag is set by `PrerenderReady` in `Layout` after a double `requestAnimationFrame`, so it
+means committed *and painted*, and because it lives in the parent of the routed page, the child
+`useSeo` effects have already written `<head>` by the time it flips. Timeouts exist only as
+failure tripwires.
+
+**Two passes, and the second one is the point.** Pass 1 serves the pristine shell for every HTML
+request, so snapshots come from a clean client render rather than from a previously written
+snapshot. Pass 2 re-serves `dist` the way Vercel does — prerendered file first — and reloads
+every route. Pass 1 *cannot* detect a hydration mismatch: the shell leaves `#root` empty,
+`main.tsx` takes the `createRoot` branch, and `hydrateRoot` never runs. An earlier version of
+this script reported "no hydration mismatches" from pass 1 alone. That was vacuously true and it
+hid a React #418 on every single route. `main.tsx` sets `window.__HYDRATED__` so pass 2 can
+assert hydration actually happened rather than trusting a silent console.
+
+**Hydration hazards found, all of which produced real #418s:**
+
+- *Adjacent JSX text children.* `{t("x")}&nbsp;` is two text children to React but serialises as
+  one text node in DOM-derived HTML, so React expects two nodes and finds one. Thirteen sites,
+  including two in `Footer` that were therefore on every page. Fix: collapse into a single
+  template literal.
+- *`useRevealOnScroll` mutating `className`*, which React owns, before the snapshot was taken.
+  Inverted instead: `.reveal` is now visible by default and the hook *hides* off-screen elements
+  with `[data-reveal-pending]`. Prerendered pages therefore paint content immediately instead of
+  at `opacity: 0`, and elements already in the viewport are never armed, so nothing blinks after
+  hydration. `prerender.mjs` strips the attribute before serialising — React diffs attributes it
+  never rendered, so a data attribute is no escape hatch.
+- *`localStorage` reads in `useState` initialisers* in the language, shortlist and compare
+  contexts. Moved into effects, gated by a `hydrated` flag so persistence doesn't fire on the
+  initial pass.
+
+**Playwright in CI:** `.npmrc` sets `playwright_browsers_path=0`, so Chromium installs into
+`node_modules/playwright-core/.local-browsers` and rides Vercel's `node_modules` cache instead of
+re-downloading ~95MB per deploy. `vercel-build` runs `scripts/install-chromium-deps.sh` first —
+Vercel's image is Amazon Linux, so `playwright install --with-deps` fails on a missing `apt-get`
+and the shared libraries have to come from `dnf`/`yum`.
 
 ### 404s
 
