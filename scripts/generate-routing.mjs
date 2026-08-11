@@ -82,7 +82,17 @@ Sitemap: ${SITE}/sitemap.xml
 // pages we prerender can never drift from the set we serve 200s for.
 writeFileSync(
   path.join(ROOT, "scripts/routes.generated.json"),
-  JSON.stringify({ routes: all.map((r) => r.p) }, null, 2) + "\n",
+  JSON.stringify(
+    {
+      routes: all.map((r) => r.p),
+      // Prerendered but deliberately kept OUT of the sitemap: this is the body served with a
+      // 404 status. Without it the catch-all would serve the prerendered homepage, which both
+      // shows the wrong content to crawlers and hydration-mismatches against <NotFound/>.
+      prerenderOnly: ["/404"],
+    },
+    null,
+    2,
+  ) + "\n",
   "utf-8",
 );
 
@@ -104,7 +114,7 @@ const vercel = {
     })),
     // Anything else is genuinely not a page: serve the shell but with a real 404 status,
     // so crawlers and monitoring see 404 rather than a soft 200.
-    { src: "/.*", status: 404, dest: "/index.html" },
+    { src: "/.*", status: 404, dest: "/404/index.html" },
   ],
 };
 writeFileSync(path.join(ROOT, "vercel.json"), JSON.stringify(vercel, null, 2) + "\n", "utf-8");

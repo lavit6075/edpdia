@@ -26,7 +26,9 @@ import { chromium } from "playwright";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
-const ROUTES = JSON.parse(readFileSync(path.join(ROOT, "scripts/routes.generated.json"), "utf-8")).routes;
+const ROUTE_CONFIG = JSON.parse(readFileSync(path.join(ROOT, "scripts/routes.generated.json"), "utf-8"));
+// prerenderOnly pages (currently just /404) get static HTML but stay out of the sitemap.
+const ROUTES = [...ROUTE_CONFIG.routes, ...(ROUTE_CONFIG.prerenderOnly ?? [])];
 
 // Snapshot the pristine shell BEFORE any writes. Prerendering "/" overwrites
 // dist/index.html, and if the fallback then served that rendered homepage, every later route
