@@ -9,7 +9,10 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "validate:data": "node scripts/validate-schools.mjs",
-    "validate:i18n": "node scripts/validate-i18n.mjs"
+    "validate:i18n": "node scripts/validate-i18n.mjs",
+    "prebuild": "node scripts/generate-routing.mjs",
+    "images:fetch": "node scripts/fetch-images.mjs",
+    "images:optimise": "node scripts/optimise-images.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",

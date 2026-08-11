@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /compare
+Disallow: /shortlist
+
+Sitemap: https://edpdia.vercel.app/sitemap.xml

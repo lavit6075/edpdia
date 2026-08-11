@@ -4,9 +4,18 @@ import { SchoolCard } from "../components/school/SchoolCard";
 import { HeroGraphic } from "../components/HeroGraphic";
 import { CampusStrip } from "../components/CampusStrip";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
+import { organizationLd } from "../lib/seo";
 
 export function Home() {
   const { t } = useLanguage();
+  useSeo({
+    title: `${t("header.brand")} — ${t("home.eyebrow")}`,
+    description: t("home.subtitle"),
+    path: "/",
+    jsonLd: organizationLd,
+  });
+
   const featured = schools.slice(0, 3);
 
   const stats = [

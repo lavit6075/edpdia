@@ -1,10 +1,17 @@
 import { useState, type FormEvent } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 
 const CONTACT_EMAIL = "hello@edpdia.hk";
 
 export function Contact() {
   const { t } = useLanguage();
+  useSeo({
+    title: `${t("contactPage.heroTitle")} — ${t("header.brand")}`,
+    description: t("contactPage.heroSubtitle"),
+    path: "/contact",
+  });
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

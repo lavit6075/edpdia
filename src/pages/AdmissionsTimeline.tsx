@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 import { TIMELINE_STEPS, type AdmissionLevel } from "../lib/timelineSteps";
 
 function getIntakeYearOptions(): number[] {
@@ -20,6 +21,12 @@ function stepDate(startYear: number, monthsBefore: number): Date {
 
 export function AdmissionsTimeline() {
   const { t, language } = useLanguage();
+  useSeo({
+    title: `${t("timeline.title")} — ${t("header.brand")}`,
+    description: t("timeline.subtitle").slice(0, 155),
+    path: "/admissions/timeline",
+  });
+
   const intakeYearOptions = useMemo(() => getIntakeYearOptions(), []);
   const [level, setLevel] = useState<AdmissionLevel>("primary");
   const [intakeYear, setIntakeYear] = useState<number>(intakeYearOptions[0]);

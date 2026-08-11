@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 
 export function About() {
   const { t } = useLanguage();
+  useSeo({
+    title: `${t("about.heroTitle")} — ${t("header.brand")}`,
+    description: t("about.missionBody").slice(0, 155),
+    path: "/about",
+  });
+
 
   const neutralityPoints = [
     { title: t("about.neutralPoint1Title"), body: t("about.neutralPoint1Body") },

@@ -1,3 +1,101 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^\\/\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/admissions\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/admissions\\/timeline\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/resources\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/about\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/faq\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/contact\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/chinese-international-school\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/hong-kong-international-school\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/german-swiss-international-school\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/canadian-international-school-of-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/french-international-school-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/australian-international-school-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/harrow-international-school-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/kellett-school\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/yew-chung-international-school-of-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/nord-anglia-international-school-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/malvern-college-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/schools\\/stamford-american-school-hong-kong\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/compare\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^\\/shortlist\\/?$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/.*",
+      "status": 404,
+      "dest": "/index.html"
+    }
+  ]
 }

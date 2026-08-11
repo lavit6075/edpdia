@@ -85,7 +85,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/CIS_Main_Entrance.JPG/1920px-CIS_Main_Entrance.JPG",
+        "url": "/img/chinese-international-school-0-bd66c5989695.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 3.0",
@@ -93,12 +93,12 @@
         "author": "圍棋一級",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:CIS_Main_Entrance.JPG",
         "caption": "CIS Main Entrance",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/CIS_Main_Entrance.JPG/500px-CIS_Main_Entrance.JPG",
+        "thumbUrl": "/img/chinese-international-school-0-t-e945a72bfc36.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Chinese_International_School.jpg/1920px-Chinese_International_School.jpg",
+        "url": "/img/chinese-international-school-1-a65fda244f3a.jpg",
         "width": 1400,
         "height": 2120,
         "licence": "CC BY-SA 4.0",
@@ -106,12 +106,12 @@
         "author": "Exploringlife",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_International_School.jpg",
         "caption": "Chinese International School in Braemar Hill, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Chinese_International_School.jpg/500px-Chinese_International_School.jpg",
+        "thumbUrl": "/img/chinese-international-school-1-t-5cd3ddcf1b8c.jpg",
         "thumbWidth": 480,
         "thumbHeight": 727
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Chinese_International_School_2018.jpg",
+        "url": "/img/chinese-international-school-2-cbcc55fab0ec.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -119,12 +119,12 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_International_School_2018.jpg",
         "caption": "Chinese International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Chinese_International_School_2018.jpg/500px-Chinese_International_School_2018.jpg",
+        "thumbUrl": "/img/chinese-international-school-2-t-889a72cba602.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/CISCampusAerial.jpg",
+        "url": "/img/chinese-international-school-3-a5cd5ac40a27.jpg",
         "width": 1400,
         "height": 545,
         "licence": "CC BY-SA 4.0",
@@ -132,7 +132,7 @@
         "author": "Ehecis",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:CISCampusAerial.jpg",
         "caption": "CIS Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/CISCampusAerial.jpg/500px-CISCampusAerial.jpg",
+        "thumbUrl": "/img/chinese-international-school-3-t-fc23ec20c48f.jpg",
         "thumbWidth": 480,
         "thumbHeight": 187
       }
@@ -164,7 +164,7 @@
       "https://www.instagram.com/HongKongInternationalSchool",
       "https://www.youtube.com/@HKIStv"
     ],
-    "logoUrl": "https://www.hkis.edu.hk/Images/assets/logo-primary.svg",
+    "logoUrl": "/img/logo-hong-kong-international-school-ee66ea2954a8.svg",
     "address": {
       "lineEn": "1 Red Hill Road, Tai Tam, Hong Kong (Secondary Campus); 23 South Bay Close, Repulse Bay, Hong Kong (Primary Campus)",
       "lineZh": "香港大潭紅山道1號（中學部）；香港淺水灣南灣坊6及23號（小學部）",
@@ -245,7 +245,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Hong_Kong_International_School.JPG",
+        "url": "/img/hong-kong-international-school-0-be79ec573b19.jpg",
         "width": 1400,
         "height": 788,
         "licence": "CC BY-SA 3.0",
@@ -253,12 +253,12 @@
         "author": "HK Arun",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_International_School.JPG",
         "caption": "Front view of Hong Kong International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hong_Kong_International_School.JPG/500px-Hong_Kong_International_School.JPG",
+        "thumbUrl": "/img/hong-kong-international-school-0-t-3bfae31f3a67.jpg",
         "thumbWidth": 480,
         "thumbHeight": 270
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Hong_Kong_International_School_01.jpg/1920px-Hong_Kong_International_School_01.jpg",
+        "url": "/img/hong-kong-international-school-1-05e9357cf2d0.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -266,12 +266,12 @@
         "author": "Underwaterbuffalo",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_International_School_01.jpg",
         "caption": "Hong Kong International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Hong_Kong_International_School_01.jpg/500px-Hong_Kong_International_School_01.jpg",
+        "thumbUrl": "/img/hong-kong-international-school-1-t-644eaae88442.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hong_Kong_International_School_02.jpg/1920px-Hong_Kong_International_School_02.jpg",
+        "url": "/img/hong-kong-international-school-2-e2e71da5c02b.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -279,12 +279,12 @@
         "author": "Underwaterbuffalo",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_International_School_02.jpg",
         "caption": "Hong Kong International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hong_Kong_International_School_02.jpg/500px-Hong_Kong_International_School_02.jpg",
+        "thumbUrl": "/img/hong-kong-international-school-2-t-f850e40c3a7a.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Inside_of_HKIS.JPG",
+        "url": "/img/hong-kong-international-school-3-d56fef8fa253.jpg",
         "width": 1400,
         "height": 788,
         "licence": "CC BY-SA 3.0",
@@ -292,12 +292,12 @@
         "author": "HK Arun",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inside_of_HKIS.JPG",
         "caption": "Inside of the Hong Kong International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Inside_of_HKIS.JPG/500px-Inside_of_HKIS.JPG",
+        "thumbUrl": "/img/hong-kong-international-school-3-t-1134b33bb581.jpg",
         "thumbWidth": 480,
         "thumbHeight": 270
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Inside_of_the_HKIS.JPG",
+        "url": "/img/hong-kong-international-school-4-c976e9b94a5d.jpg",
         "width": 1400,
         "height": 792,
         "licence": "CC BY-SA 3.0",
@@ -305,12 +305,12 @@
         "author": "HK Arun",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inside_of_the_HKIS.JPG",
         "caption": "Inside of the Hong Kong International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Inside_of_the_HKIS.JPG/500px-Inside_of_the_HKIS.JPG",
+        "thumbUrl": "/img/hong-kong-international-school-4-t-e5073e3613b7.jpg",
         "thumbWidth": 480,
         "thumbHeight": 272
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Statue_of_HKIS.JPG",
+        "url": "/img/hong-kong-international-school-5-72bfe97ae242.jpg",
         "width": 1400,
         "height": 876,
         "licence": "CC BY-SA 3.0",
@@ -318,12 +318,12 @@
         "author": "HK Arun",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_HKIS.JPG",
         "caption": "A statue in the HKIS",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Statue_of_HKIS.JPG/500px-Statue_of_HKIS.JPG",
+        "thumbUrl": "/img/hong-kong-international-school-5-t-c7022604a5b5.jpg",
         "thumbWidth": 480,
         "thumbHeight": 300
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Playground_HKIS.JPG",
+        "url": "/img/hong-kong-international-school-6-d16cc1fdaa44.jpg",
         "width": 1400,
         "height": 867,
         "licence": "CC BY-SA 3.0",
@@ -331,7 +331,7 @@
         "author": "HK Arun",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playground_HKIS.JPG",
         "caption": "Hong Kong International School playground",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Playground_HKIS.JPG/500px-Playground_HKIS.JPG",
+        "thumbUrl": "/img/hong-kong-international-school-6-t-d8a8501a4352.jpg",
         "thumbWidth": 480,
         "thumbHeight": 297
       }
@@ -363,7 +363,7 @@
       "https://www.facebook.com/GSISHK/",
       "https://www.instagram.com/gsishk/"
     ],
-    "logoUrl": "https://www.gsis.edu.hk/_next/static/media/img-logo.805f99bd.svg",
+    "logoUrl": "/img/logo-german-swiss-international-school-828854ea33a0.svg",
     "address": {
       "lineEn": "11 Guildford Road, The Peak, Hong Kong (The Peak Campus); 162 Pok Fu Lam Road, Pok Fu Lam, Hong Kong (Pok Fu Lam Campus)",
       "lineZh": "香港山頂僑福道11及22號（山頂校舍）；香港薄扶林薄扶林道162號（薄扶林校舍）",
@@ -405,7 +405,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/German_Swiss_International_School_Peak_Campus.jpg/1920px-German_Swiss_International_School_Peak_Campus.jpg",
+        "url": "/img/german-swiss-international-school-0-fb75d3869f14.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -413,12 +413,12 @@
         "author": "Ceeseven",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:German_Swiss_International_School_Peak_Campus.jpg",
         "caption": "German Swiss International School Peak Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/German_Swiss_International_School_Peak_Campus.jpg/500px-German_Swiss_International_School_Peak_Campus.jpg",
+        "thumbUrl": "/img/german-swiss-international-school-0-t-24452593e505.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/GSISPrimary.jpg/1920px-GSISPrimary.jpg",
+        "url": "/img/german-swiss-international-school-1-33b07fa1e562.jpg",
         "width": 1400,
         "height": 788,
         "licence": "CC BY-SA 3.0",
@@ -426,12 +426,12 @@
         "author": "WhisperToMe",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:GSISPrimary.jpg",
         "caption": "German Swiss International School Pok Fu Lam Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/GSISPrimary.jpg/500px-GSISPrimary.jpg",
+        "thumbUrl": "/img/german-swiss-international-school-1-t-5811f97ac0d9.jpg",
         "thumbWidth": 480,
         "thumbHeight": 270
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/German_Swiss_International_School_2020.jpg",
+        "url": "/img/german-swiss-international-school-2-24fc41ce56d1.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY 4.0",
@@ -439,12 +439,12 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:German_Swiss_International_School_2020.jpg",
         "caption": "German Swiss International School Peak Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/German_Swiss_International_School_2020.jpg/500px-German_Swiss_International_School_2020.jpg",
+        "thumbUrl": "/img/german-swiss-international-school-2-t-161041472bd9.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_L.JPG",
+        "url": "/img/german-swiss-international-school-3-d1d558a8837a.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 2.5",
@@ -452,12 +452,12 @@
         "author": "No machine-readable author provided. ParkerStarS assumed (based on copyright claims).",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_L.JPG",
         "caption": "German Swiss International School (Middle Block), 11 Guildford Road, Peak Road, the Victoria Peak, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_L.JPG/500px-HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_L.JPG",
+        "thumbUrl": "/img/german-swiss-international-school-3-t-f8a8b45978e3.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_M.JPG",
+        "url": "/img/german-swiss-international-school-4-3cb76030d9fc.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 2.5",
@@ -465,12 +465,12 @@
         "author": "No machine-readable author provided. ParkerStarS assumed (based on copyright claims).",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_M.JPG",
         "caption": "German Swiss International School (Middle Block), 11 Guildford Road, Peak Road, the Victoria Peak, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_M.JPG/500px-HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_M.JPG",
+        "thumbUrl": "/img/german-swiss-international-school-4-t-ff25978f43ab.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_U.JPG",
+        "url": "/img/german-swiss-international-school-5-3cf04cf448fe.jpg",
         "width": 1400,
         "height": 1867,
         "licence": "CC BY-SA 2.5",
@@ -478,12 +478,12 @@
         "author": "No machine-readable author provided. ParkerStarS assumed (based on copyright claims).",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_U.JPG",
         "caption": "German Swiss International School (Middle Block), 11 Guildford Road, Peak Road, the Victoria Peak, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_U.JPG/500px-HK_Peak_Guildford_Road_German_Swiss_Intl_Sch_U.JPG",
+        "thumbUrl": "/img/german-swiss-international-school-5-t-b1497d554fa3.jpg",
         "thumbWidth": 480,
         "thumbHeight": 640
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/HK_Peak_Guildford_Road_German_Swiss_Intl_School.JPG",
+        "url": "/img/german-swiss-international-school-6-f75dd05aa079.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 2.5",
@@ -491,7 +491,7 @@
         "author": "No machine-readable author provided. ParkerStarS assumed (based on copyright claims).",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Peak_Guildford_Road_German_Swiss_Intl_School.JPG",
         "caption": "German Swiss International School (Middle Block), 11 Guildford Road, Peak Road, the Victoria Peak, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/HK_Peak_Guildford_Road_German_Swiss_Intl_School.JPG/500px-HK_Peak_Guildford_Road_German_Swiss_Intl_School.JPG",
+        "thumbUrl": "/img/german-swiss-international-school-6-t-072323855842.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       }
@@ -526,7 +526,7 @@
       "https://www.youtube.com/user/cdniscomm",
       "https://www.linkedin.com/school/canadian-international-school-of-hong-kong/"
     ],
-    "logoUrl": "https://www.cdnis.edu.hk/resources/images/f_auto,q_auto/v1660613705/cdniseduhk/vpbrwmahzfh0k3t6knwa/top-logo.png",
+    "logoUrl": "/img/logo-canadian-international-school-of-hong-kong-5202d1f8e44c.png",
     "address": {
       "lineEn": "36 Nam Long Shan Road, Aberdeen, Hong Kong (Main Campus); 11 Heung Yip Road, Wong Chuk Hang, Hong Kong (Early Years Centre)",
       "lineZh": null,
@@ -621,7 +621,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg/1920px-Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg",
+        "url": "/img/canadian-international-school-of-hong-kong-0-32de9023e819.jpg",
         "width": 1400,
         "height": 927,
         "licence": "CC BY-SA 4.0",
@@ -629,12 +629,12 @@
         "author": "Exploringlife",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School_of_Hong_Kong_(blue_sky).jpg",
         "caption": "Canadian International School in Sham Wan, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg/500px-Canadian_International_School_of_Hong_Kong_%28blue_sky%29.jpg",
+        "thumbUrl": "/img/canadian-international-school-of-hong-kong-0-t-30e23c0e83cd.jpg",
         "thumbWidth": 480,
         "thumbHeight": 318
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Canadian_International_School.jpg/1920px-Canadian_International_School.jpg",
+        "url": "/img/canadian-international-school-of-hong-kong-1-287a7fc4ecc1.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -642,12 +642,12 @@
         "author": "Ceeseven",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School.jpg",
         "caption": "Canadian International School of Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Canadian_International_School.jpg/500px-Canadian_International_School.jpg",
+        "thumbUrl": "/img/canadian-international-school-of-hong-kong-1-t-2e6a755cc3a7.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Canadian_International_School_Leo_Lee_Arts_Centre.jpg/1920px-Canadian_International_School_Leo_Lee_Arts_Centre.jpg",
+        "url": "/img/canadian-international-school-of-hong-kong-2-568a5f503889.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -655,12 +655,12 @@
         "author": "Ceeseven",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School_Leo_Lee_Arts_Centre.jpg",
         "caption": "Canadian International School Leo Lee Arts Centre",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Canadian_International_School_Leo_Lee_Arts_Centre.jpg/500px-Canadian_International_School_Leo_Lee_Arts_Centre.jpg",
+        "thumbUrl": "/img/canadian-international-school-of-hong-kong-2-t-4aad4a1ce60f.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Canadian_International_School_of_Hong_Kong.JPG/1920px-Canadian_International_School_of_Hong_Kong.JPG",
+        "url": "/img/canadian-international-school-of-hong-kong-3-297bc7b70b98.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -668,12 +668,12 @@
         "author": "Exploringlife",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School_of_Hong_Kong.JPG",
         "caption": "Canadian International School of Hong Kong in Sham Wan, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Canadian_International_School_of_Hong_Kong.JPG/500px-Canadian_International_School_of_Hong_Kong.JPG",
+        "thumbUrl": "/img/canadian-international-school-of-hong-kong-3-t-9bf24b10d0a3.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canadian_International_School_201811.jpg",
+        "url": "/img/canadian-international-school-of-hong-kong-4-7063b356d3e3.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 4.0",
@@ -681,7 +681,7 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canadian_International_School_201811.jpg",
         "caption": "Canadian International School",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Canadian_International_School_201811.jpg/500px-Canadian_International_School_201811.jpg",
+        "thumbUrl": "/img/canadian-international-school-of-hong-kong-4-t-dbba0e0047fc.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       }
@@ -713,7 +713,7 @@
       "https://www.facebook.com/HKFIS/",
       "https://www.instagram.com/hkfis/"
     ],
-    "logoUrl": "https://static.wixstatic.com/media/fecce6_b5ddd0a6d1174fe8914bda78e06dfd6a~mv2.png/v1/fill/w_420,h_464,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bilingual_logo_red_bar-01.png",
+    "logoUrl": "/img/logo-french-international-school-hong-kong-f6db2327612c.png",
     "address": {
       "lineEn": "Multiple campuses: Chai Wan, Jardine's Lookout, Blue Pool Road (Hong Kong Island) and Tseung Kwan O",
       "lineZh": null,
@@ -813,7 +813,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/FrenchSchoolHKBluePoolCampus5.jpg/1920px-FrenchSchoolHKBluePoolCampus5.jpg",
+        "url": "/img/french-international-school-hong-kong-0-b48713001dca.jpg",
         "width": 1400,
         "height": 788,
         "licence": "CC0",
@@ -821,12 +821,12 @@
         "author": "WhisperToMe",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:FrenchSchoolHKBluePoolCampus5.jpg",
         "caption": "French International School of Hong Kong Blue Pool Road Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/FrenchSchoolHKBluePoolCampus5.jpg/500px-FrenchSchoolHKBluePoolCampus5.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-0-t-eb776fef931c.jpg",
         "thumbWidth": 480,
         "thumbHeight": 270
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Frenchschooltseungkwano.jpg/1920px-Frenchschooltseungkwano.jpg",
+        "url": "/img/french-international-school-hong-kong-1-7e12d7c45231.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC0",
@@ -834,12 +834,12 @@
         "author": "WhisperToMe",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frenchschooltseungkwano.jpg",
         "caption": "French International School of Hong Kong Tseung Kwan O Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Frenchschooltseungkwano.jpg/500px-Frenchschooltseungkwano.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-1-t-606ab6aafab0.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/HK_SKD_TKO_%E5%B0%87%E8%BB%8D%E6%BE%B3%E5%8D%97_Tseung_Kwan_O_South_%E5%94%90%E8%B3%A2%E8%A1%97_Tong_Yin_Street_Lycee_Francais_%E6%B3%95%E5%9C%8B%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_French_International_School_of_Hong_Kong_Tseung_Kwan_O_Campus_May_2022_Px3_01.jpg/1920px-thumbnail.jpg",
+        "url": "/img/french-international-school-hong-kong-2-f3427abd4228.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -847,12 +847,12 @@
         "author": "Fatlonai Shunhga Shaw",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_SKD_TKO_%E5%B0%87%E8%BB%8D%E6%BE%B3%E5%8D%97_Tseung_Kwan_O_South_%E5%94%90%E8%B3%A2%E8%A1%97_Tong_Yin_Street_Lycee_Francais_%E6%B3%95%E5%9C%8B%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_French_International_School_of_Hong_Kong_Tseung_Kwan_O_Campus_May_2022_Px3_01.jpg",
         "caption": "HK SKD TKO zh:將軍澳南 Tseung Kwan O South zh:唐賢街 Tong Yin Street Lycee Francais 法國國際學校 French International School of Hong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/HK_SKD_TKO_%E5%B0%87%E8%BB%8D%E6%BE%B3%E5%8D%97_Tseung_Kwan_O_South_%E5%94%90%E8%B3%A2%E8%A1%97_Tong_Yin_Street_Lycee_Francais_%E6%B3%95%E5%9C%8B%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_French_International_School_of_Hong_Kong_Tseung_Kwan_O_Campus_May_2022_Px3_01.jpg/500px-thumbnail.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-2-t-369f61de48a7.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/FrenchschoolChaiwan.jpg/1920px-FrenchschoolChaiwan.jpg",
+        "url": "/img/french-international-school-hong-kong-3-03ce6b1ca5e6.jpg",
         "width": 1400,
         "height": 788,
         "licence": "CC BY-SA 3.0",
@@ -860,12 +860,12 @@
         "author": "WhisperToMe",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:FrenchschoolChaiwan.jpg",
         "caption": "French International School of Hong Kong Chai Wan Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/FrenchschoolChaiwan.jpg/500px-FrenchschoolChaiwan.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-3-t-5ac3c8de8ed4.jpg",
         "thumbWidth": 480,
         "thumbHeight": 270
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/French_International_School_TKO_Campus_site_201802.jpg",
+        "url": "/img/french-international-school-hong-kong-4-17261003f313.jpg",
         "width": 1400,
         "height": 934,
         "licence": "CC BY-SA 4.0",
@@ -873,12 +873,12 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_International_School_TKO_Campus_site_201802.jpg",
         "caption": "French International School Victor Segalen of Hong Kong-TKO Campus site",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/French_International_School_TKO_Campus_site_201802.jpg/500px-French_International_School_TKO_Campus_site_201802.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-4-t-c4aab8b51ef5.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/French_International_School_in_Hong_Kong_2017.jpg",
+        "url": "/img/french-international-school-hong-kong-5-c761da9a9277.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 4.0",
@@ -886,12 +886,12 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_International_School_in_Hong_Kong_2017.jpg",
         "caption": "French International School of Hong Kong Jardine's Lookout Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/French_International_School_in_Hong_Kong_2017.jpg/500px-French_International_School_in_Hong_Kong_2017.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-5-t-531a52c72047.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Lyc%C3%A9e_fran%C3%A7ais_de_Hong_Kong.jpg",
+        "url": "/img/french-international-school-hong-kong-6-6dc1a818f843.jpg",
         "width": 1400,
         "height": 956,
         "licence": "CC BY 2.5",
@@ -899,12 +899,12 @@
         "author": "Consulat Général France HK",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lyc%C3%A9e_fran%C3%A7ais_de_Hong_Kong.jpg",
         "caption": "French lycée",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lyc%C3%A9e_fran%C3%A7ais_de_Hong_Kong.jpg/500px-Lyc%C3%A9e_fran%C3%A7ais_de_Hong_Kong.jpg",
+        "thumbUrl": "/img/french-international-school-hong-kong-6-t-6fcfcb1aab54.jpg",
         "thumbWidth": 480,
         "thumbHeight": 328
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Lyc%C3%A9e_fran%C3%A7ais_international%2C_Hong_Kong.JPG",
+        "url": "/img/french-international-school-hong-kong-7-8489e675a3fa.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 3.0",
@@ -912,7 +912,7 @@
         "author": "Tksteven",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lyc%C3%A9e_fran%C3%A7ais_international%2C_Hong_Kong.JPG",
         "caption": "French International School of Hong Kong Jardine's Lookout Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lyc%C3%A9e_fran%C3%A7ais_international%2C_Hong_Kong.JPG/500px-Lyc%C3%A9e_fran%C3%A7ais_international%2C_Hong_Kong.JPG",
+        "thumbUrl": "/img/french-international-school-hong-kong-7-t-7cb7608fe693.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       }
@@ -945,7 +945,7 @@
       "https://www.facebook.com/AustralianInternationalSchoolHongKong",
       "https://hk.linkedin.com/school/australian-international-school-hong-kong"
     ],
-    "logoUrl": "https://www.aishk.edu.hk/Images/assets/logo/logo-crest.svg",
+    "logoUrl": "/img/logo-australian-international-school-hong-kong-969d539ad4b7.svg",
     "address": {
       "lineEn": "3A Norfolk Road, Kowloon Tong, Kowloon, Hong Kong",
       "lineZh": "九龍九龍塘羅福道3A號",
@@ -1019,7 +1019,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Australian_International_School_Hong_Kong.jpg/1920px-Australian_International_School_Hong_Kong.jpg",
+        "url": "/img/australian-international-school-hong-kong-0-a57ce4e264b4.jpg",
         "width": 1400,
         "height": 924,
         "licence": "CC BY-SA 4.0",
@@ -1027,12 +1027,12 @@
         "author": "Exploringlife",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Australian_International_School_Hong_Kong.jpg",
         "caption": "Australian International School in Kowloon Tong, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Australian_International_School_Hong_Kong.jpg/500px-Australian_International_School_Hong_Kong.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-0-t-76304ff44fa0.jpg",
         "thumbWidth": 480,
         "thumbHeight": 317
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/AISHK_School_Field_and_Building.jpg/1920px-AISHK_School_Field_and_Building.jpg",
+        "url": "/img/australian-international-school-hong-kong-1-20030120cdb8.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 4.0",
@@ -1040,12 +1040,12 @@
         "author": "AISHK",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:AISHK_School_Field_and_Building.jpg",
         "caption": "Image of AISHK",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/AISHK_School_Field_and_Building.jpg/500px-AISHK_School_Field_and_Building.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-1-t-ea22df1b9df2.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E7%AA%A9%E6%89%93%E8%80%81%E9%81%93_Waterloo_Road_Australian_International_School_near_%E7%A6%A7%E7%A6%8F%E9%81%93_Hereford_Road_June_2020_SS2_03.jpg/1920px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E7%AA%A9%E6%89%93%E8%80%81%E9%81%93_Waterloo_Road_Australian_International_School_near_%E7%A6%A7%E7%A6%8F%E9%81%93_Hereford_Road_June_2020_SS2_03.jpg",
+        "url": "/img/australian-international-school-hong-kong-2-0cd919853181.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -1053,12 +1053,12 @@
         "author": "Faiytla Chamirue Yegrefudsoi",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E7%AA%A9%E6%89%93%E8%80%81%E9%81%93_Waterloo_Road_Australian_International_School_near_%E7%A6%A7%E7%A6%8F%E9%81%93_Hereford_Road_June_2020_SS2_03.jpg",
         "caption": "HK 九龍塘 Kln Tong 窩打老道 Waterloo Road near 禧福道 Hereford Road in June 2020",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E7%AA%A9%E6%89%93%E8%80%81%E9%81%93_Waterloo_Road_Australian_International_School_near_%E7%A6%A7%E7%A6%8F%E9%81%93_Hereford_Road_June_2020_SS2_03.jpg/500px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E7%AA%A9%E6%89%93%E8%80%81%E9%81%93_Waterloo_Road_Australian_International_School_near_%E7%A6%A7%E7%A6%8F%E9%81%93_Hereford_Road_June_2020_SS2_03.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-2-t-656a324c1b88.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Australian_International_School_Hong_Kong_November_2021_SS2_10.jpg/1920px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Australian_International_School_Hong_Kong_November_2021_SS2_10.jpg",
+        "url": "/img/australian-international-school-hong-kong-3-9179f791ac25.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -1066,12 +1066,12 @@
         "author": "Monk Msingowu 202LU",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Australian_International_School_Hong_Kong_November_2021_SS2_10.jpg",
         "caption": "HK 九龍塘 Kln Tong zh:添福道 Tim Fuk Road in November 2021",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Australian_International_School_Hong_Kong_November_2021_SS2_10.jpg/500px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Australian_International_School_Hong_Kong_November_2021_SS2_10.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-3-t-63951b06d8e4.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/AustralianIntlSchoolhk2.jpg",
+        "url": "/img/australian-international-school-hong-kong-4-c456d010cb3b.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "Public domain",
@@ -1079,12 +1079,12 @@
         "author": "Chong Fat",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:AustralianIntlSchoolhk2.jpg",
         "caption": "香港澳洲國際學校",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/AustralianIntlSchoolhk2.jpg/500px-AustralianIntlSchoolhk2.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-4-t-93dd290b6a84.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/AustralianIntlSchoolhk.jpg",
+        "url": "/img/australian-international-school-hong-kong-5-a8cf876ad28e.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "Public domain",
@@ -1092,7 +1092,7 @@
         "author": "Chong Fat",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:AustralianIntlSchoolhk.jpg",
         "caption": "香港澳洲國際學校",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/AustralianIntlSchoolhk.jpg/500px-AustralianIntlSchoolhk.jpg",
+        "thumbUrl": "/img/australian-international-school-hong-kong-5-t-1097322210c0.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       }
@@ -1122,7 +1122,7 @@
       "https://www.facebook.com/HarrowHK",
       "https://www.instagram.com/harrowhkofficial"
     ],
-    "logoUrl": "https://www.harrowhongkong.hk/wp-content/uploads/2024/10/cropped-Website-Logo_new.png",
+    "logoUrl": "/img/logo-harrow-international-school-hong-kong-47a22a19e669.png",
     "address": {
       "lineEn": "38 Tsing Ying Road, Tuen Mun, Hong Kong",
       "lineZh": "新界屯門青盈路38號",
@@ -1186,7 +1186,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Harrow_International_School_Hong_Kong.JPG/1920px-Harrow_International_School_Hong_Kong.JPG",
+        "url": "/img/harrow-international-school-hong-kong-0-9730792ddc35.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 3.0",
@@ -1194,12 +1194,12 @@
         "author": "水水",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harrow_International_School_Hong_Kong.JPG",
         "caption": "Harrow International School Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Harrow_International_School_Hong_Kong.JPG/500px-Harrow_International_School_Hong_Kong.JPG",
+        "thumbUrl": "/img/harrow-international-school-hong-kong-0-t-d8103bf7ac31.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Harrow_International_School_Hong_Kong_202201.png",
+        "url": "/img/harrow-international-school-hong-kong-1-de67b7475ff5.jpg",
         "width": 1400,
         "height": 744,
         "licence": "CC BY 3.0",
@@ -1207,7 +1207,7 @@
         "author": "Brian 帶你飛",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harrow_International_School_Hong_Kong_202201.png",
         "caption": "哈羅香港國際學校",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Harrow_International_School_Hong_Kong_202201.png/500px-Harrow_International_School_Hong_Kong_202201.png",
+        "thumbUrl": "/img/harrow-international-school-hong-kong-1-t-91bfb73f77ca.jpg",
         "thumbWidth": 480,
         "thumbHeight": 255
       }
@@ -1239,7 +1239,7 @@
       "https://www.youtube.com/KellettSchoolHK",
       "https://www.facebook.com/KellettSchool"
     ],
-    "logoUrl": "https://www.kellettschool.com/Images/img/global/logo.png",
+    "logoUrl": "/img/logo-kellett-school-1c7e50eef66c.png",
     "address": {
       "lineEn": "2 Wah Lok Path, Wah Fu, Pok Fu Lam, Hong Kong (Preparatory Campus); 7 Lam Hing Street, Kowloon Bay, Hong Kong (Preparatory and Senior Campus)",
       "lineZh": "香港華富華樂徑2號（小學校舍）；九龍九龍灣臨興街7號（小學及中學校舍）",
@@ -1305,7 +1305,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg/1920px-Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg",
+        "url": "/img/kellett-school-0-d5c319f95722.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -1313,12 +1313,12 @@
         "author": "LN9267",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kellett_School_(Pokfulam_Campus)_28-11-2022.jpg",
         "caption": "​This photo is taken in Pok Fu Lam.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg/500px-Kellett_School_%28Pokfulam_Campus%29_28-11-2022.jpg",
+        "thumbUrl": "/img/kellett-school-0-t-ee9735ae050c.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/HK_%E8%8F%AF%E5%AF%8C%E9%82%A8_Wah_Fu_Estate_%E8%8F%AF%E5%AF%8C%E9%81%93_Wah_Fu_Road_%E8%8F%AF%E6%A8%82%E5%BE%91_Wah_Lok_Path_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_Kellett_School_March_2022_SS2_02.jpg/1920px-HK_%E8%8F%AF%E5%AF%8C%E9%82%A8_Wah_Fu_Estate_%E8%8F%AF%E5%AF%8C%E9%81%93_Wah_Fu_Road_%E8%8F%AF%E6%A8%82%E5%BE%91_Wah_Lok_Path_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_Kellett_School_March_2022_SS2_02.jpg",
+        "url": "/img/kellett-school-1-b3cd5d049e84.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 4.0",
@@ -1326,12 +1326,12 @@
         "author": "MANEG CHASHINGA",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_%E8%8F%AF%E5%AF%8C%E9%82%A8_Wah_Fu_Estate_%E8%8F%AF%E5%AF%8C%E9%81%93_Wah_Fu_Road_%E8%8F%AF%E6%A8%82%E5%BE%91_Wah_Lok_Path_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_Kellett_School_March_2022_SS2_02.jpg",
         "caption": "HK zh:華富邨 Wah Fu Estate 華富道 Wah Fu Road 華樂徑 Wah Lok Path 啟歷學校 Kellett School in March 2022",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/HK_%E8%8F%AF%E5%AF%8C%E9%82%A8_Wah_Fu_Estate_%E8%8F%AF%E5%AF%8C%E9%81%93_Wah_Fu_Road_%E8%8F%AF%E6%A8%82%E5%BE%91_Wah_Lok_Path_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_Kellett_School_March_2022_SS2_02.jpg/500px-HK_%E8%8F%AF%E5%AF%8C%E9%82%A8_Wah_Fu_Estate_%E8%8F%AF%E5%AF%8C%E9%81%93_Wah_Fu_Road_%E8%8F%AF%E6%A8%82%E5%BE%91_Wah_Lok_Path_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_Kellett_School_March_2022_SS2_02.jpg",
+        "thumbUrl": "/img/kellett-school-1-t-693e04d31110.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/HK_Wah_Fu_Estate_%E8%8F%AF%E6%99%AF%E8%A1%97_Wah_King_Street_Kellet_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_British_International_School_Mar-2012_Ip4.jpg/1920px-HK_Wah_Fu_Estate_%E8%8F%AF%E6%99%AF%E8%A1%97_Wah_King_Street_Kellet_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_British_International_School_Mar-2012_Ip4.jpg",
+        "url": "/img/kellett-school-2-b638f2b1f6ee.jpg",
         "width": 1400,
         "height": 1046,
         "licence": "CC BY-SA 3.0",
@@ -1339,12 +1339,12 @@
         "author": "Staunbrnaw",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Wah_Fu_Estate_%E8%8F%AF%E6%99%AF%E8%A1%97_Wah_King_Street_Kellet_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_British_International_School_Mar-2012_Ip4.jpg",
         "caption": "British International School, Wah Lok Path, Wah King Street, Wah Fu Estate, Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/HK_Wah_Fu_Estate_%E8%8F%AF%E6%99%AF%E8%A1%97_Wah_King_Street_Kellet_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_British_International_School_Mar-2012_Ip4.jpg/500px-HK_Wah_Fu_Estate_%E8%8F%AF%E6%99%AF%E8%A1%97_Wah_King_Street_Kellet_%E5%95%9F%E6%AD%B7%E5%AD%B8%E6%A0%A1_British_International_School_Mar-2012_Ip4.jpg",
+        "thumbUrl": "/img/kellett-school-2-t-ac3195456d90.jpg",
         "thumbWidth": 480,
         "thumbHeight": 359
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kellett_School_201406.jpg/1920px-Kellett_School_201406.jpg",
+        "url": "/img/kellett-school-3-295f296f159d.jpg",
         "width": 1400,
         "height": 934,
         "licence": "CC BY 3.0",
@@ -1352,12 +1352,12 @@
         "author": "Wing1990hk",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kellett_School_201406.jpg",
         "caption": "Kellett School 啟歷學校",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kellett_School_201406.jpg/500px-Kellett_School_201406.jpg",
+        "thumbUrl": "/img/kellett-school-3-t-61c68a32afbd.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Kellettintlschoolhkprimary.jpg/960px-Kellettintlschoolhkprimary.jpg",
+        "url": "/img/kellett-school-4-51f8ff6fb8a4.jpg",
         "width": 1400,
         "height": 1192,
         "licence": "CC BY-SA 3.0",
@@ -1365,7 +1365,7 @@
         "author": "WhisperToMe",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kellettintlschoolhkprimary.jpg",
         "caption": "Kellett School, Pok Fu Lam Campus",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Kellettintlschoolhkprimary.jpg/500px-Kellettintlschoolhkprimary.jpg",
+        "thumbUrl": "/img/kellett-school-4-t-bdbf0cb0b58e.jpg",
         "thumbWidth": 480,
         "thumbHeight": 409
       }
@@ -1393,7 +1393,7 @@
     "introZh": "耀中國際學校於1932年創辦，是一所男女兼收的雙語日校，於九龍塘及將軍澳合共設有九個校舍。學校招收由六個月大的幼兒至十三年級學生，並於中學階段開辦IGCSE及國際文憑大學預科課程，實行中英雙語教學。",
     "officialWebsite": "https://www.ycis-hk.com",
     "officialSocial": [],
-    "logoUrl": "https://www.ycis-hk.com/images/logo/YCIS-PLogo-Vertical-RGB-Colour-Sep2021.svg",
+    "logoUrl": "/img/logo-yew-chung-international-school-of-hong-kong-b2395a2ccbff.svg",
     "address": {
       "lineEn": "Multiple campuses in Kowloon Tong and Tseung Kwan O, Hong Kong",
       "lineZh": "九龍九龍塘森麻實道22號等多個校舍（九龍塘及將軍澳）",
@@ -1435,7 +1435,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg/1920px-Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg",
+        "url": "/img/yew-chung-international-school-of-hong-kong-0-78021d0a3bd9.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 4.0",
@@ -1443,12 +1443,12 @@
         "author": "Prosperity Horizons",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg",
         "caption": "Yew Chung International Secondary School in Kowloon Tong, Hong Kong.",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg/500px-Yew_Chung_International_School_of_Hong_Kong_-_Secondary.jpg",
+        "thumbUrl": "/img/yew-chung-international-school-of-hong-kong-0-t-6ce036267118.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_06.jpg/1920px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_06.jpg",
+        "url": "/img/yew-chung-international-school-of-hong-kong-1-ab9f709552c8.jpg",
         "width": 1400,
         "height": 1867,
         "licence": "CC BY-SA 4.0",
@@ -1456,12 +1456,12 @@
         "author": "Monk Msingowu 202LU",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_(Hong_Kong)_November_2021_SS2_06.jpg",
         "caption": "HK 九龍塘 Kln Tong zh:添福道 Tim Fuk Road in November 2021",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_06.jpg/500px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_06.jpg",
+        "thumbUrl": "/img/yew-chung-international-school-of-hong-kong-1-t-90c41693d062.jpg",
         "thumbWidth": 480,
         "thumbHeight": 640
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_08.jpg/1920px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_08.jpg",
+        "url": "/img/yew-chung-international-school-of-hong-kong-2-69c09a4d81bb.jpg",
         "width": 1400,
         "height": 1867,
         "licence": "CC BY-SA 4.0",
@@ -1469,12 +1469,12 @@
         "author": "Monk Msingowu 202LU",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_(Hong_Kong)_November_2021_SS2_08.jpg",
         "caption": "HK 九龍塘 Kln Tong zh:添福道 Tim Fuk Road in November 2021",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_08.jpg/500px-HK_%E4%B9%9D%E9%BE%8D%E5%A1%98_Kln_Tong_%E6%B7%BB%E7%A6%8F%E9%81%93_Tim_Fuk_Road_Yew_Chung_International_School_%28Hong_Kong%29_November_2021_SS2_08.jpg",
+        "thumbUrl": "/img/yew-chung-international-school-of-hong-kong-2-t-b44b7968b2ce.jpg",
         "thumbWidth": 480,
         "thumbHeight": 640
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/HK_Kln_Tong_%E5%A4%9A%E7%A6%8F%E9%81%93_To_Fuk_Road_%E9%A6%99%E6%B8%AF%E8%80%80%E4%B8%AD%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_Yew_Chung_International_School_entrance_stairs_March-2012.jpg/1920px-HK_Kln_Tong_%E5%A4%9A%E7%A6%8F%E9%81%93_To_Fuk_Road_%E9%A6%99%E6%B8%AF%E8%80%80%E4%B8%AD%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_Yew_Chung_International_School_entrance_stairs_March-2012.jpg",
+        "url": "/img/yew-chung-international-school-of-hong-kong-3-c5c02cb86c00.jpg",
         "width": 1400,
         "height": 1874,
         "licence": "CC BY-SA 3.0",
@@ -1482,12 +1482,12 @@
         "author": "Wimgoalim",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_Kln_Tong_%E5%A4%9A%E7%A6%8F%E9%81%93_To_Fuk_Road_%E9%A6%99%E6%B8%AF%E8%80%80%E4%B8%AD%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_Yew_Chung_International_School_entrance_stairs_March-2012.jpg",
         "caption": "Yew Chung International School, zh:九龍塘 多福道 To Fuk Road, 香港耀中國際學校, Kowloon Tong, Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/HK_Kln_Tong_%E5%A4%9A%E7%A6%8F%E9%81%93_To_Fuk_Road_%E9%A6%99%E6%B8%AF%E8%80%80%E4%B8%AD%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_Yew_Chung_International_School_entrance_stairs_March-2012.jpg/500px-HK_Kln_Tong_%E5%A4%9A%E7%A6%8F%E9%81%93_To_Fuk_Road_%E9%A6%99%E6%B8%AF%E8%80%80%E4%B8%AD%E5%9C%8B%E9%9A%9B%E5%AD%B8%E6%A0%A1_Yew_Chung_International_School_entrance_stairs_March-2012.jpg",
+        "thumbUrl": "/img/yew-chung-international-school-of-hong-kong-3-t-deb52eb97b41.jpg",
         "thumbWidth": 480,
         "thumbHeight": 643
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/HK_YewChungInternationalSchool_Secondary.JPG",
+        "url": "/img/yew-chung-international-school-of-hong-kong-4-7c1249b4f12d.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY-SA 3.0",
@@ -1495,7 +1495,7 @@
         "author": "Chong Fat",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_YewChungInternationalSchool_Secondary.JPG",
         "caption": "Yew Chung International School in Hong Kong (secondary)",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/HK_YewChungInternationalSchool_Secondary.JPG/500px-HK_YewChungInternationalSchool_Secondary.JPG",
+        "thumbUrl": "/img/yew-chung-international-school-of-hong-kong-4-t-be9a58e541ed.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       }
@@ -1527,7 +1527,7 @@
       "https://www.facebook.com/NAISHongKong",
       "https://www.instagram.com/naishongkong"
     ],
-    "logoUrl": "https://web.archive.org/web/20260101004925im_/https://www.nordangliaeducation.com/nais-hong-kong/-/media/nais-hong-kong/nais_hk_logo_black.png?h=48&iar=0&w=286&rev=00bc35cbf9314dde80fd726b31cc4a8a&hash=F615B8CCA312862ED393DF0413BE753B",
+    "logoUrl": "/img/logo-nord-anglia-international-school-hong-kong-18788aaaf0af.png",
     "address": {
       "lineEn": "Sai Kung (Early Years Campus), Lam Tin (Primary Campus), and Kwun Tong (Secondary Campus), Hong Kong",
       "lineZh": null,
@@ -1657,7 +1657,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/NAIS_-_August_2015.JPG/1920px-NAIS_-_August_2015.JPG",
+        "url": "/img/nord-anglia-international-school-hong-kong-0-236da7bbc91b.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY-SA 4.0",
@@ -1665,12 +1665,12 @@
         "author": "Hkpupil",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAIS_-_August_2015.JPG",
         "caption": "Nord Anglia International School Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/NAIS_-_August_2015.JPG/500px-NAIS_-_August_2015.JPG",
+        "thumbUrl": "/img/nord-anglia-international-school-hong-kong-0-t-339dfa98bd52.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       },
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nord_Anglia_International_School_Hong_Kong_20151122.jpg/1920px-Nord_Anglia_International_School_Hong_Kong_20151122.jpg",
+        "url": "/img/nord-anglia-international-school-hong-kong-1-0964ee72e587.jpg",
         "width": 1400,
         "height": 933,
         "licence": "CC BY 3.0",
@@ -1678,7 +1678,7 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nord_Anglia_International_School_Hong_Kong_20151122.jpg",
         "caption": "Nord Anglia International School Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nord_Anglia_International_School_Hong_Kong_20151122.jpg/500px-Nord_Anglia_International_School_Hong_Kong_20151122.jpg",
+        "thumbUrl": "/img/nord-anglia-international-school-hong-kong-1-t-bc3bf428fa7e.jpg",
         "thumbWidth": 480,
         "thumbHeight": 320
       }
@@ -1708,7 +1708,7 @@
       "https://www.facebook.com/MalvernHK",
       "https://www.instagram.com/malvernhk"
     ],
-    "logoUrl": "https://web.archive.org/web/20260101093254im_/https://www.malverncollege.org.hk/wp-content/themes/malvernhktheme/malvernhtml/docs/dist/img/logo.png",
+    "logoUrl": "/img/logo-malvern-college-hong-kong-e9771d389f50.png",
     "address": {
       "lineEn": "Fo Chun Road, Pak Shek Kok, Tai Po, New Territories, Hong Kong",
       "lineZh": "新界大埔白石角科進路3號",
@@ -1773,7 +1773,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Malvern_College_Hong_Kong_202102.jpg",
+        "url": "/img/malvern-college-hong-kong-0-524e73f6aefb.jpg",
         "width": 1400,
         "height": 1050,
         "licence": "CC BY 4.0",
@@ -1781,7 +1781,7 @@
         "author": "Wpcpey",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malvern_College_Hong_Kong_202102.jpg",
         "caption": "Malvern College Hong Kong",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Malvern_College_Hong_Kong_202102.jpg/500px-Malvern_College_Hong_Kong_202102.jpg",
+        "thumbUrl": "/img/malvern-college-hong-kong-0-t-879d654dd9e7.jpg",
         "thumbWidth": 480,
         "thumbHeight": 360
       }
@@ -1812,7 +1812,7 @@
       "https://www.facebook.com/StamfordAmericanSchoolHongKong",
       "https://www.instagram.com/stamford_hk"
     ],
-    "logoUrl": "https://www.sais.edu.hk/wp-content/uploads/sites/19/2025/05/Stamford_HK_Horiz_Logo_200313_RGB-02-1.webp",
+    "logoUrl": "/img/logo-stamford-american-school-hong-kong-534beb598957.webp",
     "address": {
       "lineEn": "25 Man Fuk Road, Ho Man Tin, Kowloon, Hong Kong (Ho Man Tin Campus); G/F to 2/F, Imperial Cullinan, 10 Hoi Fai Road, Tai Kok Tsui, Kowloon, Hong Kong (West Kowloon Campus)",
       "lineZh": null,
@@ -1881,7 +1881,7 @@
     "verificationStatus": "unverified",
     "photos": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Stamford_American_School_HK.jpg",
+        "url": "/img/stamford-american-school-hong-kong-0-fed66b95d6e8.jpg",
         "width": 1400,
         "height": 1346,
         "licence": "CC BY-SA 4.0",
@@ -1889,7 +1889,7 @@
         "author": "StamfordRegina",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamford_American_School_HK.jpg",
         "caption": "Located conveniently in the Heart of Kowloon Stamford American School is located in the heart of Kowloon, just a 5-minut",
-        "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stamford_American_School_HK.jpg/500px-Stamford_American_School_HK.jpg",
+        "thumbUrl": "/img/stamford-american-school-hong-kong-0-t-bcecba3c4da5.jpg",
         "thumbWidth": 480,
         "thumbHeight": 461
       }

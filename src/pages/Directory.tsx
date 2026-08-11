@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { schools, getDistricts, getCurricula, getRegions } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 
 function toggle<T>(list: T[], value: T): T[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
@@ -9,6 +10,12 @@ function toggle<T>(list: T[], value: T): T[] {
 
 export function Directory() {
   const { t, language } = useLanguage();
+  useSeo({
+    title: `${t("directory.title")} — ${t("header.brand")}`,
+    description: t("directory.subtitle"),
+    path: "/schools",
+  });
+
   const [query, setQuery] = useState("");
   const [regions, setRegions] = useState<string[]>([]);
   const [districts, setDistricts] = useState<string[]>([]);

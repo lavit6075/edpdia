@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import type { School } from "../types/school";
 import { getSchoolBySlug, localizeAddress, localizeIntro, localizeSchoolName } from "../lib/schools";
 import { Tag } from "../components/school/Tag";
 import { VerificationBadge } from "../components/school/VerificationBadge";
@@ -9,31 +10,67 @@ import { SchoolLogo } from "../components/school/SchoolLogo";
 import { CampusPhoto } from "../components/school/CampusPhoto";
 import { PhotoStrip } from "../components/school/PhotoStrip";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
+import { SITE_URL } from "../lib/seo";
 
+/**
+ * Split in two so hooks are never called conditionally: the outer component resolves the slug
+ * and renders the not-found state, the inner one only ever runs with a school in hand.
+ */
 export function SchoolProfile() {
   const { slug } = useParams();
-  const { language, t } = useLanguage();
   const school = slug ? getSchoolBySlug(slug) : undefined;
+  if (!school) return <SchoolNotFound />;
+  return <SchoolProfileView school={school} />;
+}
 
-  if (!school) {
-    return (
-      <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6">
-        <h1 className="text-2xl font-semibold text-neutral-900">{t("profile.notFoundTitle")}</h1>
-        <p className="mt-2 text-neutral-600">{t("profile.notFoundBody")}</p>
-        <Link
-          to="/schools"
-          className="mt-6 inline-block rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800"
-        >
-          {t("profile.backToDirectoryButton")}
-        </Link>
-      </div>
-    );
-  }
+function SchoolNotFound() {
+  const { t } = useLanguage();
+  useSeo({
+    title: `${t("profile.notFoundTitle")} — ${t("header.brand")}`,
+    description: t("profile.notFoundBody"),
+    path: "/schools",
+  });
+  return (
+    <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6">
+      <h1 className="text-2xl font-semibold text-neutral-900">{t("profile.notFoundTitle")}</h1>
+      <p className="mt-2 text-neutral-600">{t("profile.notFoundBody")}</p>
+      <Link
+        to="/schools"
+        className="mt-6 inline-block rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800"
+      >
+        {t("profile.backToDirectoryButton")}
+      </Link>
+    </div>
+  );
+}
+
+function SchoolProfileView({ school }: { school: School }) {
+  const { language, t } = useLanguage();
 
   const name = localizeSchoolName(school, language);
   const intro = localizeIntro(school, language);
   const address = localizeAddress(school, language);
   const secondaryName = language === "en" ? school.nameZh : name.isFallback ? null : school.nameEn;
+
+  const lead = school.photos[0];
+  const schoolLd = {
+    "@context": "https://schema.org",
+    "@type": "School",
+    name: school.nameEn,
+    ...(school.nameZh ? { alternateName: school.nameZh } : {}),
+    description: school.introEn,
+    url: `${SITE_URL}/schools/${school.slug}`,
+    sameAs: [school.officialWebsite, ...school.officialSocial].filter(Boolean),
+    ...(lead ? { image: `${SITE_URL}${lead.url}` } : {}),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: school.address.lineEn,
+      addressLocality: school.district,
+      addressRegion: school.region,
+      addressCountry: "HK",
+    },
+  };
 
   const sections = [
     { id: "overview", label: t("profile.sectionOverview") },
@@ -42,6 +79,15 @@ export function SchoolProfile() {
     { id: "achievements", label: t("profile.sectionAchievements") },
     { id: "sources", label: t("profile.sectionSources") },
   ];
+
+  useSeo({
+    title: `${name.text} — ${t("header.brand")}`,
+    description: intro.text.slice(0, 155),
+    path: `/schools/${school.slug}`,
+    image: lead?.url,
+    type: "article",
+    jsonLd: schoolLd,
+  });
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">

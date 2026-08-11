@@ -1,11 +1,27 @@
 import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { FAQ_ENTRIES } from "../lib/faqData";
+import { useSeo } from "../hooks/useSeo";
 
 export function Faq() {
   const { t, language } = useLanguage();
   const zh = language === "zh-HK";
   const [openId, setOpenId] = useState<string | null>(FAQ_ENTRIES[0]?.id ?? null);
+
+  useSeo({
+    title: `${t("faqPage.heroTitle")} — ${t("header.brand")}`,
+    description: t("faqPage.heroSubtitle"),
+    path: "/faq",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: FAQ_ENTRIES.map((e) => ({
+        "@type": "Question",
+        name: zh ? e.questionZh : e.questionEn,
+        acceptedAnswer: { "@type": "Answer", text: zh ? e.answerZh : e.answerEn },
+      })),
+    },
+  });
 
   return (
     <div>

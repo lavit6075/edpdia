@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 import { CHECKLIST_ITEMS, EXAM_TYPES, PROCESS_STEPS } from "../lib/admissionsGuideData";
 import { DecorativeBanner } from "../components/DecorativeBanner";
 import { DECORATIVE_IMAGES } from "../lib/decorativeImages";
 
 export function Admissions() {
   const { t, language } = useLanguage();
+  useSeo({
+    title: `${t("admissionsPage.heroTitle")} — ${t("header.brand")}`,
+    description: t("admissionsPage.heroSubtitle").slice(0, 155),
+    path: "/admissions",
+  });
+
   const zh = language === "zh-HK";
 
   return (

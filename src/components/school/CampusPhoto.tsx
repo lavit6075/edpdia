@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { SchoolPhoto } from "../../types/school";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { galleryAlt } from "../../lib/photoAlt";
 import { PhotoCredit } from "./PhotoCredit";
 
 interface CampusPhotoProps {
@@ -34,7 +35,7 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
           loading="lazy"
           decoding="async"
           onError={() => setFailed(true)}
-          alt={photo.caption || t("profile.photoAlt").replace("{school}", schoolName)}
+          alt={galleryAlt(photo, schoolName, t("profile.photoAlt").replace("{school}", schoolName))}
           className="h-full w-full object-cover"
         />
       </div>

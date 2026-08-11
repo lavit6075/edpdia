@@ -89,13 +89,30 @@ for (const [i, school] of schools.entries()) {
     errors.push(`${label}: has fee figures but no sources[] entries`);
   }
 
+  if (!Array.isArray(school.photos) || school.photos.length === 0) {
+    warnings.push(`${label}: no photos`);
+  } else {
+    for (const [i, p] of school.photos.entries()) {
+      for (const field of ["url", "thumbUrl", "licence", "author", "sourceUrl"]) {
+        if (!p[field]) errors.push(`${label}: photos[${i}] missing ${field}`);
+      }
+      for (const field of ["url", "thumbUrl"]) {
+        if (p[field] && !/^(\/img\/|https:\/\/)/.test(p[field])) {
+          errors.push(`${label}: photos[${i}].${field} must be a /img/ path or https:// URL`);
+        }
+      }
+    }
+  }
+
   if (!["verified", "unverified"].includes(school.verificationStatus)) {
     errors.push(`${label}: invalid verificationStatus "${school.verificationStatus}"`);
   }
 
   if (school.logoUrl !== null) {
-    if (typeof school.logoUrl !== "string" || !/^https:\/\/.+/.test(school.logoUrl)) {
-      errors.push(`${label}: logoUrl must be null or an https:// URL`);
+    // Images are self-hosted under /img/. Remote https:// is still accepted so a newly added
+    // school can be committed before the localise step runs.
+    if (typeof school.logoUrl !== "string" || !/^(\/img\/|https:\/\/).+/.test(school.logoUrl)) {
+      errors.push(`${label}: logoUrl must be null, a /img/ path, or an https:// URL`);
     }
   } else {
     warnings.push(`${label}: no logoUrl — will render the generated placeholder only`);

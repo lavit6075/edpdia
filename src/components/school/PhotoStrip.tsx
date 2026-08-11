@@ -1,5 +1,6 @@
 import type { SchoolPhoto } from "../../types/school";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { galleryAlt } from "../../lib/photoAlt";
 
 interface PhotoStripProps {
   photos: SchoolPhoto[];
@@ -44,7 +45,7 @@ export function PhotoStrip({ photos, schoolName }: PhotoStripProps) {
                 height={photo.thumbHeight}
                 loading="lazy"
                 decoding="async"
-                alt={photo.caption || t("profile.photoAlt").replace("{school}", schoolName)}
+                alt={galleryAlt(photo, schoolName, t("profile.photoAlt").replace("{school}", schoolName))}
                 className="h-28 w-auto rounded-md border border-neutral-200 object-cover transition-opacity duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-85"
               />
               <span className="mt-1 block max-w-[15rem] text-[11px] leading-tight text-neutral-400">

@@ -231,7 +231,6 @@
   "resourcesPage": {
     "heroTitle": "Resources & News",
     "heroSubtitle": "Articles to help you navigate Hong Kong's international school landscape.",
-    "readMore": "Read more →",
     "disclaimer": "These are general educational articles written by Edpdia, not news reporting or advice specific to any school. Placeholder content — see the About page for our sourcing approach."
   },
   "faqPage": {
@@ -255,5 +254,8 @@
     "title": "Page not found",
     "body": "The page you're looking for doesn't exist.",
     "backHome": "Back to homepage"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
   }
 }

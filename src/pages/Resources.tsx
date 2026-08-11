@@ -1,10 +1,17 @@
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 import { RESOURCE_ARTICLES } from "../lib/resourcesData";
 import { DecorativeBanner } from "../components/DecorativeBanner";
 import { DECORATIVE_IMAGES } from "../lib/decorativeImages";
 
 export function Resources() {
   const { t, language } = useLanguage();
+  useSeo({
+    title: `${t("resourcesPage.heroTitle")} — ${t("header.brand")}`,
+    description: t("resourcesPage.heroSubtitle"),
+    path: "/resources",
+  });
+
   const zh = language === "zh-HK";
 
   return (
@@ -36,9 +43,6 @@ export function Resources() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
                 {zh ? article.excerptZh : article.excerptEn}
               </p>
-              <span className="mt-4 text-sm font-semibold text-neutral-300" aria-disabled="true">
-                {t("resourcesPage.readMore")}
-              </span>
             </article>
           ))}
         </div>

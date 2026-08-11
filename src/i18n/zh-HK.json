@@ -231,7 +231,6 @@
   "resourcesPage": {
     "heroTitle": "資源與新聞",
     "heroSubtitle": "助你了解香港國際學校生態的文章。",
-    "readMore": "閱讀更多 →",
     "disclaimer": "以上為 Edpdia 撰寫的一般教育性文章,並非新聞報道或針對個別學校的建議。此為預留內容——我們的資料來源方針請見「關於我們」頁面。"
   },
   "faqPage": {
@@ -255,5 +254,8 @@
     "title": "找不到頁面",
     "body": "你所查找的頁面並不存在。",
     "backHome": "返回主頁"
+  },
+  "a11y": {
+    "skipToContent": "跳至主要內容"
   }
 }
