@@ -32,7 +32,13 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
           src={photo.url}
           width={photo.width}
           height={photo.height}
-          loading="lazy"
+          // Eager + high priority, NOT lazy. This is the LCP element on every profile: a large
+          // image high in the document. `loading="lazy"` defers it until layout has run and the
+          // lazy-load threshold is evaluated, which on a throttled connection cost ~1.4s of LCP
+          // for nothing — the image is above the fold, so it was never going to be skipped.
+          // fetchpriority="high" additionally jumps it ahead of the CSS/JS the preload scanner
+          // finds alongside it. Every OTHER image on the page stays lazy.
+          fetchPriority="high"
           decoding="async"
           onError={() => setFailed(true)}
           alt={galleryAlt(photo, schoolName, t("profile.photoAlt").replace("{school}", schoolName))}

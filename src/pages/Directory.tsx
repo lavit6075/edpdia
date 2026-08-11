@@ -3,6 +3,7 @@ import { schools, getDistricts, getCurricula, getRegions } from "../lib/schools"
 import { SchoolCard } from "../components/school/SchoolCard";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useSeo } from "../hooks/useSeo";
+import { SITE_URL } from "../lib/seo";
 
 function toggle<T>(list: T[], value: T): T[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
@@ -14,6 +15,27 @@ export function Directory() {
     title: `${t("directory.title")} — ${t("header.brand")}`,
     description: t("directory.subtitle"),
     path: "/schools",
+    // Deliberately the FULL set, not the filtered view. Filters are client state that never
+    // changes the URL, so the canonical document at /schools is the whole directory; emitting the
+    // filtered subset would describe a page no crawler can reach. Each entry is a plain url + name
+    // pointing at the profile — the profile carries the School type and the sourced detail. No
+    // rating, review or aggregate properties: schema.org offers them, we have nothing to put in
+    // them, and inventing them is exactly the rankings-by-the-back-door the site refuses.
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${t("directory.title")} — ${t("header.brand")}`,
+      description: t("directory.subtitle"),
+      url: `${SITE_URL}/schools`,
+      numberOfItems: schools.length,
+      itemListOrder: "https://schema.org/ItemListUnordered",
+      itemListElement: schools.map((s, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE_URL}/schools/${s.slug}`,
+        name: s.nameEn,
+      })),
+    },
   });
 
   const [query, setQuery] = useState("");
