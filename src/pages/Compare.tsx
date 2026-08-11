@@ -10,6 +10,7 @@ import {
 } from "../lib/schools";
 import { formatHKD, NotPublished } from "../components/school/NotPublished";
 import { VerificationBadge } from "../components/school/VerificationBadge";
+import { useSeo } from "../hooks/useSeo";
 
 function parseSlugs(param: string | null): string[] {
   return (param ?? "")
@@ -22,6 +23,16 @@ export function Compare() {
   const { t, language } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const { compareList, setCompareList } = useCompare();
+
+  // noIndex: the page is a rendering of whatever slugs are in ?schools=, so there is no single
+  // document to index and no honest canonical to point at. Still gets a title and description so
+  // a shared link reads sensibly in a browser tab or chat unfurl.
+  useSeo({
+    title: `${t("compare.title")} — ${t("header.brand")}`,
+    description: t("compare.subtitle"),
+    path: "/compare",
+    noIndex: true,
+  });
 
   const urlSlugs = useMemo(() => parseSlugs(searchParams.get("schools")), [searchParams]);
 

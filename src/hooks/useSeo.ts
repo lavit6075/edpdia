@@ -9,6 +9,8 @@ interface SeoOptions {
   image?: string;
   type?: "website" | "article";
   jsonLd?: object | object[] | null;
+  /** See applyMeta — for views whose content comes from the query string or localStorage. */
+  noIndex?: boolean;
 }
 
 /**
@@ -19,7 +21,7 @@ interface SeoOptions {
  * even though both languages currently share one URL (see README — real /zh-HK/ routes are a
  * separate, larger piece of work).
  */
-export function useSeo({ title, description, path, image, type, jsonLd = null }: SeoOptions) {
+export function useSeo({ title, description, path, image, type, jsonLd = null, noIndex = false }: SeoOptions) {
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -29,11 +31,12 @@ export function useSeo({ title, description, path, image, type, jsonLd = null }:
       path,
       image,
       type,
+      noIndex,
       locale: language === "zh-HK" ? "zh_HK" : "en_HK",
     });
     applyJsonLd(jsonLd);
     return () => applyJsonLd(null);
     // jsonLd is an object literal at most call sites; serialise so we don't loop on identity.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title, description, path, image, type, language, JSON.stringify(jsonLd)]);
+  }, [title, description, path, image, type, noIndex, language, JSON.stringify(jsonLd)]);
 }

@@ -3,9 +3,19 @@ import { useShortlist } from "../context/ShortlistContext";
 import { getSchoolBySlug } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
 import { useLanguage } from "../i18n/LanguageContext";
+import { useSeo } from "../hooks/useSeo";
 
 export function Shortlist() {
   const { t } = useLanguage();
+
+  // noIndex: contents come from the visitor's own localStorage, so the prerendered version is an
+  // empty list. Indexing that would list a permanently empty page against a useful-sounding title.
+  useSeo({
+    title: `${t("shortlist.title")} — ${t("header.brand")}`,
+    description: t("shortlist.subtitle"),
+    path: "/shortlist",
+    noIndex: true,
+  });
   const { shortlist } = useShortlist();
   const schools = shortlist
     .map((slug) => getSchoolBySlug(slug))

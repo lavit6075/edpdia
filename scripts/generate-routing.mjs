@@ -31,9 +31,15 @@ const STATIC_ROUTES = [
   { p: "/about", pr: "0.6", cf: "monthly" },
   { p: "/faq", pr: "0.6", cf: "monthly" },
   { p: "/contact", pr: "0.5", cf: "yearly" },
-  { p: "/compare", pr: "0.4", cf: "monthly" },
-  { p: "/shortlist", pr: "0.3", cf: "yearly" },
 ];
+
+/**
+ * Prerendered and served 200, but never listed in the sitemap and marked noindex in-page.
+ * Both render whatever is in the URL query or the visitor's localStorage, so the prerendered
+ * copy is an empty comparison and an empty shortlist. Advertising those in a sitemap invites
+ * crawlers to index a permanently empty page under a useful-sounding title.
+ */
+const NOINDEX_ROUTES = [{ p: "/compare" }, { p: "/shortlist" }];
 
 const schoolRoutes = schools.map((s) => ({
   p: `/schools/${s.slug}`,
@@ -42,13 +48,16 @@ const schoolRoutes = schools.map((s) => ({
   lastmod: s.lastVerified || null,
 }));
 
-const all = [...STATIC_ROUTES, ...schoolRoutes];
+/** Everything that gets a 200 and a prerendered file. */
+const all = [...STATIC_ROUTES, ...schoolRoutes, ...NOINDEX_ROUTES];
+/** Subset that also belongs in the sitemap. */
+const indexable = [...STATIC_ROUTES, ...schoolRoutes];
 
 // ---------- sitemap.xml ----------
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
-${all
+${indexable
   .map(
     (r) => `  <url>
     <loc>${SITE}${r.p}</loc>
@@ -97,8 +106,7 @@ writeFileSync(
 );
 
 // ---------- vercel.json ----------
-const appRoutes = all.filter((r) => r.p !== "/compare" && r.p !== "/shortlist").map((r) => r.p);
-const spaPaths = [...appRoutes, "/compare", "/shortlist"];
+const spaPaths = all.map((r) => r.p);
 
 const vercel = {
   $schema: "https://openapi.vercel.sh/vercel.json",
@@ -119,6 +127,6 @@ const vercel = {
 };
 writeFileSync(path.join(ROOT, "vercel.json"), JSON.stringify(vercel, null, 2) + "\n", "utf-8");
 
-console.log(`sitemap.xml: ${all.length} URLs`);
+console.log(`sitemap.xml: ${indexable.length} URLs (${NOINDEX_ROUTES.length} routes noindex, excluded)`);
 console.log(`robots.txt written`);
 console.log(`vercel.json: ${spaPaths.length} explicit routes + filesystem + 404 catch-all`);

@@ -4,11 +4,11 @@ export const SITE_NAME = "Edpdia";
 /**
  * Imperatively manage <head> tags for the current route.
  *
- * IMPORTANT CAVEAT: this is a client-side SPA, so these tags are written after JS runs.
- * Googlebot renders JS and will see them. Most social-card scrapers (Facebook, Twitter/X,
- * LinkedIn, Slack, WhatsApp) do NOT execute JS — they read the raw HTML response, which is
- * the same static index.html for every route. og:/twitter: tags therefore will not produce
- * per-page link previews until the site is prerendered. See README "SEO status".
+ * These tags are written by effects, i.e. after JS runs — but the build prerenders every route
+ * (scripts/prerender.mjs snapshots the settled DOM), so the raw HTML response already carries
+ * them. That matters because most social-card scrapers (Facebook, Twitter/X, LinkedIn, Slack,
+ * WhatsApp) do not execute JS; before prerendering they saw the same empty index.html for every
+ * route and no per-page link previews were possible.
  */
 
 type MetaSpec = {
@@ -20,6 +20,12 @@ type MetaSpec = {
   path: string;
   type?: "website" | "article";
   locale?: string;
+  /**
+   * Keep the page out of search results. Set on views whose content comes from the URL query or
+   * from localStorage (compare, shortlist): there is no stable document for a crawler to index,
+   * and a canonical pointing at an empty version of the page would be worse than no listing.
+   */
+  noIndex?: boolean;
 };
 
 function upsert(selector: string, create: () => HTMLElement) {
@@ -53,12 +59,15 @@ function absolute(url: string) {
   return url.startsWith("http") ? url : `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
-export function applyMeta({ title, description, image, path, type = "website", locale = "en_HK" }: MetaSpec) {
+export function applyMeta({
+  title, description, image, path, type = "website", locale = "en_HK", noIndex = false,
+}: MetaSpec) {
   const url = absolute(path);
   const img = image ? absolute(image) : `${SITE_URL}/favicon.svg`;
 
   document.title = title;
   setMetaByName("description", description);
+  setMetaByName("robots", noIndex ? "noindex, follow" : "index, follow");
 
   const canonical = upsert('link[rel="canonical"]', () => {
     const l = document.createElement("link");
