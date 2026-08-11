@@ -197,7 +197,7 @@ export function Compare() {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             {selected.length < MAX_COMPARE ? (
-              <label className="flex items-center gap-2 text-sm text-neutral-700">
+              <label className="flex w-full flex-col gap-2 text-sm text-neutral-700 sm:w-auto sm:flex-row sm:items-center">
                 {t("compare.addSchool")}
                 <select
                   onChange={(e) => {
@@ -205,7 +205,7 @@ export function Compare() {
                     e.target.value = "";
                   }}
                   defaultValue=""
-                  className="rounded-md border border-neutral-300 px-2 py-1.5 text-sm focus:border-brand-500 focus:outline-none"
+                  className="w-full min-w-0 max-w-full rounded-md border border-neutral-300 px-2 py-1.5 text-sm focus:border-brand-500 focus:outline-none sm:w-auto"
                 >
                   <option value="" disabled>
                     {t("compare.addSchoolPlaceholder")}

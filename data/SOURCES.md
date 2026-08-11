@@ -369,3 +369,67 @@ Every logo was downloaded and inspected. SVG is preferred, then the largest avai
 - Chinese addresses for campuses outside the EDB registry (listed above) were transliterated from
   standard Hong Kong street names rather than taken from an official Chinese page.
 - CIS logo is a 32×32 favicon; replace if a higher-resolution official asset becomes reachable.
+
+## Revisions (2026-08-11)
+
+### `address.lineZh` — transliterations reverted to English (12/12 → 8/12 Chinese)
+
+Previously, campuses that were **not** in the EDB registry had their Chinese addresses rendered
+using standard Hong Kong street-name equivalents. That has been reverted: a `lineZh` is now kept
+**only where every campus in the string came from the EDB registry**. Where any campus was
+transliterated, the field is `null` and the UI falls back to the English address.
+
+Rationale: a visibly-English address line reads honestly as "not translated." A plausible-looking
+but unverified Chinese line reads as authoritative — and would be indistinguishable from the
+registry-sourced ones. The failure modes are not symmetric, so the uncertain ones are not shown.
+
+| School | `lineZh` | Why |
+|---|---|---|
+| Chinese International School | ✅ kept | fully EDB-sourced |
+| Hong Kong International School | ✅ kept | both campuses EDB-sourced |
+| German Swiss International School | ✅ kept | both campuses EDB-sourced |
+| Australian International School HK | ✅ kept | fully EDB-sourced |
+| Harrow International School HK | ✅ kept | fully EDB-sourced |
+| Kellett School | ✅ kept | both campuses EDB-sourced |
+| Yew Chung International School of HK | ✅ kept | Somerset Road campus EDB-sourced |
+| Malvern College Hong Kong | ✅ kept | fully EDB-sourced |
+| Canadian International School of HK | ⬅ reverted to English | early-years centre was transliterated |
+| French International School HK | ⬅ reverted to English | only the Blue Pool Road campus is registered |
+| Nord Anglia International School HK | ⬅ reverted to English | Sai Kung early-years campus was transliterated |
+| Stamford American School HK | ⬅ reverted to English | not in the EDB registry at all |
+
+`nameZh` and `introZh` are unaffected — both remain 11/12 and 12/12 respectively. Nord Anglia's
+`nameZh` (`香港諾德安達國際學校`) is retained on the zh.wikipedia corroboration noted above.
+
+### Chinese International School logo — favicon replaced with a text wordmark
+
+CIS's only retrievable brand asset was a 32×32 `.ico` favicon (its real header logo is injected by
+JavaScript and never appears in the served HTML). Rather than upscale a 32px bitmap into a 48–80px
+box — which would look visibly soft — `logoUrl` is now `null`, so the profile and cards render the
+generated wordmark instead: the letters **CIS** set in the site's own typeface (`var(--font-sans)`)
+on the IB-indigo curriculum colour. Nothing is upscaled, and no low-fidelity asset is shown.
+
+This is the only school where the placeholder is used by deliberate choice rather than because no
+logo exists. If a higher-resolution official CIS asset becomes reachable, set `logoUrl` and the
+real logo returns automatically.
+
+### CC BY-SA usage — delineation and attribution scope
+
+9 of the 12 campus photos are ShareAlike (7× CC BY-SA 4.0, 2× CC BY-SA 3.0). The decorative
+imagery contains **no ShareAlike at all** (CC BY 2.0 ×1, CC0 ×2) and is therefore unaffected.
+
+Confirmed for the ShareAlike photos:
+
+1. **They are used as discrete illustrations, not incorporated into a combined work.** Each sits in
+   its own bordered `<figure>` with its own caption, visually delineated from the surrounding page.
+2. **They are displayed complete and unmodified.** `CampusPhoto` uses `object-contain`, never
+   `object-cover` — this was changed specifically for this reason, as a CSS crop is a visual
+   adaptation. Because no adaptation is produced, ShareAlike's adaptation clause is never engaged,
+   and no obligation propagates to anything around the image.
+3. **Attribution is scoped explicitly to the photograph.** Each caption names the author and the
+   licence (both linked to source) and then states, on its own line: *"Licence applies to this
+   photograph only."* Nothing in the rendering states or implies that Edpdia's own surrounding
+   content — text, data, layout, code — is offered under a ShareAlike licence. It is not.
+
+The decorative banners do use `object-cover` (a crop), which is a derivative use — permitted under
+CC BY 2.0 and CC0 with attribution, which is rendered. No ShareAlike image is ever cropped.

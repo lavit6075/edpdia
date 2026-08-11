@@ -131,7 +131,8 @@
     "accessedLabel": "查閱日期",
     "photoAlt": "{school}校舍",
     "photoCreditPrefix": "相片：",
-    "photoViaCommons": "來自維基共享資源"
+    "photoViaCommons": "來自維基共享資源",
+    "photoLicenceScope": "授權條款僅適用於此相片。"
   },
   "verification": {
     "verified": "已核實",

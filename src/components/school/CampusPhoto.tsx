@@ -7,9 +7,22 @@ interface CampusPhotoProps {
   schoolName: string;
 }
 
-/** Hotlinked freely-licensed Commons photo. Renders the attribution the licence requires
- *  directly beneath the image. Explicit width/height + aspect-ratio reserve the space so
- *  the image loading never shifts layout. */
+/**
+ * A freely-licensed Commons photo, hotlinked and displayed as a self-contained illustration.
+ *
+ * Licence hygiene (most of these are CC BY-SA):
+ * - The image is shown **complete and unmodified** — `object-contain`, never `object-cover`.
+ *   A CSS crop would be a visual adaptation; displaying the whole frame keeps this pure
+ *   reproduction, so ShareAlike's adaptation clause is never engaged.
+ * - It sits inside its own bordered <figure>, visually delineated from the surrounding page,
+ *   so the photo reads as a discrete included work rather than part of a combined whole.
+ * - The <figcaption> names the author and licence (both linked) and states explicitly that the
+ *   licence covers the photograph only — nothing here implies ShareAlike over Edpdia's own
+ *   surrounding content.
+ *
+ * Explicit width/height plus a fixed aspect-ratio box reserve the space, so loading never
+ * shifts layout.
+ */
 export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
   const { t } = useLanguage();
   const [failed, setFailed] = useState(false);
@@ -17,10 +30,10 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
   if (failed) return null;
 
   return (
-    <figure className="mt-6">
+    <figure className="mt-6 max-w-2xl">
       <div
-        className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100"
-        style={{ aspectRatio: `${photo.width} / ${photo.height}`, maxHeight: "22rem" }}
+        className="flex items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50"
+        style={{ aspectRatio: `${photo.width} / ${photo.height}`, maxHeight: "20rem" }}
       >
         <img
           src={photo.url}
@@ -30,34 +43,37 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
           decoding="async"
           onError={() => setFailed(true)}
           alt={t("profile.photoAlt").replace("{school}", schoolName)}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
-      <figcaption className="mt-2 text-xs text-neutral-500">
-        {t("profile.photoCreditPrefix")}{" "}
-        <a
-          href={photo.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-brand-700 hover:underline"
-        >
-          {photo.author}
-        </a>
-        {", "}
-        {photo.licenceUrl ? (
+      <figcaption className="mt-2 text-xs leading-relaxed text-neutral-500">
+        <span>
+          {t("profile.photoCreditPrefix")}{" "}
           <a
-            href={photo.licenceUrl}
+            href={photo.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-700 hover:underline"
           >
-            {photo.licence}
+            {photo.author}
           </a>
-        ) : (
-          photo.licence
-        )}
-        {" · "}
-        {t("profile.photoViaCommons")}
+          {" · "}
+          {photo.licenceUrl ? (
+            <a
+              href={photo.licenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-700 hover:underline"
+            >
+              {photo.licence}
+            </a>
+          ) : (
+            photo.licence
+          )}
+          {" · "}
+          {t("profile.photoViaCommons")}
+        </span>
+        <span className="mt-0.5 block text-neutral-400">{t("profile.photoLicenceScope")}</span>
       </figcaption>
     </figure>
   );

@@ -24,7 +24,7 @@
       "https://www.facebook.com/CISHK",
       "https://www.instagram.com/cishk"
     ],
-    "logoUrl": "https://www.cis.edu.hk/uploaded/themes/default_21/mycis_favicon.ico",
+    "logoUrl": null,
     "address": {
       "lineEn": "1 Hau Yuen Path, Braemar Hill, Hong Kong SAR, China",
       "lineZh": "香港北角寶馬山校園徑1號",
@@ -316,7 +316,7 @@
     "logoUrl": "https://www.cdnis.edu.hk/resources/images/f_auto,q_auto/v1660613705/cdniseduhk/vpbrwmahzfh0k3t6knwa/top-logo.png",
     "address": {
       "lineEn": "36 Nam Long Shan Road, Aberdeen, Hong Kong (Main Campus); 11 Heung Yip Road, Wong Chuk Hang, Hong Kong (Early Years Centre)",
-      "lineZh": "香港香港仔南朗山道36號（主校舍）；香港黃竹坑香葉道11號THE SOUTHSIDE地下G21-24號舖（幼兒學習中心）",
+      "lineZh": null,
       "district": "Aberdeen / Wong Chuk Hang"
     },
     "admissions": {
@@ -445,7 +445,7 @@
     "logoUrl": "https://static.wixstatic.com/media/fecce6_b5ddd0a6d1174fe8914bda78e06dfd6a~mv2.png/v1/fill/w_420,h_464,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bilingual_logo_red_bar-01.png",
     "address": {
       "lineEn": "Multiple campuses: Chai Wan, Jardine's Lookout, Blue Pool Road (Hong Kong Island) and Tseung Kwan O",
-      "lineZh": "香港藍塘道165號（藍塘道校舍）；另設柴灣、渣甸山及將軍澳校舍",
+      "lineZh": null,
       "district": "Chai Wan / Jardine's Lookout / Blue Pool Road / Tseung Kwan O"
     },
     "admissions": {
@@ -956,7 +956,7 @@
     "logoUrl": "https://web.archive.org/web/20260101004925im_/https://www.nordangliaeducation.com/nais-hong-kong/-/media/nais-hong-kong/nais_hk_logo_black.png?h=48&iar=0&w=286&rev=00bc35cbf9314dde80fd726b31cc4a8a&hash=F615B8CCA312862ED393DF0413BE753B",
     "address": {
       "lineEn": "Sai Kung (Early Years Campus), Lam Tin (Primary Campus), and Kwun Tong (Secondary Campus), Hong Kong",
-      "lineZh": "九龍藍田安田街11號（小學部）；九龍觀塘月華街19號（中學部）；另設西貢幼兒部校舍",
+      "lineZh": null,
       "district": "Sai Kung / Lam Tin / Kwun Tong"
     },
     "admissions": {
@@ -1216,7 +1216,7 @@
     "logoUrl": "https://www.sais.edu.hk/wp-content/uploads/sites/19/2025/05/Stamford_HK_Horiz_Logo_200313_RGB-02-1.webp",
     "address": {
       "lineEn": "25 Man Fuk Road, Ho Man Tin, Kowloon, Hong Kong (Ho Man Tin Campus); G/F to 2/F, Imperial Cullinan, 10 Hoi Fai Road, Tai Kok Tsui, Kowloon, Hong Kong (West Kowloon Campus)",
-      "lineZh": "九龍何文田文福道25號（何文田校舍）；九龍大角咀海輝道10號瓏璽地下至2樓（西九龍校舍）",
+      "lineZh": null,
       "district": "Ho Man Tin / Tai Kok Tsui"
     },
     "admissions": {

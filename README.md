@@ -135,10 +135,19 @@ never shift layout as they arrive.
 
 UI strings live in `src/i18n/{en,zh-HK}.json` (parity enforced by `npm run validate:i18n`).
 School-level Chinese content lives in the data: `nameZh` (11/12 — Stamford publishes no Chinese
-name), `introZh` (12/12) and `address.lineZh` (12/12). Chinese names and addresses come from the
+name), `introZh` (12/12) and `address.lineZh` (8/12). Chinese names and addresses come from the
 Education Bureau's official international-schools registry; intros were written for this project
 from facts already present in `introEn`. Where a `...Zh` field is null, the UI falls back to
-English with a small "English only" note rather than showing a blank.
+English rather than showing a blank.
+
+`address.lineZh` is deliberately **only** populated where every campus in the string came from the
+EDB registry. Four schools have campuses that aren't registered, so their address falls back to
+English instead of a transliteration — a visibly-English line reads honestly as "not translated,"
+whereas an unverified Chinese line would read as authoritative. See `data/SOURCES.md`.
+
+Third-party photographs are included as discrete, unmodified illustrations with per-image
+attribution scoped to the photograph. Nothing in the rendering implies that Edpdia's own content
+is offered under those images' licences — see the CC BY-SA note in `data/SOURCES.md`.
 
 ### Motion
 

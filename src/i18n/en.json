@@ -131,7 +131,8 @@
     "accessedLabel": "accessed",
     "photoAlt": "{school} campus",
     "photoCreditPrefix": "Photo:",
-    "photoViaCommons": "via Wikimedia Commons"
+    "photoViaCommons": "via Wikimedia Commons",
+    "photoLicenceScope": "Licence applies to this photograph only."
   },
   "verification": {
     "verified": "Verified",
