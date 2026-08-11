@@ -25,7 +25,7 @@ export interface DecorativeImage {
 export const DECORATIVE_IMAGES = {
   /** Admissions Guide header — generic study imagery, CC0. */
   admissions: {
-    url: "https://cdn.stocksnap.io/img-thumbs/960w/8Y0EDX4VP9.jpg",
+    url: "/img/decor-d16ce1668e15.jpg",
     width: 960,
     height: 640,
     licence: "CC0 1.0",
@@ -36,7 +36,7 @@ export const DECORATIVE_IMAGES = {
   },
   /** Resources header — generic note-taking imagery, CC0. */
   resources: {
-    url: "https://live.staticflickr.com/313/18692128651_9fde6621b8_b.jpg",
+    url: "/img/decor-9c1060734843.jpg",
     width: 1024,
     height: 683,
     licence: "CC0 1.0",
