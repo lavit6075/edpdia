@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useCompare, MAX_COMPARE } from "../context/CompareContext";
 import { useLanguage } from "../i18n/LanguageContext";
