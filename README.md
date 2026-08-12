@@ -360,11 +360,50 @@ assert hydration actually happened rather than trusting a silent console.
   contexts. Moved into effects, gated by a `hydrated` flag so persistence doesn't fire on the
   initial pass.
 
-**Playwright in CI:** `.npmrc` sets `playwright_browsers_path=0`, so Chromium installs into
-`node_modules/playwright-core/.local-browsers` and rides Vercel's `node_modules` cache instead of
-re-downloading ~95MB per deploy. `vercel-build` runs `scripts/install-chromium-deps.sh` first —
-Vercel's image is Amazon Linux, so `playwright install --with-deps` fails on a missing `apt-get`
-and the shared libraries have to come from `dnf`/`yum`.
+**Playwright in CI:** `PLAYWRIGHT_BROWSERS_PATH=0` is set as a Vercel project environment
+variable, so Chromium installs into `node_modules/playwright-core/.local-browsers` and rides
+Vercel's `node_modules` cache instead of re-downloading 184 MiB per deploy (measured: ~16s).
+`vercel-build` runs `scripts/install-chromium-deps.sh` first — Vercel's image is Amazon Linux, so
+`playwright install --with-deps` fails on a missing `apt-get` and the shared libraries have to
+come from `dnf`/`yum` — then `scripts/check-browser-cache.sh`, which fails the build if the
+browsers did not land inside `node_modules`.
+
+That guard exists because the original mechanism failed *open*. This was previously
+`playwright_browsers_path=0` in `.npmrc`, which is not a supported npm config key; it worked only
+because npm forwarded unknown keys into the environment, and npm warns it will stop. The day it
+stops, Chromium installs to `~/.cache/ms-playwright`, falls out of the build cache, and every
+deploy re-downloads it with nothing failing and no log line to notice.
+
+Build cache headroom: Vercel allows 1 GB per cache key (key includes the git branch), retained one
+month. This project uploads ~296 MB, so ~29%.
+
+### Images
+
+All 114 raster images have AVIF and (where it wins) WebP siblings, served via `<picture>` with the
+original JPEG/PNG as the fallback `<img>`. **19.03 MB -> 10.71 MB, -43.7%** to a modern browser.
+Regenerate with `npm run images:modernise`.
+
+Quality is chosen per image, not fixed: `scripts/lib/encode.mjs` binary-searches for the smallest
+encode still clearing an SSIM floor of 0.97 against the current file. A fixed quality number means
+something different on a flat sky than on a tree canopy.
+
+Three things fell out of measuring rather than assuming:
+
+- **WebP is only kept where it beats the original.** At high fidelity it encoded several lead
+  photos *larger* than the source JPEG (up to 112%). Keeping those would make Safari 14-15 — WebP
+  yes, AVIF no — download more than before.
+- **Logos go lossless.** Hard-edged flat-colour artwork; no lossy quality clears the SSIM floor.
+  Four logos stay PNG-only because lossless AVIF came out bigger than the PNG.
+- **Coverage is therefore not uniform**, so `Picture` reads a build-time manifest
+  (`src/data/image-variants.json`) instead of swapping the file extension. A `<source>` pointing at
+  a file that does not exist is a broken image, not a graceful fallback — the browser commits to
+  the first type it supports and does not retry the next one.
+
+`<picture>` carries `display: contents` so it stays out of layout; as an inline box it would break
+every `h-full` image inside an aspect-ratio container.
+
+The deployment carries all three formats (44 MB in `public/img`), but any one visitor downloads
+only one of them.
 
 ### 404s
 
