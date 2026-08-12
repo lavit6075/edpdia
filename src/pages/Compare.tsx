@@ -8,6 +8,7 @@ import {
   localizeSchoolName,
   schools,
 } from "../lib/schools";
+import type { School } from "../types/school";
 import { formatHKD, NotPublished } from "../components/school/NotPublished";
 import { VerificationBadge } from "../components/school/VerificationBadge";
 import { useSeo } from "../hooks/useSeo";
@@ -37,13 +38,13 @@ export function Compare() {
     if (urlSlugs.length === 0 && compareList.length > 0) {
       setSearchParams({ schools: compareList.join(",") }, { replace: true });
     }
-  }, []);
+  }, [urlSlugs.length, compareList, setSearchParams]);
 
   useEffect(() => {
     if (urlSlugs.length > 0) {
       setCompareList(urlSlugs);
     }
-  }, [searchParams]);
+  }, [urlSlugs, setCompareList]);
 
   const selected = urlSlugs
     .map((slug) => getSchoolBySlug(slug))
@@ -73,12 +74,12 @@ export function Compare() {
     {
       title: "General",
       rows: [
-        { label: t("compare.rowRegion") || "Region", render: (s: any) => t(`regions.${s.region}`) || s.region },
-        { label: t("compare.rowDistrict") || "District", render: (s: any) => s.district },
-        { label: t("compare.rowAgeRange") || "Age Range", render: (s: any) => `${s.ageRange.min}–${s.ageRange.max}` },
-        { label: t("compare.rowGradeLevels") || "Grade Levels", render: (s: any) => s.gradeLevels },
-        { label: t("compare.rowSchoolType") || "School Type", render: (s: any) => t(`schoolType.${s.schoolType}`) || s.schoolType },
-        { label: t("compare.rowBoarding") || "Boarding", render: (s: any) => (s.boarding ? t("profile.yes") || "Yes" : t("profile.no") || "No") },
+        { label: t("compare.rowRegion") || "Region", render: (s: School) => t(`regions.${s.region}`) || s.region },
+        { label: t("compare.rowDistrict") || "District", render: (s: School) => s.district },
+        { label: t("compare.rowAgeRange") || "Age Range", render: (s: School) => `${s.ageRange.min}–${s.ageRange.max}` },
+        { label: t("compare.rowGradeLevels") || "Grade Levels", render: (s: School) => s.gradeLevels },
+        { label: t("compare.rowSchoolType") || "School Type", render: (s: School) => t(`schoolType.${s.schoolType}`) || s.schoolType },
+        { label: t("compare.rowBoarding") || "Boarding", render: (s: School) => (s.boarding ? t("profile.yes") || "Yes" : t("profile.no") || "No") },
       ],
     },
     {
@@ -86,7 +87,7 @@ export function Compare() {
       rows: [
         {
           label: t("compare.rowCurriculum") || "Curriculum",
-          render: (s: any) => (
+          render: (s: School) => (
             <div className="flex flex-wrap gap-1">
               {s.curriculum.map((c: string) => (
                 <span key={c} className="inline-block rounded bg-neutral-100 px-1.5 py-0.5 text-[11px] font-medium text-neutral-600">
@@ -101,10 +102,10 @@ export function Compare() {
     {
       title: "Admissions",
       rows: [
-        { label: t("compare.rowApplicationFee") || "Application Fee", render: (s: any) => formatHKD(s.admissions.applicationFee) },
+        { label: t("compare.rowApplicationFee") || "Application Fee", render: (s: School) => formatHKD(s.admissions.applicationFee) },
         {
           label: t("compare.rowEntranceExams") || "Entrance Exams",
-          render: (s: any) =>
+          render: (s: School) =>
             s.admissions.entranceExams.length > 0 ? s.admissions.entranceExams.join(", ") : <NotPublished />,
         },
       ],
@@ -114,7 +115,7 @@ export function Compare() {
       rows: [
         {
           label: t("compare.rowTuitionRange") || "Tuition Range",
-          render: (s: any) => {
+          render: (s: School) => {
             const range = getTuitionRange(s);
             if (!range) return <NotPublished />;
             return range.min === range.max
@@ -122,13 +123,13 @@ export function Compare() {
               : `${formatHKD(range.min)} – ${formatHKD(range.max)}`;
           },
         },
-        { label: t("compare.rowDebenture") || "Debenture", render: (s: any) => formatHKD(s.admissions.debentureOrCapitalLevy) },
+        { label: t("compare.rowDebenture") || "Debenture", render: (s: School) => formatHKD(s.admissions.debentureOrCapitalLevy) },
       ],
     },
     {
       title: "Status",
       rows: [
-        { label: t("compare.rowVerification") || "Verification", render: (s: any) => <VerificationBadge status={s.verificationStatus} /> },
+        { label: t("compare.rowVerification") || "Verification", render: (s: School) => <VerificationBadge status={s.verificationStatus} /> },
       ],
     },
   ];
@@ -215,7 +216,7 @@ export function Compare() {
                     </th>
                   )}
                 </tr>
-              </thead
+              </thead>
               <tbody className="divide-y divide-neutral-100">
                 {sections.map((section) => (
                   <React.Fragment key={section.title}>
