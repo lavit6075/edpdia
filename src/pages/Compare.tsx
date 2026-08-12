@@ -24,9 +24,6 @@ export function Compare() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { compareList, setCompareList } = useCompare();
 
-  // noIndex: the page is a rendering of whatever slugs are in ?schools=, so there is no single
-  // document to index and no honest canonical to point at. Still gets a title and description so
-  // a shared link reads sensibly in a browser tab or chat unfurl.
   useSeo({
     title: `${t("compare.title")} — ${t("header.brand")}`,
     description: t("compare.subtitle"),
@@ -36,21 +33,16 @@ export function Compare() {
 
   const urlSlugs = useMemo(() => parseSlugs(searchParams.get("schools")), [searchParams]);
 
-  // If arriving with no URL state but a saved selection exists, promote it into the URL
-  // so the comparison becomes shareable immediately.
   useEffect(() => {
     if (urlSlugs.length === 0 && compareList.length > 0) {
       setSearchParams({ schools: compareList.join(",") }, { replace: true });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Keep the persisted selection in sync with whatever's in the URL (e.g. a shared link).
   useEffect(() => {
     if (urlSlugs.length > 0) {
       setCompareList(urlSlugs);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const selected = urlSlugs
@@ -85,7 +77,15 @@ export function Compare() {
     { label: t("compare.rowDistrict"), render: (s) => s.district },
     {
       label: t("compare.rowCurriculum"),
-      render: (s) => s.curriculum.join(", "),
+      render: (s) => (
+        <div className="flex flex-wrap gap-1">
+          {s.curriculum.map((c) => (
+            <span key={c} className="inline-block rounded bg-neutral-100 px-1.5 py-0.5 text-[11px] font-medium text-neutral-600">
+              {c}
+            </span>
+          ))}
+        </div>
+      ),
     },
     {
       label: t("compare.rowAgeRange"),
@@ -154,18 +154,20 @@ export function Compare() {
               {t("compare.swipeHint")}
             </p>
           )}
-          <div className="overflow-x-auto rounded-lg border border-neutral-200">
+          <div className="overflow-x-auto rounded-xl border border-neutral-200 shadow-sm">
             <table className="w-full min-w-[640px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-neutral-200 bg-neutral-50 text-left">
-                  <th className="w-40 py-3 pl-4 pr-2 font-medium text-neutral-500"></th>
+              <thead className="bg-neutral-50">
+                <tr className="border-b border-neutral-200 text-left">
+                  <th className="w-48 py-4 pl-4 pr-2 font-semibold text-neutral-500 uppercase tracking-wider text-[11px]">
+                    {t("compare.attribute") || "Attribute"}
+                  </th>
                   {selected.map((school) => (
-                    <th key={school.slug} className="min-w-[200px] px-4 py-3 align-top">
+                    <th key={school.slug} className="min-w-[200px] px-4 py-4 align-top">
                       <div className="flex items-start justify-between gap-2">
-                        <div>
+                        <div className="flex-1">
                           <Link
                             to={`/schools/${school.slug}`}
-                            className="font-semibold text-neutral-900 hover:text-brand-700"
+                            className="text-base font-bold text-neutral-900 hover:text-brand-700 transition-colors"
                           >
                             {localizeSchoolName(school, language).text}
                           </Link>
@@ -174,9 +176,9 @@ export function Compare() {
                           type="button"
                           onClick={() => removeSchool(school.slug)}
                           aria-label={t("compare.removeAria")}
-                          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-neutral-400 hover:bg-neutral-200 hover:text-neutral-700"
+                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700"
                         >
-                          ×
+                          <span className="text-lg">×</span>
                         </button>
                       </div>
                       <Link
@@ -189,9 +191,9 @@ export function Compare() {
                   ))}
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-neutral-100">
                 {rows.map((row) => (
-                  <tr key={row.label} className="border-b border-neutral-100 align-top">
+                  <tr key={row.label} className="hover:bg-neutral-50/50 transition-colors align-top">
                     <th className="py-3 pl-4 pr-2 text-left font-medium text-neutral-500">
                       {row.label}
                     </th>
@@ -206,36 +208,38 @@ export function Compare() {
             </table>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            {selected.length < MAX_COMPARE ? (
-              <label className="flex w-full flex-col gap-2 text-sm text-neutral-700 sm:w-auto sm:flex-row sm:items-center">
-                {t("compare.addSchool")}
-                <select
-                  onChange={(e) => {
-                    addSchool(e.target.value);
-                    e.target.value = "";
-                  }}
-                  defaultValue=""
-                  className="w-full min-w-0 max-w-full rounded-md border border-neutral-300 px-2 py-1.5 text-sm focus:border-brand-500 focus:outline-none sm:w-auto"
-                >
-                  <option value="" disabled>
-                    {t("compare.addSchoolPlaceholder")}
-                  </option>
-                  {availableToAdd.map((s) => (
-                    <option key={s.slug} value={s.slug}>
-                      {localizeSchoolName(s, language).text}
+          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-1">
+              {selected.length < MAX_COMPARE ? (
+                <label className="flex items-center gap-3 text-sm text-neutral-700">
+                  <span className="font-medium">{t("compare.addSchool")}</span>
+                  <select
+                    onChange={(e) => {
+                      addSchool(e.target.value);
+                      e.target.value = "";
+                    }}
+                    defaultValue=""
+                    className="rounded-md border border-neutral-300 px-3 py-1.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 bg-white"
+                  >
+                    <option value="" disabled>
+                      {t("compare.addSchoolPlaceholder")}
                     </option>
-                  ))}
-                </select>
-              </label>
-            ) : (
-              <p className="text-sm text-neutral-500">{t("compare.maxReachedNote")}</p>
-            )}
+                    {availableToAdd.map((s) => (
+                      <option key={s.slug} value={s.slug}>
+                        {localizeSchoolName(s, language).text}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ) : (
+                <p className="text-sm text-neutral-500">{t("compare.maxReachedNote")}</p>
+              )}
+            </div>
 
             <button
               type="button"
               onClick={() => updateUrl([])}
-              className="text-sm font-medium text-neutral-500 hover:text-neutral-700"
+              className="text-sm font-medium text-neutral-500 hover:text-neutral-700 underline underline-offset-4"
             >
               {t("compare.clearAll")}
             </button>

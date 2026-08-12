@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { schools, getDistricts, getCurricula, getRegions } from "../lib/schools";
+import { schools, getDistricts, getCurricula, getRegions, getSchoolTypes } from "../lib/schools";
 import { SchoolCard } from "../components/school/SchoolCard";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useSeo } from "../hooks/useSeo";
@@ -15,12 +15,6 @@ export function Directory() {
     title: `${t("directory.title")} — ${t("header.brand")}`,
     description: t("directory.subtitle"),
     path: "/schools",
-    // Deliberately the FULL set, not the filtered view. Filters are client state that never
-    // changes the URL, so the canonical document at /schools is the whole directory; emitting the
-    // filtered subset would describe a page no crawler can reach. Each entry is a plain url + name
-    // pointing at the profile — the profile carries the School type and the sourced detail. No
-    // rating, review or aggregate properties: schema.org offers them, we have nothing to put in
-    // them, and inventing them is exactly the rankings-by-the-back-door the site refuses.
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -42,11 +36,14 @@ export function Directory() {
   const [regions, setRegions] = useState<string[]>([]);
   const [districts, setDistricts] = useState<string[]>([]);
   const [curricula, setCurricula] = useState<string[]>([]);
+  const [schoolTypes, setSchoolTypes] = useState<string[]>([]);
+  const [boarding, setBoarding] = useState<boolean | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const allRegions = useMemo(() => getRegions(), []);
   const allDistricts = useMemo(() => getDistricts(), []);
   const allCurricula = useMemo(() => getCurricula(), []);
+  const allSchoolTypes = useMemo(() => getSchoolTypes(), []);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -60,17 +57,21 @@ export function Directory() {
       if (curricula.length && !school.curriculum.some((c) => curricula.includes(c))) {
         return false;
       }
+      if (schoolTypes.length && !schoolTypes.includes(school.schoolType)) return false;
+      if (boarding !== null && school.boarding !== boarding) return false;
       return true;
     });
-  }, [query, regions, districts, curricula]);
+  }, [query, regions, districts, curricula, schoolTypes, boarding]);
 
-  const activeFilterCount = regions.length + districts.length + curricula.length;
+  const activeFilterCount = regions.length + districts.length + curricula.length + schoolTypes.length + (boarding !== null ? 1 : 0);
 
   function clearFilters() {
     setQuery("");
     setRegions([]);
     setDistricts([]);
     setCurricula([]);
+    setSchoolTypes([]);
+    setBoarding(null);
   }
 
   return (
@@ -103,7 +104,7 @@ export function Directory() {
 
           <div className={`${filtersOpen ? "block" : "hidden"} mt-4 lg:mt-0 lg:block`}>
             <div className="sticky top-20 space-y-6">
-              <div>
+              <div className="relative">
                 <label htmlFor="search" className="text-sm font-semibold text-neutral-900">
                   {t("directory.search")}
                 </label>
@@ -113,7 +114,7 @@ export function Directory() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder={t("directory.searchPlaceholder")}
-                  className="mt-2 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+                  className="mt-2 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                 />
               </div>
 
@@ -138,6 +139,48 @@ export function Directory() {
                 selected={curricula}
                 onToggle={(v) => setCurricula((c) => toggle(c, v))}
               />
+
+              <FilterGroup
+                title={t("directory.schoolType") || "School Type"}
+                options={allSchoolTypes}
+                selected={schoolTypes}
+                onToggle={(v) => setSchoolTypes((s) => toggle(s, v))}
+              />
+
+              <fieldset className="mt-6">
+                <legend className="text-sm font-semibold text-neutral-900">
+                  {t("directory.boarding") || "Boarding"}
+                </legend>
+                <div className="mt-2 flex flex-wrap gap-3">
+                  <label className="flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={boarding === true}
+                      onChange={() => setBoarding(true)}
+                      className="h-4 w-4 rounded-full border-neutral-300 text-brand-700 focus:ring-brand-500"
+                    />
+                    {t("profile.yes") || "Yes"}
+                  </label>
+                  <label className="flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={boarding === false}
+                      onChange={() => setBoarding(false)}
+                      className="h-4 w-4 rounded-full border-neutral-300 text-brand-700 focus:ring-brand-500"
+                    />
+                    {t("profile.no") || "No"}
+                  </label>
+                  <label className="flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+                    <input
+                      type="radio"
+                      checked={boarding === null}
+                      onChange={() => setBoarding(null)}
+                      className="h-4 w-4 rounded-full border-neutral-300 text-brand-700 focus:ring-brand-500"
+                    />
+                    {t("directory.allBoarding") || "All"}
+                  </label>
+                </div>
+              </fieldset>
 
               {activeFilterCount > 0 || query ? (
                 <button
@@ -174,7 +217,7 @@ export function Directory() {
             </div>
           ) : (
             <div
-              key={`${language}|${query}|${regions.join()}|${districts.join()}|${curricula.join()}`}
+              key={`${language}|${query}|${regions.join()}|${districts.join()}|${curricula.join()}|${schoolTypes.join()}|${boarding}`}
               className="fade-swap grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
             >
               {results.map((school) => (
@@ -199,11 +242,11 @@ interface FilterGroupProps {
 function FilterGroup({ title, options, optionLabel, selected, onToggle }: FilterGroupProps) {
   if (options.length === 0) return null;
   return (
-    <fieldset>
+    <fieldset className="mt-6">
       <legend className="text-sm font-semibold text-neutral-900">{title}</legend>
       <div className="mt-2 max-h-56 space-y-1.5 overflow-y-auto pr-1">
         {options.map((option) => (
-          <label key={option} className="flex items-start gap-2 text-sm text-neutral-700">
+          <label key={option} className="flex items-start gap-2 text-sm text-neutral-700 cursor-pointer">
             <input
               type="checkbox"
               checked={selected.includes(option)}

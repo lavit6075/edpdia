@@ -43,6 +43,10 @@ export function getRegions(): School["region"][] {
   return Array.from(new Set(schools.map((school) => school.region)));
 }
 
+export function getSchoolTypes(): string[] {
+  return Array.from(new Set(schools.map((school) => school.schoolType))).sort();
+}
+
 export interface TuitionRange {
   min: number;
   max: number;

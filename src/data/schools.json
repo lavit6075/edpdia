@@ -1894,5 +1894,149 @@
         "thumbHeight": 461
       }
     ]
+  },
+  {
+    "id": "international-school-hong-kong-ishk",
+    "nameEn": "International School Hong Kong",
+    "nameZh": "香港國際學校 (ISHK)",
+    "slug": "international-school-hong-kong-ishk",
+    "district": "Kowloon Tong",
+    "region": "Kowloon",
+    "curriculum": [
+      "IB Primary Years Programme (IBPYP)",
+      "IB Middle Years Programme (IBMYP)",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Preschool to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "International School Hong Kong (ISHK) is a non-profit, co-educational school offering the International Baccalaureate (IB) continuum from early childhood through Grade 12.",
+    "introZh": "香港國際學校 (ISHK) 是一所非牟利男女共校，提供從幼兒至十二年級的國際文憑 (IB) 全程課程。",
+    "officialWebsite": "https://www.ishk.hk",
+    "officialSocial": [],
+    "logoUrl": null,
+    "address": {
+      "lineEn": "Kowloon Tong, Hong Kong",
+      "lineZh": "香港九龍塘",
+      "district": "Kowloon Tong"
+    },
+    "admissions": {
+      "tuitionByLevel": [],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [],
+    "lastVerified": "2026-08-12",
+    "verificationStatus": "unverified",
+    "photos": []
+  },
+  {
+    "id": "european-school-hong-kong",
+    "nameEn": "European School Hong Kong",
+    "nameZh": "香港歐洲學校",
+    "slug": "european-school-hong-kong",
+    "district": "Central / Sheung Wan",
+    "region": "Hong Kong Island",
+    "curriculum": [
+      "European Baccalaureate"
+    ],
+    "ageRange": {
+      "min": 3,
+      "max": 18
+    },
+    "gradeLevels": "Preschool to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "European School Hong Kong provides a high-quality European education, following the European Baccalaureate curriculum for students from across the globe.",
+    "introZh": "香港歐洲學校提供高品質的歐洲教育，為全球學生提供歐洲文憑課程。",
+    "officialWebsite": "https://www.eshk.hk",
+    "officialSocial": [],
+    "logoUrl": null,
+    "address": {
+      "lineEn": "Central / Sheung Wan, Hong Kong",
+      "lineZh": "香港中環 / 象灣",
+      "district": "Central / Sheung Wan"
+    },
+    "admissions": {
+      "tuitionByLevel": [],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [],
+    "lastVerified": "2026-08-12",
+    "verificationStatus": "unverified",
+    "photos": []
+  },
+  {
+    "id": "american-school-hong-kong",
+    "nameEn": "American School Hong Kong",
+    "nameZh": "香港美國學校",
+    "slug": "american-school-hong-kong",
+    "district": "Kowloon Tong",
+    "region": "Kowloon",
+    "curriculum": [
+      "American Curriculum",
+      "IB Diploma Programme (IBDP)"
+    ],
+    "ageRange": {
+      "min": 5,
+      "max": 18
+    },
+    "gradeLevels": "KG to Grade 12",
+    "schoolType": "co-ed",
+    "boarding": false,
+    "introEn": "American School Hong Kong offers a rigorous American curriculum and the IB Diploma Programme for students from Kindergarten to Grade 12.",
+    "introZh": "香港美國學校為幼稚園至十二年級的學生提供嚴格的美式課程及國際文憑大學預科課程。",
+    "officialWebsite": "https://www.ashk.hk",
+    "officialSocial": [],
+    "logoUrl": null,
+    "address": {
+      "lineEn": "Kowloon Tong, Hong Kong",
+      "lineZh": "香港九龍塘",
+      "district": "Kowloon Tong"
+    },
+    "admissions": {
+      "tuitionByLevel": [],
+      "otherFees": [],
+      "applicationFee": null,
+      "debentureOrCapitalLevy": null,
+      "entranceExams": [],
+      "applicationDeadlines": [],
+      "processSteps": []
+    },
+    "principalMessage": null,
+    "achievements": {
+      "examResults": [],
+      "universityDestinations": [],
+      "awards": []
+    },
+    "sources": [],
+    "lastVerified": "2026-08-12",
+    "verificationStatus": "unverified",
+    "photos": []
   }
 ]
