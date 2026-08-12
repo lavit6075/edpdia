@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { DecorativeImage } from "../lib/decorativeImages";
+import { Picture } from "./Picture";
 
 interface DecorativeBannerProps {
   image: DecorativeImage;
@@ -21,7 +22,7 @@ export function DecorativeBanner({
 
   return (
     <div className={`relative w-full overflow-hidden bg-neutral-100 ${heightClass} ${className}`}>
-      <img
+      <Picture
         src={image.url}
         width={image.width}
         height={image.height}

@@ -1,6 +1,7 @@
 import type { SchoolPhoto } from "../../types/school";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { galleryAlt } from "../../lib/photoAlt";
+import { Picture } from "../Picture";
 
 interface PhotoStripProps {
   photos: SchoolPhoto[];
@@ -39,7 +40,7 @@ export function PhotoStrip({ photos, schoolName }: PhotoStripProps) {
               title={`${photo.author} · ${photo.licence}`}
               className="group block"
             >
-              <img
+              <Picture
                 src={photo.thumbUrl}
                 width={photo.thumbWidth}
                 height={photo.thumbHeight}

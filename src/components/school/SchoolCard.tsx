@@ -7,6 +7,7 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import { localizeIntro, localizeSchoolName } from "../../lib/schools";
 import { useCompare } from "../../context/CompareContext";
 import { useRevealOnScroll } from "../../hooks/useRevealOnScroll";
+import { Picture } from "../Picture";
 
 export function SchoolCard({ school }: { school: School }) {
   const { language, t } = useLanguage();
@@ -33,7 +34,7 @@ export function SchoolCard({ school }: { school: School }) {
             Every school has at least one photo, so this never renders ragged. */}
         {lead && (
           <div className="aspect-[16/6] w-full overflow-hidden bg-neutral-100">
-            <img
+            <Picture
               src={lead.thumbUrl}
               width={lead.thumbWidth}
               height={lead.thumbHeight}

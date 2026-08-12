@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { schools, localizeSchoolName } from "../lib/schools";
 import { useLanguage } from "../i18n/LanguageContext";
+import { Picture } from "./Picture";
 
 /**
  * Homepage band of real campus photography — every school in the directory, in directory
@@ -24,7 +25,7 @@ export function CampusStrip() {
             <li key={school.id} className="shrink-0">
               <Link to={`/schools/${school.slug}`} className="group block w-44 sm:w-56">
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
-                  <img
+                  <Picture
                     src={photo.thumbUrl}
                     width={photo.thumbWidth}
                     height={photo.thumbHeight}

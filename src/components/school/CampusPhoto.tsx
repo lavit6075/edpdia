@@ -3,6 +3,7 @@ import type { SchoolPhoto } from "../../types/school";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { galleryAlt } from "../../lib/photoAlt";
 import { PhotoCredit } from "./PhotoCredit";
+import { Picture } from "../Picture";
 
 interface CampusPhotoProps {
   photo: SchoolPhoto;
@@ -28,7 +29,7 @@ export function CampusPhoto({ photo, schoolName }: CampusPhotoProps) {
   return (
     <figure className="mt-6">
       <div className="aspect-[3/2] w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
-        <img
+        <Picture
           src={photo.url}
           width={photo.width}
           height={photo.height}

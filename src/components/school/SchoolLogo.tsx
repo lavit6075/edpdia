@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { School } from "../../types/school";
 import { PlaceholderLogo } from "./PlaceholderLogo";
+import { Picture } from "../Picture";
 
 interface SchoolLogoProps {
   school: Pick<School, "nameEn" | "curriculum" | "slug" | "logoUrl">;
@@ -29,7 +30,7 @@ export function SchoolLogo({ school, size = 44, className = "" }: SchoolLogoProp
   }
 
   return (
-    <img
+    <Picture
       src={school.logoUrl}
       alt={`${school.nameEn} logo`}
       width={size}

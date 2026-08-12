@@ -14,7 +14,8 @@
     "images:fetch": "node scripts/fetch-images.mjs",
     "images:optimise": "node scripts/optimise-images.mjs",
     "prerender": "node scripts/prerender.mjs",
-    "vercel-build": "bash scripts/install-chromium-deps.sh && playwright install chromium && npm run build"
+    "vercel-build": "bash scripts/install-chromium-deps.sh && playwright install chromium && bash scripts/check-browser-cache.sh && npm run build",
+    "images:modernise": "node scripts/modernise-images.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
@@ -29,8 +30,12 @@
     "@vitejs/plugin-react": "^6.0.4",
     "oxlint": "^1.75.0",
     "playwright": "^1.62.1",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"
+  },
+  "allowScripts": {
+    "sharp@0.35.3": true
   }
 }
