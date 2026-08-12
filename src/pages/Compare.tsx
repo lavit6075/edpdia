@@ -69,177 +69,185 @@ export function Compare() {
 
   const availableToAdd = schools.filter((s) => !selected.some((sel) => sel.slug === s.slug));
 
-  const rows: {
-    label: string;
-    render: (school: (typeof schools)[number]) => React.ReactNode;
-  }[] = [
-    { label: t("compare.rowRegion"), render: (s) => t(`regions.${s.region}`) },
-    { label: t("compare.rowDistrict"), render: (s) => s.district },
+  const sections = [
     {
-      label: t("compare.rowCurriculum"),
-      render: (s) => (
-        <div className="flex flex-wrap gap-1">
-          {s.curriculum.map((c) => (
-            <span key={c} className="inline-block rounded bg-neutral-100 px-1.5 py-0.5 text-[11px] font-medium text-neutral-600">
-              {c}
-            </span>
-          ))}
-        </div>
-      ),
+      title: "General",
+      rows: [
+        { label: t("compare.rowRegion"), render: (s: any) => t(`regions.${s.region}`) },
+        { label: t("compare.rowDistrict"), render: (s: any) => s.district },
+        { label: t("compare.rowAgeRange"), render: (s: any) => `${s.ageRange.min}–${s.ageRange.max}` },
+        { label: t("compare.rowGradeLevels"), render: (s: any) => s.gradeLevels },
+        { label: t("compare.rowSchoolType"), render: (s: any) => t(`schoolType.${s.schoolType}`) },
+        { label: t("compare.rowBoarding"), render: (s: any) => (s.boarding ? t("profile.yes") : t("profile.no")) },
+      ],
     },
     {
-      label: t("compare.rowAgeRange"),
-      render: (s) => `${s.ageRange.min}–${s.ageRange.max}`,
-    },
-    { label: t("compare.rowGradeLevels"), render: (s) => s.gradeLevels },
-    {
-      label: t("compare.rowSchoolType"),
-      render: (s) => t(`schoolType.${s.schoolType}`),
-    },
-    {
-      label: t("compare.rowBoarding"),
-      render: (s) => (s.boarding ? t("profile.yes") : t("profile.no")),
-    },
-    {
-      label: t("compare.rowTuitionRange"),
-      render: (s) => {
-        const range = getTuitionRange(s);
-        if (!range) return <NotPublished />;
-        return range.min === range.max
-          ? formatHKD(range.min)
-          : `${formatHKD(range.min)} – ${formatHKD(range.max)}`;
-      },
+      title: "Academics",
+      rows: [
+        {
+          label: t("compare.rowCurriculum"),
+          render: (s: any) => (
+            <div className="flex flex-wrap gap-1">
+              {s.curriculum.map((c: string) => (
+                <span key={c} className="inline-block rounded bg-neutral-100 px-1.5 py-0.5 text-[11px] font-medium text-neutral-600">
+                  {c}
+                </span>
+              ))}
+            </div>
+          ),
+        },
+      ],
     },
     {
-      label: t("compare.rowApplicationFee"),
-      render: (s) => formatHKD(s.admissions.applicationFee),
+      title: "Admissions",
+      rows: [
+        { label: t("compare.rowApplicationFee"), render: (s: any) => formatHKD(s.admissions.applicationFee) },
+        {
+          label: t("compare.rowEntranceExams"),
+          render: (s: any) =>
+            s.admissions.entranceExams.length > 0 ? s.admissions.entranceExams.join(", ") : <NotPublished />,
+        },
+      ],
     },
     {
-      label: t("compare.rowDebenture"),
-      render: (s) => formatHKD(s.admissions.debentureOrCapitalLevy),
+      title: "Financials",
+      rows: [
+        {
+          label: t("compare.rowTuitionRange"),
+          render: (s: any) => {
+            const range = getTuitionRange(s);
+            if (!range) return <NotPublished />;
+            return range.min === range.max
+              ? formatHKD(range.min)
+              : `${formatHKD(range.min)} – ${formatHKD(range.max)}`;
+          },
+        },
+        { label: t("compare.rowDebenture"), render: (s: any) => formatHKD(s.admissions.debentureOrCapitalLevy) },
+      ],
     },
     {
-      label: t("compare.rowEntranceExams"),
-      render: (s) =>
-        s.admissions.entranceExams.length > 0 ? s.admissions.entranceExams.join(", ") : <NotPublished />,
-    },
-    {
-      label: t("compare.rowVerification"),
-      render: (s) => <VerificationBadge status={s.verificationStatus} />,
+      title: "Status",
+      rows: [
+        { label: t("compare.rowVerification"), render: (s: any) => <VerificationBadge status={s.verificationStatus} /> },
+      ],
     },
   ];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <div className="max-w-2xl">
-        <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">{t("compare.title")}</h1>
-        <p className="mt-2 text-neutral-600">{t("compare.subtitle")}</p>
+      <div className="max-w-2xl mb-12">
+        <h1 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
+          {t("compare.title")}
+        </h1>
+        <p className="mt-4 text-lg text-neutral-600">
+          {t("compare.subtitle")}
+        </p>
       </div>
 
       {selected.length === 0 ? (
-        <div className="mt-8 rounded-lg border border-dashed border-neutral-300 bg-neutral-50 px-6 py-16 text-center">
-          <h2 className="text-lg font-semibold text-neutral-900">{t("compare.emptyTitle")}</h2>
-          <p className="mt-2 text-sm text-neutral-600">{t("compare.emptyBody")}</p>
+        <div className="mt-8 rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 px-6 py-20 text-center">
+          <h2 className="text-xl font-semibold text-neutral-900">{t("compare.emptyTitle")}</h2>
+          <p className="mt-2 text-neutral-600">{t("compare.emptyBody")}</p>
           <Link
             to="/schools"
-            className="mt-4 inline-block rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800"
+            className="mt-6 inline-block rounded-full bg-brand-700 px-8 py-3 text-sm font-semibold text-white hover:bg-brand-800 transition-colors"
           >
             {t("compare.browseDirectory")}
           </Link>
         </div>
       ) : (
-        <div className="mt-8">
-          {selected.length > 1 && (
-            <p className="mb-2 text-xs font-medium text-neutral-500 sm:hidden">
-              {t("compare.swipeHint")}
-            </p>
-          )}
-          <div className="overflow-x-auto rounded-xl border border-neutral-200 shadow-sm">
-            <table className="w-full min-w-[640px] border-collapse text-sm">
-              <thead className="bg-neutral-50">
-                <tr className="border-b border-neutral-200 text-left">
-                  <th className="w-48 py-4 pl-4 pr-2 font-semibold text-neutral-500 uppercase tracking-wider text-[11px]">
+        <div className="relative overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[800px] border-collapse text-left">
+              <thead className="sticky top-0 z-10 bg-white">
+                <tr className="border-b border-neutral-200">
+                  <th className="w-64 py-8 pl-6 pr-4 font-medium text-neutral-400 uppercase tracking-wider text-[11px]">
                     {t("compare.attribute") || "Attribute"}
                   </th>
                   {selected.map((school) => (
-                    <th key={school.slug} className="min-w-[200px] px-4 py-4 align-top">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex-1">
+                    <th key={school.slug} className="px-6 py-8 align-top">
+                      <div className="group relative flex flex-col items-start">
+                        <div className="flex items-center justify-between w-full mb-2">
                           <Link
                             to={`/schools/${school.slug}`}
-                            className="text-base font-bold text-neutral-900 hover:text-brand-700 transition-colors"
+                            className="text-xl font-bold text-neutral-900 hover:text-brand-700 transition-colors leading-tight"
                           >
                             {localizeSchoolName(school, language).text}
                           </Link>
+                          <button
+                            type="button"
+                            onClick={() => removeSchool(school.slug)}
+                            className="opacity-0 group-hover:opacity-100 absolute -top-2 -right-2 h-6 w-6 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-all text-lg leading-none"
+                          >
+                            ×
+                          </button>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => removeSchool(school.slug)}
-                          aria-label={t("compare.removeAria")}
-                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700"
+                        <Link
+                          to={`/schools/${school.slug}`}
+                          className="text-xs font-medium text-brand-700 hover:underline opacity-80 hover:opacity-100 transition-opacity"
                         >
-                          <span className="text-lg">×</span>
-                        </button>
+                          {t("compare.viewProfile")}
+                        </Link>
                       </div>
-                      <Link
-                        to={`/schools/${school.slug}`}
-                        className="mt-1 inline-block text-xs font-medium text-brand-700 hover:underline"
-                      >
-                        {t("compare.viewProfile")}
-                      </Link>
                     </th>
                   ))}
+                  
+                  {selected.length < MAX_COMPARE && (
+                    <th className="px-6 py-8 align-top min-w-[200px]">
+                      <div className="flex flex-col items-center justify-center border-2 border-dashed border-neutral-200 rounded-xl p-4 h-full min-h-[100px]">
+                        <span className="text-xs font-medium text-neutral-400 mb-2">Add a school</span>
+                        <select
+                          onChange={(e) => {
+                            addSchool(e.target.value);
+                            e.target.value = "";
+                          }}
+                          defaultValue=""
+                          className="w-full rounded-md border border-neutral-300 px-2 py-1.5 text-xs focus:border-brand-500 focus:outline-none bg-white"
+                        >
+                          <option value="" disabled>Select school...</option>
+                          {availableToAdd.map((s) => (
+                            <option key={s.slug} value={s.slug}>
+                              {localizeSchoolName(s, language).text}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </th>
+                  )}
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100">
-                {rows.map((row) => (
-                  <tr key={row.label} className="hover:bg-neutral-50/50 transition-colors align-top">
-                    <th className="py-3 pl-4 pr-2 text-left font-medium text-neutral-500">
-                      {row.label}
-                    </th>
-                    {selected.map((school) => (
-                      <td key={school.slug} className="px-4 py-3 text-neutral-800">
-                        {row.render(school)}
+                {sections.map((section) => (
+                  <React.Fragment key={section.title}>
+                    <tr className="bg-neutral-50/50">
+                      <td colSpan={selected.length + (selected.length < MAX_COMPARE ? 1 : 0)} className="px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-neutral-400">
+                        {section.title}
                       </td>
+                    </tr>
+                    {section.rows.map((row) => (
+                      <tr key={row.label} className="hover:bg-neutral-50/30 transition-colors align-middle group">
+                        <td className="py-5 pl-6 pr-4 text-sm font-medium text-neutral-500 group-hover:text-neutral-800 transition-colors">
+                          {row.label}
+                        </td>
+                        {selected.map((school) => (
+                          <td key={school.slug} className="px-6 py-5 text-sm font-semibold text-neutral-900">
+                            {row.render(school)}
+                          </td>
+                        ))}
+                        {selected.length < MAX_COMPARE && <td className="px-6 py-5" />}
+                      </tr>
                     ))}
-                  </tr>
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-col gap-1">
-              {selected.length < MAX_COMPARE ? (
-                <label className="flex items-center gap-3 text-sm text-neutral-700">
-                  <span className="font-medium">{t("compare.addSchool")}</span>
-                  <select
-                    onChange={(e) => {
-                      addSchool(e.target.value);
-                      e.target.value = "";
-                    }}
-                    defaultValue=""
-                    className="rounded-md border border-neutral-300 px-3 py-1.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 bg-white"
-                  >
-                    <option value="" disabled>
-                      {t("compare.addSchoolPlaceholder")}
-                    </option>
-                    {availableToAdd.map((s) => (
-                      <option key={s.slug} value={s.slug}>
-                        {localizeSchoolName(s, language).text}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              ) : (
-                <p className="text-sm text-neutral-500">{t("compare.maxReachedNote")}</p>
-              )}
-            </div>
-
+          <div className="mt-12 flex justify-center">
             <button
               type="button"
               onClick={() => updateUrl([])}
-              className="text-sm font-medium text-neutral-500 hover:text-neutral-700 underline underline-offset-4"
+              className="text-sm font-medium text-neutral-400 hover:text-neutral-600 transition-colors underline underline-offset-4"
             >
               {t("compare.clearAll")}
             </button>
