@@ -4,7 +4,7 @@
     "nameEn": "Chinese International School",
     "nameZh": "漢基國際學校",
     "slug": "chinese-international-school",
-    "district": "North Point / Braemar Hill",
+    "district": "Eastern",
     "region": "Hong Kong Island",
     "curriculum": [
       "IB Middle Years Programme (IBMYP)",
@@ -28,7 +28,7 @@
     "address": {
       "lineEn": "1 Hau Yuen Path, Braemar Hill, Hong Kong SAR, China",
       "lineZh": "香港北角寶馬山校園徑1號",
-      "district": "North Point / Braemar Hill"
+      "district": "Eastern"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -143,7 +143,7 @@
     "nameEn": "Hong Kong International School",
     "nameZh": "香港國際學校",
     "slug": "hong-kong-international-school",
-    "district": "Tai Tam / Repulse Bay",
+    "district": "Southern",
     "region": "Hong Kong Island",
     "curriculum": [
       "American Curriculum",
@@ -168,7 +168,7 @@
     "address": {
       "lineEn": "1 Red Hill Road, Tai Tam, Hong Kong (Secondary Campus); 23 South Bay Close, Repulse Bay, Hong Kong (Primary Campus)",
       "lineZh": "香港大潭紅山道1號（中學部）；香港淺水灣南灣坊6及23號（小學部）",
-      "district": "Tai Tam / Repulse Bay"
+      "district": "Southern"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -342,7 +342,7 @@
     "nameEn": "German Swiss International School",
     "nameZh": "德瑞國際學校",
     "slug": "german-swiss-international-school",
-    "district": "The Peak / Pok Fu Lam",
+    "district": "Central & Western",
     "region": "Hong Kong Island",
     "curriculum": [
       "German International Abitur (DIA)",
@@ -367,7 +367,7 @@
     "address": {
       "lineEn": "11 Guildford Road, The Peak, Hong Kong (The Peak Campus); 162 Pok Fu Lam Road, Pok Fu Lam, Hong Kong (Pok Fu Lam Campus)",
       "lineZh": "香港山頂僑福道11及22號（山頂校舍）；香港薄扶林薄扶林道162號（薄扶林校舍）",
-      "district": "The Peak / Pok Fu Lam"
+      "district": "Central & Western"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -502,7 +502,7 @@
     "nameEn": "Canadian International School of Hong Kong",
     "nameZh": "香港加拿大國際學校",
     "slug": "canadian-international-school-of-hong-kong",
-    "district": "Aberdeen / Wong Chuk Hang",
+    "district": "Southern",
     "region": "Hong Kong Island",
     "curriculum": [
       "IB Primary Years Programme (IBPYP)",
@@ -530,7 +530,7 @@
     "address": {
       "lineEn": "36 Nam Long Shan Road, Aberdeen, Hong Kong (Main Campus); 11 Heung Yip Road, Wong Chuk Hang, Hong Kong (Early Years Centre)",
       "lineZh": null,
-      "district": "Aberdeen / Wong Chuk Hang"
+      "district": "Southern"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -692,7 +692,7 @@
     "nameEn": "French International School Hong Kong",
     "nameZh": "法國國際學校",
     "slug": "french-international-school-hong-kong",
-    "district": "Chai Wan / Jardine's Lookout / Blue Pool Road / Tseung Kwan O",
+    "district": "Eastern",
     "region": "Hong Kong Island",
     "curriculum": [
       "French National Curriculum (AEFE)",
@@ -717,7 +717,7 @@
     "address": {
       "lineEn": "Multiple campuses: Chai Wan, Jardine's Lookout, Blue Pool Road (Hong Kong Island) and Tseung Kwan O",
       "lineZh": null,
-      "district": "Chai Wan / Jardine's Lookout / Blue Pool Road / Tseung Kwan O"
+      "district": "Eastern"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -923,7 +923,7 @@
     "nameEn": "Australian International School Hong Kong",
     "nameZh": "香港澳洲國際學校",
     "slug": "australian-international-school-hong-kong",
-    "district": "Kowloon Tong",
+    "district": "Kowloon City",
     "region": "Kowloon",
     "curriculum": [
       "Australian Curriculum",
@@ -949,7 +949,7 @@
     "address": {
       "lineEn": "3A Norfolk Road, Kowloon Tong, Kowloon, Hong Kong",
       "lineZh": "九龍九龍塘羅福道3A號",
-      "district": "Kowloon Tong"
+      "district": "Kowloon City"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1218,7 +1218,7 @@
     "nameEn": "Kellett School",
     "nameZh": "啟歷學校",
     "slug": "kellett-school",
-    "district": "Pok Fu Lam / Kowloon Bay",
+    "district": "Central & Western",
     "region": "Hong Kong Island",
     "curriculum": [
       "British Curriculum",
@@ -1243,7 +1243,7 @@
     "address": {
       "lineEn": "2 Wah Lok Path, Wah Fu, Pok Fu Lam, Hong Kong (Preparatory Campus); 7 Lam Hing Street, Kowloon Bay, Hong Kong (Preparatory and Senior Campus)",
       "lineZh": "香港華富華樂徑2號（小學校舍）；九龍九龍灣臨興街7號（小學及中學校舍）",
-      "district": "Pok Fu Lam / Kowloon Bay"
+      "district": "Central & Western"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1376,7 +1376,7 @@
     "nameEn": "Yew Chung International School of Hong Kong",
     "nameZh": "耀中國際學校",
     "slug": "yew-chung-international-school-of-hong-kong",
-    "district": "Kowloon Tong / Tseung Kwan O",
+    "district": "Kowloon City",
     "region": "Kowloon",
     "curriculum": [
       "IGCSE",
@@ -1397,7 +1397,7 @@
     "address": {
       "lineEn": "Multiple campuses in Kowloon Tong and Tseung Kwan O, Hong Kong",
       "lineZh": "九龍九龍塘森麻實道22號等多個校舍（九龍塘及將軍澳）",
-      "district": "Kowloon Tong / Tseung Kwan O"
+      "district": "Kowloon City"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1506,7 +1506,7 @@
     "nameEn": "Nord Anglia International School Hong Kong",
     "nameZh": "香港諾德安達國際學校",
     "slug": "nord-anglia-international-school-hong-kong",
-    "district": "Sai Kung / Lam Tin / Kwun Tong",
+    "district": "Kwun Tong",
     "region": "Kowloon",
     "curriculum": [
       "English National Curriculum",
@@ -1531,7 +1531,7 @@
     "address": {
       "lineEn": "Sai Kung (Early Years Campus), Lam Tin (Primary Campus), and Kwun Tong (Secondary Campus), Hong Kong",
       "lineZh": null,
-      "district": "Sai Kung / Lam Tin / Kwun Tong"
+      "district": "Kwun Tong"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1689,7 +1689,7 @@
     "nameEn": "Malvern College Hong Kong",
     "nameZh": "香港墨爾文國際學校",
     "slug": "malvern-college-hong-kong",
-    "district": "Pak Shek Kok, Tai Po",
+    "district": "Tai Po",
     "region": "New Territories",
     "curriculum": [
       "IB Diploma Programme (IBDP)"
@@ -1712,7 +1712,7 @@
     "address": {
       "lineEn": "Fo Chun Road, Pak Shek Kok, Tai Po, New Territories, Hong Kong",
       "lineZh": "新界大埔白石角科進路3號",
-      "district": "Pak Shek Kok, Tai Po"
+      "district": "Tai Po"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1792,7 +1792,7 @@
     "nameEn": "Stamford American School Hong Kong",
     "nameZh": null,
     "slug": "stamford-american-school-hong-kong",
-    "district": "Ho Man Tin / Tai Kok Tsui",
+    "district": "Kowloon City",
     "region": "Kowloon",
     "curriculum": [
       "American Curriculum",
@@ -1816,7 +1816,7 @@
     "address": {
       "lineEn": "25 Man Fuk Road, Ho Man Tin, Kowloon, Hong Kong (Ho Man Tin Campus); G/F to 2/F, Imperial Cullinan, 10 Hoi Fai Road, Tai Kok Tsui, Kowloon, Hong Kong (West Kowloon Campus)",
       "lineZh": null,
-      "district": "Ho Man Tin / Tai Kok Tsui"
+      "district": "Kowloon City"
     },
     "admissions": {
       "tuitionByLevel": [
@@ -1900,7 +1900,7 @@
     "nameEn": "International School Hong Kong",
     "nameZh": "香港國際學校 (ISHK)",
     "slug": "international-school-hong-kong-ishk",
-    "district": "Kowloon Tong",
+    "district": "Kowloon City",
     "region": "Kowloon",
     "curriculum": [
       "IB Primary Years Programme (IBPYP)",
@@ -1922,7 +1922,7 @@
     "address": {
       "lineEn": "Kowloon Tong, Hong Kong",
       "lineZh": "香港九龍塘",
-      "district": "Kowloon Tong"
+      "district": "Kowloon City"
     },
     "admissions": {
       "tuitionByLevel": [],
@@ -1949,7 +1949,7 @@
     "nameEn": "European School Hong Kong",
     "nameZh": "香港歐洲學校",
     "slug": "european-school-hong-kong",
-    "district": "Central / Sheung Wan",
+    "district": "Central & Western",
     "region": "Hong Kong Island",
     "curriculum": [
       "European Baccalaureate"
@@ -1969,7 +1969,7 @@
     "address": {
       "lineEn": "Central / Sheung Wan, Hong Kong",
       "lineZh": "香港中環 / 象灣",
-      "district": "Central / Sheung Wan"
+      "district": "Central & Western"
     },
     "admissions": {
       "tuitionByLevel": [],
@@ -1996,7 +1996,7 @@
     "nameEn": "American School Hong Kong",
     "nameZh": "香港美國學校",
     "slug": "american-school-hong-kong",
-    "district": "Kowloon Tong",
+    "district": "Kowloon City",
     "region": "Kowloon",
     "curriculum": [
       "American Curriculum",
@@ -2017,7 +2017,7 @@
     "address": {
       "lineEn": "Kowloon Tong, Hong Kong",
       "lineZh": "香港九龍塘",
-      "district": "Kowloon Tong"
+      "district": "Kowloon City"
     },
     "admissions": {
       "tuitionByLevel": [],
