@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useCompare, MAX_COMPARE } from "../context/CompareContext";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -24,6 +24,10 @@ export function Compare() {
   const { t, language } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const { compareList, setCompareList } = useCompare();
+  
+  const [highlightDiffs, setHighlightDiffs] = useState(false);
+  const [hideIdentical, setHideIdentical] = useState(false);
+  const [addQuery, setAddQuery] = useState("");
 
   useSeo({
     title: `${t("compare.title")} — ${t("header.brand")}`,
@@ -68,18 +72,23 @@ export function Compare() {
     updateUrl([...selected.map((s) => s.slug), slug]);
   }
 
-  const availableToAdd = schools.filter((s) => !selected.some((sel) => sel.slug === s.slug));
+  const availableToAdd = useMemo(() => 
+    schools.filter((s) => !selected.some((sel) => sel.slug === s.slug))
+    .filter((s) => 
+      localizeSchoolName(s, language).text.toLowerCase().includes(addQuery.toLowerCase())
+    ), 
+  [schools, selected, language, addQuery]);
 
   const sections = [
     {
       title: "General",
       rows: [
-        { label: t("compare.rowRegion") || "Region", render: (s: School) => t(`regions.${s.region}`) || s.region },
-        { label: t("compare.rowDistrict") || "District", render: (s: School) => s.district },
-        { label: t("compare.rowAgeRange") || "Age Range", render: (s: School) => `${s.ageRange.min}–${s.ageRange.max}` },
-        { label: t("compare.rowGradeLevels") || "Grade Levels", render: (s: School) => s.gradeLevels },
-        { label: t("compare.rowSchoolType") || "School Type", render: (s: School) => t(`schoolType.${s.schoolType}`) || s.schoolType },
-        { label: t("compare.rowBoarding") || "Boarding", render: (s: School) => (s.boarding ? t("profile.yes") || "Yes" : t("profile.no") || "No") },
+        { label: t("compare.rowRegion") || "Region", getValue: (s: School) => s.region, render: (s: School) => t(`regions.${s.region}`) || s.region },
+        { label: t("compare.rowDistrict") || "District", getValue: (s: School) => s.district, render: (s: School) => s.district },
+        { label: t("compare.rowAgeRange") || "Age Range", getValue: (s: School) => `${s.ageRange.min}-${s.ageRange.max}`, render: (s: School) => `${s.ageRange.min}–${s.ageRange.max}` },
+        { label: t("compare.rowGradeLevels") || "Grade Levels", getValue: (s: School) => s.gradeLevels, render: (s: School) => s.gradeLevels },
+        { label: t("compare.rowSchoolType") || "School Type", getValue: (s: School) => s.schoolType, render: (s: School) => t(`schoolType.${s.schoolType}`) || s.schoolType },
+        { label: t("compare.rowBoarding") || "Boarding", getValue: (s: School) => s.boarding, render: (s: School) => (s.boarding ? t("profile.yes") || "Yes" : t("profile.no") || "No") },
       ],
     },
     {
@@ -87,6 +96,7 @@ export function Compare() {
       rows: [
         {
           label: t("compare.rowCurriculum") || "Curriculum",
+          getValue: (s: School) => s.curriculum.sort().join(","),
           render: (s: School) => (
             <div className="flex flex-wrap gap-1">
               {s.curriculum.map((c: string) => (
@@ -102,9 +112,10 @@ export function Compare() {
     {
       title: "Admissions",
       rows: [
-        { label: t("compare.rowApplicationFee") || "Application Fee", render: (s: School) => formatHKD(s.admissions.applicationFee) },
+        { label: t("compare.rowApplicationFee") || "Application Fee", getValue: (s: School) => s.admissions.applicationFee, render: (s: School) => formatHKD(s.admissions.applicationFee) },
         {
           label: t("compare.rowEntranceExams") || "Entrance Exams",
+          getValue: (s: School) => s.admissions.entranceExams.sort().join(","),
           render: (s: School) =>
             s.admissions.entranceExams.length > 0 ? s.admissions.entranceExams.join(", ") : <NotPublished />,
         },
@@ -115,6 +126,10 @@ export function Compare() {
       rows: [
         {
           label: t("compare.rowTuitionRange") || "Tuition Range",
+          getValue: (s: School) => {
+            const range = getTuitionRange(s);
+            return range ? `${range.min}-${range.max}` : "Not Published";
+          },
           render: (s: School) => {
             const range = getTuitionRange(s);
             if (!range) return <NotPublished />;
@@ -123,20 +138,32 @@ export function Compare() {
               : `${formatHKD(range.min)} – ${formatHKD(range.max)}`;
           },
         },
-        { label: t("compare.rowDebenture") || "Debenture", render: (s: School) => formatHKD(s.admissions.debentureOrCapitalLevy) },
+        { label: t("compare.rowDebenture") || "Debenture", getValue: (s: School) => s.admissions.debentureOrCapitalLevy, render: (s: School) => formatHKD(s.admissions.debentureOrCapitalLevy) },
       ],
     },
     {
       title: "Status",
       rows: [
-        { label: t("compare.rowVerification") || "Verification", render: (s: School) => <VerificationBadge status={s.verificationStatus} /> },
+        { label: t("compare.rowVerification") || "Verification", getValue: (s: School) => s.verificationStatus, render: (s: School) => <VerificationBadge status={s.verificationStatus} /> },
       ],
     },
   ];
 
+  const isRowIdentical = (row: any) => {
+    if (selected.length < 2) return false;
+    const values = selected.map(s => row.getValue(s));
+    return values.every(v => v === values[0]);
+  };
+
+  const isRowDifferent = (row: any) => {
+    if (selected.length < 2) return false;
+    const values = selected.map(s => row.getValue(s));
+    return !values.every(v => v === values[0]);
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="text-center mb-20">
+      <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-6xl mb-4">
           {t("compare.title")}
         </h1>
@@ -158,6 +185,49 @@ export function Compare() {
         </div>
       ) : (
         <div className="relative">
+          {/* Toolbar */}
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-neutral-50 p-4 rounded-2xl border border-neutral-100">
+            <div className="flex flex-wrap items-center gap-6">
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <div className="relative">
+                  <input 
+                    type="checkbox" 
+                    className="sr-only peer" 
+                    checked={highlightDiffs} 
+                    onChange={(e) => setHighlightDiffs(e.target.checked)} 
+                  />
+                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative">
+                    <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5" />
+                  </div>
+                </div>
+                <span className="text-sm font-medium text-neutral-600 group-hover:text-neutral-900 transition-colors">Highlight Differences</span>
+              </label>
+
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <div className="relative">
+                  <input 
+                    type="checkbox" 
+                    className="sr-only peer" 
+                    checked={hideIdentical} 
+                    onChange={(e) => setHideIdentical(e.target.checked)} 
+                  />
+                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative">
+                    <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5" />
+                  </div>
+                </div>
+                <span className="text-sm font-medium text-neutral-600 group-hover:text-neutral-900 transition-colors">Hide Identical</span>
+              </label>
+            </div>
+            
+            <button 
+              onClick={() => window.print()} 
+              className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-neutral-600 hover:text-neutral-900 border border-neutral-300 rounded-full hover:bg-white transition-all"
+            >
+              <span className="material-icons-outlined text-sm">print</span>
+              Print Comparison
+            </button>
+          </div>
+
           <div className="overflow-x-auto pb-10">
             <table className="w-full min-w-[800px] border-collapse text-left">
               <thead className="sticky top-0 z-20 bg-white/80 backdrop-blur-md">
@@ -197,49 +267,67 @@ export function Compare() {
                     <th className="px-6 py-12 align-top min-w-[200px]">
                       <div className="flex flex-col items-center justify-center border-2 border-dashed border-neutral-200 rounded-2xl p-4 h-full min-h-[140px] hover:border-brand-300 transition-colors group cursor-pointer">
                         <span className="text-xs font-medium text-neutral-400 mb-3 group-hover:text-brand-500 transition-colors">Add a school</span>
-                        <select
-                          onChange={(e) => {
-                            addSchool(e.target.value);
-                            e.target.value = "";
-                          }}
-                          defaultValue=""
-                          className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-xs focus:border-brand-500 focus:outline-none bg-white shadow-sm"
-                        >
-                          <option value="" disabled>Select...</option>
-                          {availableToAdd.map((s) => (
-                            <option key={s.slug} value={s.slug}>
-                              {localizeSchoolName(s, language).text}
-                            </option>
-                          ))}
-                        </select>
+                        <div className="relative w-full">
+                          <input 
+                            type="text" 
+                            placeholder="Search school..." 
+                            value={addQuery} 
+                            onChange={(e) => setAddQuery(e.target.value)} 
+                            className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-xs focus:border-brand-500 focus:outline-none bg-white shadow-sm mb-2"
+                          />
+                          <select
+                            onChange={(e) => {
+                              addSchool(e.target.value);
+                              setAddQuery("");
+                              e.target.value = "";
+                            }}
+                            defaultValue=""
+                            className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-xs focus:border-brand-500 focus:outline-none bg-white shadow-sm"
+                          >
+                            <option value="" disabled>Select...</option>
+                            {availableToAdd.map((s) => (
+                              <option key={s.slug} value={s.slug}>
+                                {localizeSchoolName(s, language).text}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
                     </th>
                   )}
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100">
-                {sections.map((section) => (
-                  <React.Fragment key={section.title}>
-                    <tr className="bg-neutral-50/40">
-                      <td colSpan={selected.length + (selected.length < MAX_COMPARE ? 1 : 0) + 1} className="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-neutral-400 border-y border-neutral-100">
-                        {section.title}
-                      </td>
-                    </tr>
-                    {section.rows.map((row) => (
-                      <tr key={row.label} className="hover:bg-neutral-50/20 transition-colors align-middle group">
-                        <td className="py-6 pl-6 pr-4 text-sm font-medium text-neutral-500 group-hover:text-neutral-800 transition-colors">
-                          {row.label}
+                {sections.map((section) => {
+                  const visibleRows = section.rows.filter(row => !hideIdentical || !isRowIdentical(row));
+                  if (visibleRows.length === 0) return null;
+
+                  return (
+                    <React.Fragment key={section.title}>
+                      <tr className="bg-neutral-50/40">
+                        <td colSpan={selected.length + (selected.length < MAX_COMPARE ? 1 : 0) + 1} className="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-neutral-400 border-y border-neutral-100">
+                          {section.title}
                         </td>
-                        {selected.map((school) => (
-                          <td key={school.slug} className="px-6 py-6 text-sm font-semibold text-neutral-900">
-                            {row.render(school)}
-                          </td>
-                        ))}
-                        {selected.length < MAX_COMPARE && <td className="px-6 py-6" />}
                       </tr>
-                    ))}
-                  </React.Fragment>
-                ))}
+                      {visibleRows.map((row) => (
+                        <tr key={row.label} className="hover:bg-neutral-50/20 transition-colors align-middle group">
+                          <td className="py-6 pl-6 pr-4 text-sm font-medium text-neutral-500 group-hover:text-neutral-800 transition-colors">
+                            {row.label}
+                          </td>
+                          {selected.map((school) => {
+                            const isDifferent = highlightDiffs && isRowDifferent(row);
+                            return (
+                              <td key={school.slug} className={`px-6 py-6 text-sm font-semibold transition-colors ${isDifferent ? 'bg-brand-50/50 text-brand-900' : 'text-neutral-900'}`}>
+                                {row.render(school)}
+                              </td>
+                            );
+                          })}
+                          {selected.length < MAX_COMPARE && <td className="px-6 py-6" />}
+                        </tr>
+                      ))}
+                    </React.Fragment>
+                  );
+                })}
               </tbody>
             </table>
           </div>
