@@ -189,31 +189,29 @@ export function Compare() {
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-neutral-50 p-4 rounded-2xl border border-neutral-100">
             <div className="flex flex-wrap items-center gap-6">
               <label className="flex items-center gap-3 cursor-pointer group">
-                <div className="relative">
+                <div className="relative flex items-center">
                   <input 
                     type="checkbox" 
                     className="sr-only peer" 
                     checked={highlightDiffs} 
                     onChange={(e) => setHighlightDiffs(e.target.checked)} 
                   />
-                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative">
-                    <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5" />
-                  </div>
+                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative"></div>
+                  <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5 z-10" />
                 </div>
                 <span className="text-sm font-medium text-neutral-600 group-hover:text-neutral-900 transition-colors">Highlight Differences</span>
               </label>
 
               <label className="flex items-center gap-3 cursor-pointer group">
-                <div className="relative">
+                <div className="relative flex items-center">
                   <input 
                     type="checkbox" 
                     className="sr-only peer" 
                     checked={hideIdentical} 
                     onChange={(e) => setHideIdentical(e.target.checked)} 
                   />
-                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative">
-                    <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5" />
-                  </div>
+                  <div className="w-10 h-5 bg-neutral-200 peer-checked:bg-brand-600 rounded-full transition-colors relative"></div>
+                  <div className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5 z-10" />
                 </div>
                 <span className="text-sm font-medium text-neutral-600 group-hover:text-neutral-900 transition-colors">Hide Identical</span>
               </label>
